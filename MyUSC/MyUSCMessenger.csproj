@@ -1,0 +1,212 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" DefaultTargets="Build">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <ProductVersion>8.0.30319</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{9BCAC404-74B1-47D0-8086-9665D159592A}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ApplicationIcon />
+    <AssemblyKeyContainerName />
+    <AssemblyName>SamplePortal5</AssemblyName>
+    <AssemblyOriginatorKeyFile />
+    <DefaultClientScript>JScript</DefaultClientScript>
+    <DefaultHTMLPageLayout>Grid</DefaultHTMLPageLayout>
+    <DefaultTargetSchema>IE50</DefaultTargetSchema>
+    <DelaySign>false</DelaySign>
+    <OutputType>Library</OutputType>
+    <RootNamespace>SamplePortal5</RootNamespace>
+    <RunPostBuildEvent>OnBuildSuccess</RunPostBuildEvent>
+    <StartupObject />
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <TargetFrameworkVersion>v2.0</TargetFrameworkVersion>
+    <OldToolsVersion>4.0</OldToolsVersion>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <OutputPath>bin\</OutputPath>
+    <AllowUnsafeBlocks>false</AllowUnsafeBlocks>
+    <BaseAddress>285212672</BaseAddress>
+    <CheckForOverflowUnderflow>false</CheckForOverflowUnderflow>
+    <ConfigurationOverrideFile />
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DocumentationFile />
+    <DebugSymbols>true</DebugSymbols>
+    <FileAlignment>4096</FileAlignment>
+    <NoStdLib>false</NoStdLib>
+    <NoWarn />
+    <Optimize>false</Optimize>
+    <RegisterForComInterop>false</RegisterForComInterop>
+    <RemoveIntegerChecks>false</RemoveIntegerChecks>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+    <WarningLevel>4</WarningLevel>
+    <DebugType>full</DebugType>
+    <ErrorReport>prompt</ErrorReport>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <OutputPath>bin\</OutputPath>
+    <AllowUnsafeBlocks>false</AllowUnsafeBlocks>
+    <BaseAddress>285212672</BaseAddress>
+    <CheckForOverflowUnderflow>false</CheckForOverflowUnderflow>
+    <ConfigurationOverrideFile />
+    <DefineConstants>TRACE</DefineConstants>
+    <DocumentationFile />
+    <DebugSymbols>false</DebugSymbols>
+    <FileAlignment>4096</FileAlignment>
+    <NoStdLib>false</NoStdLib>
+    <NoWarn />
+    <Optimize>true</Optimize>
+    <RegisterForComInterop>false</RegisterForComInterop>
+    <RemoveIntegerChecks>false</RemoveIntegerChecks>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+    <WarningLevel>4</WarningLevel>
+    <DebugType>none</DebugType>
+    <ErrorReport>prompt</ErrorReport>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="CuteChat">
+      <Name>CuteChat</Name>
+      <HintPath>..\..\Publish\Standalone\Web\bin\CuteChat.dll</HintPath>
+    </Reference>
+    <Reference Include="CuteChat.AppCode">
+      <Name>CuteChat.AppCode</Name>
+      <HintPath>..\..\Publish\Standalone\Web\bin\CuteChat.AppCode.dll</HintPath>
+    </Reference>
+    <Reference Include="System">
+      <Name>System</Name>
+    </Reference>
+    <Reference Include="System.Data">
+      <Name>System.Data</Name>
+    </Reference>
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Drawing">
+      <Name>System.Drawing</Name>
+    </Reference>
+    <Reference Include="System.Web">
+      <Name>System.Web</Name>
+    </Reference>
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml">
+      <Name>system.xml</Name>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Components\GridResusecode.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Components\JSHelper.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Components\RegNewUserFailReason.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Components\RoleData.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Components\SampleProvider.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Components\UserData.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Content Include="Admins\AdminBanner.ascx" />
+    <Content Include="Admins\ModifyProfile.aspx" />
+    <Content Include="Admins\UserAdmin.aspx" />
+    <Content Include="Admins\UserRoleAdmin.aspx" />
+    <Content Include="Admins\Web.config" />
+    <Content Include="agreement.aspx" />
+    <Content Include="banner.ascx" />
+    <Content Include="bin\CuteChat.AppCode.dll" />
+    <Content Include="bin\CuteChat.dll" />
+    <Content Include="bin\SamplePortal5.dll" />
+    <Content Include="bin\SamplePortal5.pdb" />
+    <Content Include="chat.aspx" />
+    <Content Include="copyright.aspx" />
+    <Content Include="default.aspx" />
+    <Content Include="editprofile.aspx" />
+    <Content Include="embed.aspx" />
+    <Content Include="footer.ascx" />
+    <Content Include="Global.asax" />
+    <Content Include="Help.aspx" />
+    <Content Include="images\300-cute-chat.jpg" />
+    <Content Include="images\300-web-messenger.gif" />
+    <Content Include="images\bg.gif" />
+    <Content Include="images\bg.jpg" />
+    <Content Include="images\check.gif" />
+    <Content Include="images\cutechatgirl_on_phone.gif" />
+    <Content Include="images\cutechat_girl_small.jpg" />
+    <Content Include="images\cutechat_picture.jpg" />
+    <Content Include="images\defaultavatar.gif" />
+    <Content Include="images\delete.gif" />
+    <Content Include="images\edit.gif" />
+    <Content Include="images\home.gif" />
+    <Content Include="images\messenger.jpg" />
+    <Content Include="images\role.gif" />
+    <Content Include="images\samplelogo.gif" />
+    <Content Include="images\toolbar.gif" />
+    <Content Include="images\WindowHeader.gif" />
+    <Content Include="Login.aspx" />
+    <Content Include="memberlist.aspx" />
+    <Content Include="modifyuserprofile.ascx" />
+    <Content Include="register.aspx" />
+    <Content Include="sample.css" />
+    <Content Include="termsofservice.aspx" />
+    <Content Include="viewprofile.aspx" />
+    <None Include="Web.configOLD" />
+    <Content Include="whoisonline.aspx" />
+    <EmbeddedResource Include="Global.asax.resx">
+      <DependentUpon>Global.asax.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <None Include="bin\CuteChat.lic" />
+    <None Include="bin\CuteMessenger.lic" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PreBuildEvent />
+    <PostBuildEvent />
+  </PropertyGroup>
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>51722</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:51722/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+</Project>

@@ -1,0 +1,22 @@
+﻿<html>
+<head>
+ <title>JavaScript Popup Example 3</title>
+</head>
+<script type="text/javascript">
+	function poponload()
+	{
+		var testwindow = window.open("", "mywindow", "location=1,status=1,scrollbars=1,width=100,height=100");
+		if (null == testwindow)
+		{
+			alert("Please allow popups for this to work.");
+		}
+		else
+		{
+			testwindow.moveTo(0, 0);
+		}
+	}
+</script>
+<body onload="javascript: poponload()">
+<h1>JavaScript Popup Example 3</h1>
+</body>
+</html>

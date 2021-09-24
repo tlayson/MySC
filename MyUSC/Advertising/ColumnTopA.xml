@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Advertisements>
+  <Ad>
+    <ImageUrl>~/images/Advertising/BMW.jpg</ImageUrl>
+    <NavigateUrl>http://www.BMW.com</NavigateUrl>
+    <AlternateText>Ad for BMW</AlternateText>
+  </Ad>
+  <Ad>
+    <ImageUrl>~/images/Advertising/Guiness.jpg</ImageUrl>
+    <NavigateUrl>http://www.Guiness.com</NavigateUrl>
+    <AlternateText>Ad for Guiness</AlternateText>
+  </Ad>
+  <Ad>
+    <ImageUrl>~/images/Advertising/MAndM.jpg</ImageUrl>
+    <NavigateUrl>http://www.MYMMS.com</NavigateUrl>
+    <AlternateText>Ad for MandM's</AlternateText>
+  </Ad>
+  <Ad>
+    <ImageUrl>~/images/Advertising/Sprint.jpg</ImageUrl>
+    <NavigateUrl>http://www.Sprint.com</NavigateUrl>
+    <AlternateText>Ad for Sprint</AlternateText>
+  </Ad>
+  <Ad>
+    <ImageUrl>~/images/Advertising/Fuel.jpg</ImageUrl>
+    <NavigateUrl>http://www.FUELTV.com</NavigateUrl>
+    <AlternateText>Ad for FuelTV</AlternateText>
+  </Ad>
+</Advertisements>

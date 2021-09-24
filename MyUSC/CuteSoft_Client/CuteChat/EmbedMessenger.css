@@ -1,0 +1,307 @@
+#td_IM_container td
+{
+	font-family: MS Sans Serif, Arial, Helvetica, sans-serif;
+	font-size: 8pt;
+}
+
+.HtmlControl td
+{
+	font-family: MS Sans Serif, Arial, Helvetica, sans-serif;
+	font-size: 8pt;
+}
+.button
+{
+	margin: 1px;
+	vertical-align: middle;
+	padding: 0px;
+}
+.buttonover
+{
+	border: #0A246A 1px solid;
+	background-color: #B6BDD2;
+	padding: 0px;
+	margin: 0px;
+	vertical-align: middle;
+}
+.buttondown
+{
+	border-right: buttonhighlight 1px solid;
+	border-top: buttonshadow 1px solid;
+	border-left: buttonshadow 1px solid;
+	border-bottom: buttonhighlight 1px solid;
+	margin: 0px;
+	vertical-align: middle;
+	padding: 0px;
+}
+
+.InputBoxElement /*INPUT BOX*/
+{
+	background-color:white !important;
+	font-size: 9pt;
+	font-family: Arial;
+	padding: 4px;
+	border:solid 1px #A5B6DE;
+}
+
+
+.MessageIMTabButton
+{
+	text-align: center;
+	font-family: Tahoma, Arial, Helvetica;
+	font-size: 11px;
+	font-weight: bold;
+	color: #3E5684!important;
+	height:27px;
+	background-color: #f3f3f3!important;
+	border: 1px solid #BED6E0!important;
+	background-image:url(images/button2.gif)!important;
+}
+.ActiveMessageIMTabButton
+{
+	text-align: center;
+	font-family: Tahoma, Arial, Helvetica;
+	font-size: 11px;
+	font-weight: bold;
+	color: #3E5684!important;
+	height:27px;
+	background-color: #EDF1FA!important;
+	border: 1px solid #BED6E0!important;
+	background-image:url(images/button.gif)!important;
+}
+
+.ConnectionButton
+{
+	text-align: center;
+	font: bold 9pt/1.3 verdana;
+	color: #3E5684!important;
+	background-color: #F3F3F3!important;
+	border: 1px solid #6885B9!important;
+	background-image:url(images/button.gif)!important;
+}
+
+.SendButton
+{
+	text-align: center;
+	font: bold 9pt/1.3 verdana;
+	color: #3E5684!important;
+	background-color: #F3F3F3!important;
+	border: 1px solid #6885B9!important;
+	background-image:url(images/send.gif)!important;
+}
+
+.IMTabButton
+{
+	height:25px;
+}
+.NormalIMTabButton
+{
+	border-right:solid 1px #BED6E0;
+	border-bottom:solid 1px #BED6E0;
+	border-left:none 0px;
+
+	background-color:#F0F0F0;	
+	
+	border-top:solid 1px #BED6E0;
+}
+.ActiveIMTabButton
+{
+	border-right:solid 1px #BED6E0;
+	border-left:solid 1px white;
+	border-top:solid 1px #BED6E0;
+	border-bottom:solid 1px white;
+	
+	background-color:white;
+	
+	background-image:none;
+	color:red;
+	font-weight:bold;
+	
+}
+
+.IMTabButtonPanel
+{
+	border-left:solid 1px #BED6E0;
+}
+.IMTabControl
+{
+	
+}
+.IMTabPage
+{
+	background-color:White;
+	border:solid 1px #BED6E0;
+}
+.WindowHeader
+{
+	text-align: center;
+	background-color: #EDF1FA;
+	background-image:url(images/WindowHeader.gif);
+	font-family: Arial, Helvetica;
+	font-size: 11px;
+	cursor:move;
+	font-weight: bold;
+	color: #000000;
+	height:24px;
+	border-bottom:1px solid #8d8d8d;
+	vertical-align:middle;
+}
+.WindowBody
+{
+	BACKGROUND-COLOR: #f2f2f2;
+}
+
+.ChannelTitle
+{
+	padding: 5px 0 0 5px;
+	COLOR: #4C6AA4;	
+	font:normal 15px Tahoma;
+	font-weight: bold;
+}
+
+.NumberOnline
+{
+	border-bottom: #dddddd 3px solid;
+}
+
+/*Message Classes*/
+
+.System
+{
+	color: #008200;
+}
+
+.Msg
+{
+	
+}
+.Info
+{
+}
+.Event
+{
+	color: #008200;
+}
+.EmotionMessage
+{
+	font-weight:bold;
+	color:#008200;
+}
+.UserMessage td
+{
+	font:normal 9pt Arial;
+}
+
+.OfflineMessage td
+{
+	font-style:italic;
+}
+
+.WhisperUserMessage td
+{
+	font-weight: bold;
+	color: Orange;
+}
+.Connection
+{
+	color: #008200;
+}
+.User
+{
+	color: red;	
+}
+.Contact
+{
+	color: #cc0000;	
+}
+.Admin
+{
+	font-weight: bold;
+}
+.You
+{
+	color: Blue; /*font-style:italic;*/
+	font-weight: bold;
+}
+.Sender
+{
+}
+.Target
+{
+}
+
+.RightPanel
+{
+	border: 1px solid #BED6E0!important;
+}
+.MessageList
+{
+	padding:4px;
+	background-color:White;
+	border: 1px solid #D6EEFF!important;
+}
+
+.OperatorMessage td
+{
+	color:red;
+	font-weight:bold;
+}
+
+.InstantMyStatus
+{
+}
+
+
+
+body,table
+{
+	cursor:default;
+}
+body, table, select
+{
+	font-family: MS Sans Serif, Arial, Helvetica, sans-serif;
+	font-size: 8pt;
+}
+
+.FullPageWindow
+{
+	background-color: #edf1fa!important;
+}
+
+a, a:visited, a:link
+{
+	color: #0000ff;
+	text-decoration: underline;
+}
+
+a:hover
+{
+	color: #FF3300;
+	text-decoration: underline;
+}
+.InstantMainContent
+{
+	background-color: white; border: 1px solid #BED6E0; 
+}
+
+.dialogPageHeader
+{
+    margin: 0px;
+    border-bottom: #9EB3E1 1px solid;
+}
+.dialogPageButtons
+{
+    margin: 0px;
+    border-top: #9EB3E1 1px solid;
+}
+.InstantMenuControl
+{
+	border-bottom:1px solid #808080;
+	height:25px;	
+	background-color:menu;
+}
+.HtmlTextControl
+{
+	font-family: MS Sans Serif, Arial, Helvetica, sans-serif;
+	font-size: 8pt;
+}
+

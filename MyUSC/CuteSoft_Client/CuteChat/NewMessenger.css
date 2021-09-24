@@ -1,0 +1,653 @@
+
+.AvatarImgHover
+{
+	border-color:#D6EEFF!important;
+}
+.ContactFloatPanel
+{
+	position:absolute;
+	border:solid 5px #C3D9FF;
+	background-color:White;
+	font:normal 12px arial;
+}
+.ContactFloatPanelButton
+{
+	cursor:hand;
+	margin:2px 6px 2px 6px;	
+}
+
+.ContactImageOnline
+{
+}
+.ContactImageOffline
+{
+	filter:gray;
+	opacity:0.5;
+	-moz-opacity:0.5;
+	background-color:gray;
+}
+
+.MessengerLayout
+{
+	background: url(Images/IM_Main.png) repeat-x;
+}
+.MessengerAvatar
+{
+	margin-top: 5px;
+	margin-left: 5px;
+	width:48px;
+	height:48px;
+}
+
+.MessengerMyName
+{
+	float: left;
+	height: 20px;
+	margin: 0 0 5px 8px;
+	padding-left:4px;
+	padding-right:4px;
+	cursor: default;
+	color:white;
+	font-size:14px;
+}
+.MessengerMyDescription
+{
+	font:normal 11px Tahoma;
+	height: 20px;
+	margin: 5px 0 0 8px;
+	cursor: default;
+	text-align:left;
+	padding-left:4px;
+	color:white;
+	text-overflow:ellipsis;
+	white-space:nowrap;
+	overflow:hidden;
+	width:140px;
+}
+
+.MessangerToolbarItem
+{
+	float: left;
+	margin-left: 4px;
+	padding-top: 4px;
+	width: 26px;
+	height: 20px;
+	text-align: center;
+}
+.MessangerToolbarItemHover
+{
+	background: url(Images/IM_ToolBtnHover.png);
+}
+.MessengerLineButtonHover
+{
+	background: url(Images/IM_BtnHover.png);
+}
+.MessengerSmallButton
+{
+	width: 22px;
+	height: 22px;
+	padding: 1px;
+}
+.ConversationToolbarItem
+{
+	width:36px;
+	height:28px;
+	float:left;
+	padding:2px;
+	margin-left:3px;
+	margin-top:2px;
+}
+.MessengerSmallButtonHover
+{
+	background: url(Images/IM_ConvBtnHover.png) no-repeat;
+}
+.MessengerFilterBox
+{
+	padding-right: 15px;
+	height: 20px;
+	border: 1px solid #C7C7C7;
+	font-size:12px;
+	background-image: url(Images/IM_InputBox.png);
+}
+.MessengerGroup
+{
+	font:bold 11px arial;
+	padding:3px 0 3px 2px;
+	cursor:default;
+	clear:both;
+}
+.MessengerGroupSelected
+{
+	background-color:#EEEEEE;
+}
+.MessengerNoContact
+{
+	font:normal 11px arial;
+	padding:2px;
+	cursor:default;
+	padding-left:16px;
+	color:#808080;
+}
+.MessengerContact
+{
+	cursor:default;
+	padding-left:6px;
+	clear:both;
+	font-family: MS Sans Serif, Arial, Helvetica, sans-serif;
+	font-size: 8pt;
+}
+.MessengerContactSelected
+{
+	background-color:#EEEEEE;
+}
+
+
+.MessengerContactDesc
+{
+	font:normal 11px arial;
+	color:#a0a0a0;
+}
+.MessengerContactUserName
+{
+	font-size:12px;
+}
+.MessengerGroupHover
+{
+	color:#5791DF;
+}
+.MessengerContactHover
+{
+	cursor:hand;
+	cursor:pointer;
+	color: #5791DF;
+}
+
+.MessengerContactAvatar
+{
+	float: left;
+	height: 58px;
+	width: 58px;
+	margin-left: 8px;
+}
+.MessengerContactAvatarImage
+{
+	margin-top: 6px;
+	margin-left: 6px;
+	border:solid 1px gray;
+}
+
+.MessengerContactBlink
+{
+	color:Red;
+	font-weight:bold;
+}
+.MessengerContactBlink .MessengerContactUserName
+{
+	padding-left:6px;
+}
+
+.MessengerArrow,.MessengerArrowOver
+{
+	margin-left:3px;
+	margin-right:3px;
+}
+.MessengerGroup .MessengerArrow
+{
+	display:inline;
+}
+.MessengerGroup .MessengerArrowOver
+{
+	display:none;
+}
+.MessengerGroupHover .MessengerArrow
+{
+	display:none;
+}
+.MessengerGroupHover .MessengerArrowOver
+{
+	display:inline;
+}
+.ConversationLayout
+{
+	background-color: #EDF1FA;
+}
+
+.ConversationMain
+{
+}
+.ConversationAvatarContainer
+{	
+	border:1px solid #A5B6DE;background-color:white;padding:1px;
+	margin-right:4px;
+	width:92px;
+	height:92px;
+}
+.ConversationWarning
+{
+	background-color:white;
+	border:solid 1px gray;
+	border-bottom:none;
+	font-size:9pt;
+}
+.ConversationMessageList
+{
+	background-color:White;
+	width:99%;
+	height:100%;
+	overflow:auto;
+	padding:2px 0 2px 2px;
+}
+.ConversationInputBar
+{
+	background-color: #EDF1FA;
+	width:99%;
+}
+.ConversationInputButton
+{
+	width:36px;
+	height:28px;
+	float:left;
+	padding:2px;
+	margin-left:3px;
+	margin-top:2px;
+}
+.ConversationInputButtonDown
+{
+	width:36px;
+	height:28px;
+	float:left;
+	padding:2px;
+	margin-left:3px;
+	margin-top:2px;
+	background: url(Images/IM_InpBtnHover.png) no-repeat;
+}
+.ConversationInputButtonHover
+{
+	background: url(Images/IM_InpBtnHover.png) no-repeat;
+}
+
+
+.InputBoxElement /*INPUT BOX*/
+{
+	background-color: white !important;
+	font-size: 9pt;
+	font-family: Arial;
+	padding: 4px;
+	border: solid 1px #A5B6DE;
+}
+
+
+.MessageIMTabButton
+{
+	text-align: center;
+	font-family: Tahoma, Arial, Helvetica;
+	font-size: 11px;
+	font-weight: bold;
+	color: #3E5684 !important;
+	height: 27px;
+	background-color: #f3f3f3 !important;
+	border: 1px solid #BED6E0 !important;
+	background-image: url(images/button2.gif) !important;
+}
+.ActiveMessageIMTabButton
+{
+	text-align: center;
+	font-family: Tahoma, Arial, Helvetica;
+	font-size: 11px;
+	font-weight: bold;
+	color: #3E5684 !important;
+	height: 27px;
+	background-color: #EDF1FA !important;
+	border: 1px solid #BED6E0 !important;
+	background-image: url(images/button.gif) !important;
+}
+
+.HtmlButton
+{
+	text-align: center;
+	background-color: #eeeeee;
+	border: 1px solid #999999;
+	background-image: url(images/HtmlButton.gif);
+	font-family: Tahoma, Arial, Helvetica;
+	font-size: 11px;
+	font-weight: bold;
+	height: 27px;
+	color: #333333;
+}
+.HtmlMenuButton
+{
+	background-color: #eeeeee !important;
+	border: 1px solid #999999 !important;
+}
+
+.ConnectionButton
+{
+	text-align: center;
+	font: bold 9pt/1.3 verdana;
+	color: #3E5684 !important;
+	background-color: #F3F3F3 !important;
+	border: 1px solid #6885B9 !important;
+	background-image: url(images/button.gif) !important;
+}
+
+.SendButton
+{
+	text-align: center;
+	font: bold 9pt/1.3 verdana;
+	color: #3E5684 !important;
+	background-color: #F3F3F3 !important;
+	border: 1px solid #6885B9 !important;
+	background-image: url(images/send.gif) !important;
+}
+
+.IMTabButton
+{
+	height: 25px;
+}
+.NormalIMTabButton
+{
+	border-right: solid 1px #BED6E0;
+	border-bottom: solid 1px #BED6E0;
+	border-left: none 0px;
+	background-color: #F0F0F0;
+	border-top: solid 1px #BED6E0;
+}
+.ActiveIMTabButton
+{
+	border-right: solid 1px #BED6E0;
+	border-left: solid 1px white;
+	border-top: solid 1px #BED6E0;
+	border-bottom: solid 1px white;
+	background-color: white;
+	background-image: none;
+	color: red;
+	font-weight: bold;
+}
+
+.IMTabButtonPanel
+{
+	border-left: solid 1px #BED6E0;
+}
+.IMTabControl
+{
+}
+.IMTabPage
+{
+	background-color: White;
+	border: solid 1px #BED6E0;
+}
+
+
+.WindowHeader
+{
+	text-align: center;
+	background-color: #EDF1FA;
+	background-image: url(images/WindowHeader.gif);
+	font-family: Tahoma, Arial, Helvetica;
+	font-size: 11px;
+	font-weight: bold;
+	color: #000000;
+	height: 17px;
+	border-bottom: 1px solid #8d8d8d;
+}
+
+
+.ChannelTitle
+{
+	padding: 5px 0 0 5px;
+	color: #4C6AA4;
+	font: normal 15px Tahoma;
+	font-weight: bold;
+}
+
+.NumberOnline
+{
+	border-bottom: #dddddd 3px solid;
+}
+
+/*Message Classes*/
+
+.System
+{
+	color: #008200;
+}
+
+.Msg
+{
+}
+.Info
+{
+}
+.Event
+{
+	color: #008200;
+}
+.EmotionMessage
+{
+	font-weight: bold;
+	color: #008200;
+}
+.UserMessage td
+{
+	font: normal 9pt Arial;
+}
+
+.OfflineMessage td
+{
+	font-style: italic;
+}
+
+.WhisperUserMessage td
+{
+	font-weight: bold;
+	color: Orange;
+}
+.Connection
+{
+	color: #008200;
+}
+.User
+{
+	color: #999999;
+}
+.Contact
+{
+	color: #cc0000;
+}
+.Admin
+{
+	font-weight: bold;
+}
+.You
+{
+	color: #5791DF;
+}
+.Sender
+{
+}
+.Target
+{
+}
+
+.RightPanel
+{
+	border: 1px solid #BED6E0 !important;
+}
+.MessageList
+{
+	padding: 4px;
+	background-color: White;
+	border: 1px solid #BED6E0 !important;
+}
+
+.OperatorMessage td
+{
+	color: red;
+	font-weight: bold;
+}
+
+.InstantMyStatus
+{
+}
+
+
+.ceifdialog
+{
+	border: 0;
+}
+
+.ceifdialogtl
+{
+	margin: 0 auto;
+	width: 15;
+	height: 35;
+	background: transparent url(Images/t1.gif) no-repeat;
+}
+.ceifdialogtop
+{
+	height: 26px;
+	padding: 4px 5px 4px 0;
+	padding-left: 6px;
+	color: #15428b;
+	cursor: move;
+	font: bold 11px tahoma,arial,verdana,sans-serif;
+	background: transparent url(Images/t2.gif) repeat-x;
+	vertical-align: bottom;
+	overflow: hidden;
+}
+.ceifdialogtr
+{
+	margin: 0 auto;
+	background: transparent url(Images/t3.gif) no-repeat;
+}
+.ceifdialogtitletext
+{
+	float: left;
+	margin-top: 8px;
+}
+.btnMaximize
+{
+	float: right;
+	width: 28px;
+	height: 15px;
+	text-align: right;
+	margin-top: 8px;
+	background: transparent url(Images/max2.gif) no-repeat;
+	cursor:hand;
+}
+.btnMaximized
+{
+	float: right;
+	width: 28px;
+	height: 15px;
+	text-align: right;
+	margin-top: 8px;
+	background: transparent url(Images/max.gif) no-repeat;
+	cursor:hand;
+}
+.btnMinimize
+{
+	float: right;
+	width: 28px;
+	height: 15px;
+	text-align: right;
+	margin-top: 8px;
+	background: transparent url(Images/minus.gif) no-repeat;
+	cursor:hand;
+}
+.btnClose
+{
+	float: right;
+	width: 28px;
+	height: 15px;
+	text-align: right;
+	margin-top: 8px;
+	background: transparent url(Images/Close2.gif) no-repeat;
+	cursor:hand;
+}
+.ceifdialogleftbar
+{
+	width: 15px;
+	font-size: 1px;
+	background: transparent url(Images/l1.gif) repeat-y;
+}
+.ceifdialogrightbar
+{
+	width: 15px;
+	font-size: 1px;
+	background: transparent url(Images/r1.gif) repeat-y;
+}
+.ceifdialogcenter
+{
+	border: 1px solid #84A0C4;
+	background-color: #EDF1FA;
+	font:normal 12px arial;
+	vertical-align:top;
+	overflow:hidden;
+	height:100%;
+}
+.ceifdialogbottom
+{
+	height: 15px;
+	width: 100%;
+	margin: 0 auto;
+	background: transparent url(Images/b1.gif) repeat-x;
+}
+.ceifdialogbottomleft
+{
+	width: 15px;
+	height: 15px;
+	background: transparent url(Images/l2.gif) no-repeat;
+}
+.ceifdialogbottomright
+{
+	width: 15px;
+	height: 15px;
+	background: transparent url(Images/r2.gif) no-repeat;
+}
+.HtmlWindow
+{
+	font-size:9pt;
+}
+
+#cwui_msg
+{
+	padding:12px;
+	text-align:center;
+}
+#cwui_btns
+{
+	padding:12px;
+	text-align:center;
+	padding-top: 1px;
+	height: 22px;
+	color: windowtext; font:normal 11px Tahoma;
+}
+#cwui_text
+{
+	padding:12px;
+	text-align:center;
+}
+#cwui_ok,#cwui_cancel
+{
+	width:80px;
+	height: 22px;
+	color: windowtext; font:normal 11px Tahoma;
+}
+
+.ceifdialogshadow
+{
+	background-color:#336699;
+	position:absolute;
+	left:0;
+	top:0;
+	width:100%;
+	height:100%;
+	z-index:10000;
+	cursor:not-allowed;
+	filter:alpha(opacity=20);
+	-moz-opacity:0.2;
+	opacity:0.2;
+}
+
+

@@ -1,0 +1,60 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN">
+<html>
+
+<head>
+<title>Click here to show the overlay</title>
+<style type="text/css">
+#overlay {
+     visibility: hidden;
+     position: fixed;
+     left: 0;
+     top: 0;
+     width: 100%;
+     height: 100%;
+     text-align:center;
+     z-index: 200;
+     background-image:url(maskBG.png);
+}
+
+#overlay div {
+     width:300px;
+     margin: 100px auto;
+     background-color: #fff;
+     border:1px solid #000;
+     padding:15px;
+     text-align:center;
+}
+</style>
+
+<script type="text/javascript">
+	function overlay() {
+
+		el = document.getElementById("overlay");
+		el.style.visibility = (el.style.visibility == "visible") ? "hidden" : "visible";
+
+	}
+</script>
+
+</head>
+
+<body bgcolor="white" text="black" link="blue" vlink="purple" alink="red">
+
+<p align="center"><a href='#' onclick='overlay()'>Click here to show the overlay</a></p>
+
+<p align="center">this is my text... this is my text... this is my text...&nbsp;this 
+is my text... this is my text...&nbsp;this is my text...this is my text... this 
+is my text... this is my text... this is my text...</p>
+
+
+<p align="center"><b>this is my text... this is my text... this is my text...&nbsp;this 
+is my text... t</b></p>
+
+<div id="overlay">
+<div>
+<p>Content you want the user to see goes here.</p>
+</div>
+</div>
+
+</body>
+
+</html>

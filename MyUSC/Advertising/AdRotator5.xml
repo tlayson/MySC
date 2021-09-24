@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Advertisements xmlns="http://schemas.microsoft.com/AspNet/AdRotator-Schedule-File">
+	<Ad>
+    <ImageUrl>~/images/Advertising/OakleyAd1.png</ImageUrl>
+		<NavigateUrl>~/Advertising/AdRedirector.aspx?ad=Oakley_5_1&amp;target=http://www.oakley.com&amp;source=5</NavigateUrl>
+    <AlternateText>Ad for Oakley</AlternateText>
+    <Impressions>100</Impressions>
+    <Keyword>small</Keyword>
+  </Ad>
+  <Ad>
+    <ImageUrl>~/images/Advertising/RawlingsAd.png</ImageUrl>
+		<NavigateUrl>~/Advertising/AdRedirector.aspx?ad=Rawlings_5_1&amp;target=http://www.rawlings.com&amp;source=5</NavigateUrl>
+    <AlternateText>Ad for Rawlings</AlternateText>
+    <Impressions>100</Impressions>
+    <Keyword>small</Keyword>
+  </Ad>
+  <Ad>
+    <ImageUrl>~/images/Advertising/OakleyAd.png</ImageUrl>
+		<NavigateUrl>~/Advertising/AdRedirector.aspx?ad=Oakley_5_2&amp;target=http://www.oakley.com&amp;source=5</NavigateUrl>
+    <AlternateText>Ad for Oakley</AlternateText>
+    <Impressions>100</Impressions>
+    <Keyword>small</Keyword>
+  </Ad>
+  <Ad>
+    <ImageUrl>~/images/Advertising/RawlingsAd1.png</ImageUrl>
+		<NavigateUrl>~/Advertising/AdRedirector.aspx?ad=Rawlings_5_2&amp;target=http://www.rawlings.com&amp;source=5</NavigateUrl>
+    <AlternateText>Ad for Rawlings</AlternateText>
+    <Impressions>100</Impressions>
+    <Keyword>small</Keyword>
+  </Ad>
+  <Ad>
+    <ImageUrl>~/images/Advertising/OakleyAd1.png</ImageUrl>
+		<NavigateUrl>~/Advertising/AdRedirector.aspx?ad=Oakley_5_3&amp;target=http://www.oakley.com&amp;source=5</NavigateUrl>
+    <AlternateText>Ad for Oakley</AlternateText>
+    <Impressions>100</Impressions>
+    <Keyword>small</Keyword>
+  </Ad>
+</Advertisements>

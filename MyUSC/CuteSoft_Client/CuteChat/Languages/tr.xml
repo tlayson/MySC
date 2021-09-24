@@ -1,0 +1,309 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<root>
+	<resource name="CuteChat_Messenger">Cute Messenger</resource>
+	
+	<resource name="UI_MENU_AddContact">Bağlantı ekle</resource>
+	<resource name="UI_MENU_RemoveContact">Bağlantı sil</resource>
+	<resource name="UI_MENU_ViewProfile">Profil görüntüle</resource>
+	<resource name="UI_MENU_Block">Kullanıcıyı önle</resource>
+	<resource name="UI_MENU_UnBlock">Kullanıcının önlemesini kaldır</resource>
+	<resource name="UI_MENU_ChatWith">Mesaj gönder</resource>
+	<resource name="UI_MENU_TargetAll">Herkese</resource>
+	<resource name="UI_MENU_Refresh">Tazele</resource>
+	<resource name="UI_MENU_Clear">Temizle</resource>
+	<resource name="UI_MENU_SaveMessages">Kaydet</resource>
+	<resource name="UI_MENU_ReloadMessages">Yeniden yükle</resource>
+	<resource name="UI_MENU_Invite">Davet et</resource>
+	<resource name="UI_MENU_Kick">Dışarıda tut</resource>
+	<resource name="UI_MENU_TargetIt">Konuşulacak kişi</resource>
+	<resource name="UI_MENU_AutoScroll">Otomatik kaydırma</resource>
+	<resource name="UI_MENU_StopScroll">Kaydırmaya durdur</resource>	
+	<resource name="UI_MENU_Online">Çevrimiçi</resource>
+	<resource name="UI_MENU_Offline">Çevrim dışı</resource>
+	<resource name="UI_MENU_Away">Dışarıda</resource>
+	<resource name="UI_MENU_Busy">Meşgul</resource>	
+	<resource name="UI_MENU_Blocked">Engellendi</resource>	
+	<resource name="UI_MENU_SentList">Geçmiş</resource>
+	<resource name="UI_MENU_Admin">Yönetim</resource>
+	<resource name="UI_MENU_SetPassword">Şifre belirle</resource>
+	<resource name="UI_MENU_DisableAnonymous">İsimsizleri etkisiz hale getir</resource>
+	<resource name="UI_MENU_LockChannel">Kanal kilitle</resource>
+	<resource name="UI_MENU_UnLockChannel">Kanal kilidini kaldır</resource>
+	<resource name="UI_MENU_Contacts">Bağlantılar</resource>
+	<resource name="UI_MENU_View">Görünüm</resource>
+	<resource name="UI_MENU_Exit">Çıkış</resource>
+	<resource name="UI_MENU_Signout">Oturum kapa</resource>
+	<resource name="UI_MENU_SignIn">Oturum aç</resource>
+	<resource name="UI_MENU_File">Dosya</resource>
+	<resource name="UI_MENU_OfflineMessage">Çevrim dışı mesaj</resource>	
+	<resource name="UI_MENU_Add">Ekle</resource>
+	<resource name="UI_Menu_GoAdminPage">Yönetim sayfasına git</resource>
+	<resource name="UI_PROMPT_ENABLEANONYMOUS">İsimsiz kullanıcılara izin ver</resource>
+	<resource name="UI_Menu_Connect">Connect</resource>
+	<resource name="UI_Menu_Disconnect">Disconnect</resource>
+	
+	<resource name="UI_MENU_Online">Çevrimiçi</resource>
+	<resource name="UI_MENU_Away">Dışarıda</resource>
+	<resource name="UI_MENU_Busy">Meşgul</resource>
+	<resource name="UI_MENU_OnThePhone">Telefonda</resource>
+	<resource name="UI_MENU_OutToLunch">Yemekte</resource>
+	<resource name="UI_MENU_Offline">(Çevrimdışı)</resource>	
+	<resource name="UI_MENU_AppearOffline">Çevrimdışı görünüyor</resource>
+	
+	<resource name="UI_USER_Online"><!--do not display anything--></resource>
+	<resource name="UI_USER_Away">(Dışarıda)</resource>
+	<resource name="UI_USER_Busy">(Meşgul)</resource>
+	<resource name="UI_USER_OutToLunch">(Yemekte)</resource>
+	<resource name="UI_USER_OnThePhone">(Telefonda)</resource>
+	<resource name="UI_USER_Offline">(Çevrim dışı)</resource>	
+	
+	<resource name="UI_USER_All">Herkese</resource>
+	<resource name="UI_Whisper">Fısıltı</resource>	
+	<resource name="UI_Lobbies">Kanal seç</resource>	
+	
+	<resource name="UI_PROMPT_KICKUSER">Bu kullanıcıyı geçerli kanalın dışında tutmaya istiyormusunuz?</resource>
+	
+	<resource name="UI_UnknownUserName">(Bilinmeyen)</resource>
+	<resource name="UI_Unknown">(Bilinmeyen)</resource>
+	
+	<resource name="UI_FloodControlMessage">Kısa bir zamanda bu kadar çok mesaj gönderemezsiniz.Başka mesaj göndermeden önce lütfen birkaç saniye bekleyin.</resource>
+	<resource name="UI_AreYouSureQuit">Konuşmaya kesmek istediğinize emin misiniz ?</resource>
+	<resource name="UI_AreYouSureDisconnect">Chat bağlantısını kesmek istediğinize emin misiniz?</resource>
+	<resource name="UI_NotAllowedFunction">Bu işlevi yapmanıza izin verilmemektedir.</resource>
+
+	<resource name="UI_PopupBlockedMessage">Pop-up önleyici bulundu.</resource>
+	<resource name="UI_popupblocked">Pop-up önleyici bulundu.</resource>
+	
+	<resource name="CANTNOTWHISPERTONOTARGET">Bütün kullanıcılara ileti gönderemezsiniz.</resource>
+	<resource name="UI_CONNECTION_CONNECTING">Lütfen bekleyin, sunucuya bağlanılıyor...</resource>
+	<resource name="UI_CONNECTION_ERROR">Chat sunucusu için bağlantı ölü. {0}</resource>
+	<resource name="UI_CONNECTION_READY">Bağlandı!</resource>
+	<resource name="UI_CONNECTION_Disconnect">Bağlantınız kesildi.</resource>
+	<resource name="UI_CONNECTION_CANCELLED">Bağlantı iptal edildi.</resource>
+	<resource name="UI_CONNECTION_NOTENABLE">Bağlantı başarısız. Sunucu hazır değil.</resource>
+	<resource name="UI_CONNECTION_NeedName">Lütfen Chat'a başlamak için kendinize bir takma ad seçin. Takma adınız Chat odasındaki diğer kullanıcılara sizi tanıtacak. Takma ad en fazla 20 karakter uzunluğunda olabilir,bir harf ile başlaması gerekir,boşluk veya karakterleri içeremez.</resource>
+	<resource name="UI_CONNECTION_NEEDLOGIN">Bu uygulamada isimsiz kullanıcılara izin verilmemektedir.Öncelikle bu web sitesinde oturum açmalısınız.</resource>
+	<resource name="UI_CONNECTION_NeedName_Title">Misafir Adı</resource>
+	<resource name="UI_CONNECTION_NeedName_Message">Lütfen isminizi yazın.</resource>
+	<resource name="UI_CONNECTION_NeedPassword">Şifre gerekli.</resource>
+	<resource name="UI_CONNECTION_NeedPassword_Title">Şifre</resource>
+	<resource name="UI_PROMPT_CHANNELPASSWORD">Lütfen kanal şifresini girin</resource>
+	<resource name="UI_CONNECTION_NeedPassword_Message">Bu kanal şifre korumalıdır. Lütfen kanal şifresini girin.</resource>
+	<resource name="UI_CONNECTION_Kick">Bu kanalın dışında tutulmaktasınız.</resource>	
+	<resource name="UI_CONNECTION_MissingNickName">Takma ad alanı boş.</resource>
+	<resource name="UI_CONNECTION_MissingPassword">Şifre alanı boş.</resource>
+	<resource name="UI_CONNECTION_ShortNickName">Takma adınız çok kısa.</resource>
+	<resource name="UI_CONNECTION_LongNickName">Takma adınız çok uzun.</resource>
+	
+	
+	<resource name="UI_USER_JOIN">{0} odaya girdi.</resource>
+	<resource name="UI_USER_LEAVE">{0} bu odadan ayrıldı.</resource>
+	<resource name="UI_USER_KICK">{0} dışarıda tutuldu.</resource>
+	<resource name="UI_USER_DROP">{0} odadan ayrıldı.</resource>
+	<resource name="UI_USER_BLOCK">{0} engellendi!</resource>
+	<resource name="UI_USER_UNBLOCK">{0} 'in engellemesi kaldırıldı.!</resource>
+	<resource name="UI_USER_ADD">{0} bağlantı listenize eklendi.</resource>
+	<resource name="UI_USER_REMOVE">{0} bağlantı listenizden silindi.</resource>
+	<resource name="UI_USER_EXPIRED">{0} pasif olduğunda kanaldan silindi.</resource>
+	<resource name="UI_USER_HELLO">{0} odadaki herkese merhaba dedi.</resource>
+	<resource name="UI_USER_LOGINMESSENGER">{0} Messenger'da oturum açtı..</resource>
+	<resource name="UI_USER_LOGOFFMESSENGER">{0} Massenger'da oturumunu kapattı.</resource>
+	<resource name="UI_USER_UPDATE">{0} profilini güncelledi.</resource>
+	
+	
+	<resource name="UI_ADMIN_NOTADMIN">Yalnızca yönetici bu fonksiyonu yerine getirebilir.</resource>
+	
+	
+	<!-- Add Contact -->
+	<resource name="UI_CONTACT_Detach"></resource>
+	<resource name="Select">Seç</resource>
+	<resource name="DisplayName">Kullanıcı adı</resource>
+	<resource name="Search">Ara</resource>
+	<resource name="SearchResults">Arama sonuçları</resource>
+	<resource name="UI_CONTACT_CantAddSelf">Kendi kendinizi ekleyemezsiniz.</resource>
+	<resource name="UI_CONTACT_FinishAddContact">Bu kullanıcı bağlantı listenize eklendi.</resource>
+	<resource name="UI_CONTACT_SelectContact">Lütfen isim, email veya cinsiyetlerine göre arkadaşlarınızı arayın.</resource>
+	<resource name="UI_CONTACT_AddContact_subTitle">Bağlantı listenize bir kişi ekleyebilirsiniz.</resource>
+	<resource name="UI_CONTACT_TargeAnonymous">Hedef isimsiz bir kullanıcı!</resource>
+	<resource name="UI_CONTACT_AnonymousCantAddContact">İsimsiz kullanıcı bağlantınıza eklenemez.</resource>
+	<resource name="FileformatNotsupported">Dosya gönderemezsiniz. Bu dosya formatına izin verilmemektedir.</resource>
+	<!-- End Add Contact -->
+	
+	<resource name="My_USER_BLOCK">Hedef kullanıcı tarafından engellenmişsiniz!</resource>
+	
+	<resource name="UI_NewMessage">Yeni mesaj</resource>
+	<resource name="UI_Message">Mesaj</resource>
+	<resource name="UI_UserMessageBlocked">{0}'dan yeni bir mesaj aldınız.Chat penceresi Pop-up önleyici tarafından engellenmekte,lütfen onu açmak için Ok'i tıklayın.</resource>
+	
+	<resource name="UI_UnknownSplashCommand">Komut '{0}' sistem tarafından desteklenmiyor.</resource>
+	
+	<resource name="UI_WindowBlocked">Yeni Chat penceresi engellendi ,onu açmak için Ok'i tıklayın.</resource>
+	
+	<resource name="UI_MSGTAB_GENERAL">Genel</resource>
+	<resource name="UI_MSGTAB_MYSELF">Kendi kendine</resource>
+	
+	<resource name="UI_DisableAutoFocus">Odaklanmayı etkisiz hale getir</resource>
+	<resource name="UI_EnableAutoFocus">Otomatik odaklanma</resource>
+	<resource name="UI_DisableSound">Sesleri etkisiz hale getir</resource>
+	<resource name="UI_EnableSound">Ses çal</resource>
+	<resource name="UI_InvitePrivate">Özel Chat</resource>
+	<resource name="UI_INVITEPRIVATECHAT">{0} özel bir kanala katılmanız için sizi davet ediyor.</resource>
+	<resource name="UI_ChangeAvatar">Avatar Seç</resource>
+	<resource name="UI_AvatarDialogSubTitle">Avatar size sunulan grafik veya küçük ikonlardır.Aşağıdaki listeden istediğiniz avatar'ı seçin. </resource>
+	<resource name="UI_SendAsOffline">Mesajınız çevrim dışı olan bir kullanıcıya gönderildi.</resource>
+	<resource name="UI_FeatureDisabled">Bu özellik sistem yöneticisi tarafından etkisiz hale getirildi!</resource>
+	
+	<!-- Toolbar -->	
+	<resource name="UI_MENU_SendFiles">Dosya gönder</resource>	
+	<resource name="UI_Send_NoFile">Lütfen göndermek için bir dosya seçin !</resource>
+	<resource name="UI_Send_a_File_subTitle">Göndermek için bir doya seçin ve gönder butonuna tıklayın.</resource>	
+	<resource name="MaxFileSizeMustBeLessThan">Maksimum dosya boyutu bu boyutu geçemez : </resource>
+	<resource name="UI_Send_UploadSuccessfully">Dosya göndermesi başarılı!</resource>
+	<!-- Toolbar -->
+	
+	<!-- Toolbar -->
+	<resource name="UI_Bold">Kalın</resource>
+	<resource name="UI_Italic">İtalik</resource>
+	<resource name="UI_Underline">Altı çizili</resource>
+	<resource name="UI_Help">Yardım</resource>
+	<resource name="UI_ControlPanel">Kontrol paneli</resource>
+	<resource name="UI_Emotion">Yüz ifadesi ekle</resource>
+	<resource name="UI_FontColor">Font Rengi</resource>
+	<resource name="UI_Save">Kaydet</resource>
+	<resource name="UI_SaveChat">Chat log'unu kaydet</resource>
+	<resource name="UI_Avatar">Avatar seç</resource>
+	<resource name="UI_PlaySound">Ses çal</resource>
+	<resource name="UI_AutoFocus">Odağı koru</resource>
+	<resource name="UI_AutoScroll">Pencereyi kaydır</resource>
+	<resource name="UI_SelectSkin">Tema seç</resource>
+	<resource name="UI_Clear">Ekranı temizle</resource>
+	<resource name="UI_Font">Font</resource>
+	<resource name="UI_Size">Boyut</resource>
+	<resource name="UI_Close">Kapat</resource>
+	 
+	<resource name="IEonly_Feature">Bu özellik yalnızca Internet Explorer versiyon 5.0 ve üzeri versiyonlarda çalışan kullanıcılar için kullanılabilir durumdadır.</resource>
+	<resource name="CantSaytoYourself">Özel bir mesaj göndermek için,kendinizden başka bir kişiyi seçmeniz gerekir.</resource>
+	<resource name="PrivateChatTitle">Özel Chat</resource>
+	<resource name="TargetUserNotOnline">Hedef kullanıcı çevrim dışı.</resource>
+	<resource name="PrivateChatTitle">Özel Chat</resource>
+	<resource name="ConnectingToServer">Lütfen bekleyin, sunucuya bağlanılıyor...</resource>
+	<resource name="ConnectionFailed">Bağlantı başarısız.</resource>
+	<resource name="ConnectionOK">Bağlandı!</resource>
+	<resource name="Details">Hata Detayları</resource>
+	<resource name="NotInvited">Erişim Reddedildi! Bu kanala katılmak için davet edilmediniz.</resource>
+	<resource name="NumPeoplesChatting">kişiyle konuşma</resource>
+	<resource name="DenyAllAnonymous">İsimsiz kullanıcılara bu Chat uygulamasında izin verilmemektedir.</resource>
+	<resource name="CommandPtopOnly">Bu komut yalnızca özel pencerede kullanılabilir.</resource>
+	<resource name="CantInviteSelf">Kendi kendinizi davet edemezsiniz.</resource>
+	<resource name="TargetUserOffline">Hedef kullanıcı çevrim dışı.</resource>
+	<resource name="TargetUserInvalid">Geçersiz hedef kullanıcı adı.</resource>
+	<resource name="YouCantInvite">Yalnızca bu kanalın oluşturucusu katılması için kullanıcıları davet edebilir.</resource>
+	<resource name="DenyPrivateMessage">Özel mesajlara bu Chat kanlında izin verilmemektedir.</resource>
+	<resource name="ConnectedUsingNewPC">kanala yeniden katıldı.</resource>
+	<resource name="blockuser">önle</resource>
+	<resource name="unblockuser">önlemeyi kaldır</resource>
+	<resource name="ManageChannel">Kanalı yönet</resource>
+	<resource name="IsAnonymous">isimsiz bir kullanıcı.</resource>	
+	<resource name="LOGINNEWACCOUNT">Bu hesap başka bir kullanıcı tarafından kullanılmaktadır. </resource>
+	
+	<!-- End Toolbar -->
+	
+	
+	<!-- GENERAL -->
+	<resource name="UI_Loading">Yükleniyor</resource>
+	<resource name="OK">Tamam</resource>
+	<resource name="CANCEL">Vazgeç</resource>	
+	<resource name="UI_SEND">Gönder</resource>
+	<resource name="Send">Gönder</resource>
+	
+	<resource name="MessageNotSend">Mesaj gönderilemedi!</resource>
+	<resource name="MsgMessageContainsBadWord">Mesajınız "kötü" bir kelime içeriyor: </resource>
+	<resource name="DenyChannelAnonymous">İsimsiz kullanıcılara bu Chat kanalında izin verilmemektedir.</resource>
+	<resource name="NickNameIsExists">Takma ad zaten mevcut.</resource>
+	<resource name="YouAreRejected">Kabul edilmediniz.</resource>
+	<resource name="YouAreNotConnect">Kanala bağlanamadınız.</resource>
+	<resource name="YouCantGetin">Chat kanalına kabul edilmediniz.</resource>
+	<resource name="YouAreNotModerator">Kanalın arabulucusu değilsiniz.</resource>
+	<resource name="NoModerators">Arabulucu yok.</resource>
+	<resource name="WrongPassword">Yanlış şifre - Tekrar girin!</resource>
+	<resource name="TargetUserNotPtop">{0} özel mesajları reddetmekte</resource>
+	<resource name="TargetUserAlreadyHere">Hedef kullanıcı çevrim içi.</resource>
+	<resource name="SpecifyUserName">Kullanıcı adı belirt</resource>
+	<resource name="AnonymousCantChangeAvatar">İsimsiz kullanıcıların avatar değiştirmesine izin verilmemektedir.</resource>
+	<resource name="CommandChannelOnly">Komut yalnızca kanalda kullanılabilir. </resource>
+	<resource name="NoManagerWindow">Yönetim ekranı kullanılamaz durumda.</resource>
+	<resource name="NoAccountInfo">Hesap bilgisi bulunamadı!</resource>
+	<resource name="IPAddressRejected">IP adresi kabul edilmedi.</resource>
+	<resource name="WordExceededMaxLen">Mesajınızdaki kelimelerden biri maksimum kelime uzunluğunu geçmektedir.</resource>
+	<resource name="MsgExceededMaxLen">Mesaj maksimum uzunluğu aşmakta</resource>
+	<resource name="MsgUserExpired">Bağlantı zaman aşımına uğradı.</resource>
+	<resource name="MsgUserTryJoinChannel"> kanala kabul edilmeniz için gerekiyor.</resource>
+	<resource name="MsgChooseAvatar">Avatar Seç</resource>
+	<resource name="MsgAvatarChanged">Avatarınız değişti.</resource>
+	<resource name="MsgCommandError">Komut hatası</resource>
+	<resource name="MsgCommandUnknown">Bilinmeyen Komut</resource>
+	<resource name="ConnectionRejected">Bağlantı kabul edilmedi.</resource>
+	<resource name="RequirePassword">Şifre gerekli</resource>
+	<resource name="MessageSendFailed">Mesaj gönderimi başarısız!</resource>
+	<resource name="SelectChannel">Kanal seç</resource>
+	<resource name="NickNameRestriction">Chat'a başlamak için lütfen kendinize bir takma ad seçin.  Takma adınız Chat odasındaki diğer kullanıcılara sizi tanıtacak. Takma ad en fazla 20 karakter uzunluğunda olabilir, bir harf ile başlaması gerekir,boşluk veya belirtilen karakterlerden birini içeremez:! @ # $ % ( ) + = ' " ; : &lt; &gt; ? &amp; /.</resource>
+	<resource name="GuestNameMessage">Takma ad en fazla 20 karakter uzunluğunda olabilir, bir harf ile başlaması gerekir,boşluk veya belirtilen karakterlerden birini içeremez: ! @ # $ % ( ) + = ' " ; : &lt; &gt; ? &amp; / .Lütfen Chat'a başlamak için yeni bir takma ad seçin.</resource>
+	<resource name="PleaseInputChannelPassword">Lütfen kanal şifresi girin</resource>
+	<resource name="ChatPtopWelcomeMessage">Özel chat kanalına katıldınız.Lütfen diğer Chatcilerin katılması için bekleyin.</resource>
+	<resource name="Name">İsminiz:</resource>
+	<resource name="Email">Email:</resource>
+	<resource name="Enquiry">Mesaj:</resource>
+	<resource name="Subject">Konu:</resource>
+	<resource name="ExpiredTask">Görev zaman aşımına uğradı.</resource>
+	
+	<resource name="Send_a_File">Dosya Gönder</resource>
+	
+	<resource name="MSG_TO">&#32;için&#32;</resource>
+	<resource name="WHISPER_TO">&#32;fısıltı&#32;</resource>
+	
+	<resource name="Connect_Cancel">Vazgeç</resource>
+	<resource name="NumPeoplesChatting">kişiyle Chat</resource>
+	<resource name="TargetUserNotPtop">özel Chat istemi kabul edilmedi.</resource>
+	<resource name="IsNotOnline">çevrim dışı.</resource>
+	<resource name="TargetBusyTryagain">meşgul. Lütfen tekrar deneyin.</resource>
+	<resource name="Conversations">Konuşmalar</resource>
+	<resource name="NoConversations">Aktif konuşma yok</resource>
+	<resource name="NoOnlineContacts">Bağlantılarınızın tamamı çevrimdışı.</resource>
+	<resource name="NoOfflineContacts">Çevrim dışı bağlantı yok.</resource>
+	
+	<!-- Messenger Invite -->
+	<resource name="Invite_subTitle">Bu sohbet için eklemek istediğiniz kişiyi seçin ve Ok'i tıklayın.(Birden fazla kişi seçebilirsiniz).</resource>
+	<resource name="InvitationSent">Bir davetiye gönderildi.</resource>
+	<!-- End Messenger Invite -->
+	<!-- User Profile -->
+	<resource name="ViewUserProfile_Title">Kullanıcının profilinin görüntüle</resource>
+	<!-- End User Profile -->
+	
+	
+	
+	<!-- added by terry -->
+	<resource name="UI_InviteIntoPrivate">Konuşmaya katılması için kişiyi davet et.</resource>
+	<resource name="UI_SpecifyInviteName">Kimi davet etmeyi istersiniz?</resource>
+	<resource name="UI_USER_TYPING"> bir mesaj tipi.</resource>
+	
+	
+	<resource name="UI_LeaveMessage">Lütfen bir mesaj bırakın</resource>
+	<resource name="NumberOnly">Lütfen geçerli bir sayı giriniz.</resource>
+	<resource name="ModeratorList">Operatör Listesi:</resource>
+	<resource name="ModeratorList_subTitle">Sistem için gerekli olan operatörlerin çoğunu ekleyebilirsiniz.</resource>
+	<resource name="OperatorList">Operatör Listesi:</resource>
+	<resource name="OperatorList_subTitle">Sistem için gerekli olan operatörlerin çoğunu ekleyebilirsiniz.</resource>
+	
+	<resource name="UI_MENU_UnKickUsers">Dışarıda tutulmayan kullanıcılar</resource>
+	<resource name="UI_MENU_CheckIP">IP kontrol</resource>
+	<resource name="UI_MENU_DenyIP">Önlenmiş IP</resource>
+	<resource name="UI_PROMPT_DENYUSERIP">Bu IP deki kullanıcının önlemek istediğinize emin misiniz?</resource>
+	<resource name="UI_PROMPT_CHANNELPASSWORD">Lütfen şifre belirtin, temizlemek için boş kullanabilirsiniz.</resource>
+	<resource name="UI_MessageHistory">Mesaj geçmişi</resource>
+</root>
+
+
+
+
+
+

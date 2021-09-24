@@ -1,0 +1,56 @@
+﻿<%@ Master Language="C#" MasterPageFile="~/USC.Master" AutoEventWireup="true" CodeBehind="OrgMaster.master.cs" Inherits="MyUSC.MyTeams.OrgMaster" %>
+<asp:Content ID="Content1" ContentPlaceHolderID="HeadContent" runat="server">
+	<asp:ContentPlaceHolder ID="OrgHeadContent" runat="server">
+	<script type="text/javascript">
+		(function (i, s, o, g, r, a, m) {
+			i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () {
+				(i[r].q = i[r].q || []).push(arguments)
+			}, i[r].l = 1 * new Date(); a = s.createElement(o),
+			m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m)
+		})(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+
+		ga('create', 'UA-45321215-1', 'auto');
+		ga('send', 'pageview');
+
+		setTimeout('window.location = "LoginMSC.aspx"', 1800000);
+	</script>
+	<!--
+	<script type="text/javascript" src="~/js/MGA.js"></script>
+	-->
+	</asp:ContentPlaceHolder>
+</asp:Content>
+<asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
+	<table width="100%">
+		<tr class="trMyTeamsPageHeading">
+			<td class="tdInput" colspan="2">
+				<asp:Label ID="lblPageHead" runat="server" Text="Page Heading" CssClass="tdPageHeading"></asp:Label>
+			</td>
+		</tr>
+		<tr valign="top">
+			<td style="width: 50px">
+				<asp:Menu ID="mnuMyTeams" Orientation="Vertical" staticsubmenuindent="10" runat="server" >
+					<staticmenuitemstyle CssClass="miTeamsNormal" ForeColor="Black" />
+					<StaticSelectedStyle BackColor="Red" ForeColor="White" BorderColor="White" Width="100" VerticalPadding="5" BorderWidth="1" />
+					<statichoverstyle backcolor="LightSkyBlue"/>
+					<Items>
+						<asp:MenuItem Text="Dashboard" NavigateUrl="~/MyTeams/Dashboard.aspx"></asp:MenuItem>
+						<asp:MenuItem Text="Home" NavigateUrl="~/MyTeams/Home.aspx" Value="0"></asp:MenuItem>
+						<asp:MenuItem Text="Roster" NavigateUrl="~/MyTeams/OrgRoster.aspx" Value="1"></asp:MenuItem>
+						<asp:MenuItem Text="Schedule" NavigateUrl="~/MyTeams/OrgSchedule.aspx" Value="2"></asp:MenuItem>
+						<asp:MenuItem Text="Messages" NavigateUrl="~/MyTeams/OrgMsgBoard.aspx" Value="3"></asp:MenuItem>
+						<asp:MenuItem Text="Media" NavigateUrl="~/MyTeams/OrgMedia.aspx" Value="4"></asp:MenuItem>
+						<asp:MenuItem Text="EMail" NavigateUrl="~/MyTeams/OrgMail.aspx" Value="5"></asp:MenuItem>
+						<asp:MenuItem Text="Fields/Venues" NavigateUrl="~/MyTeams/VenueList.aspx" Value="7"></asp:MenuItem>
+						<asp:MenuItem Text="Manage" NavigateUrl="~/MyTeams/ManageOrg.aspx" Value="100"></asp:MenuItem>
+					</Items>
+				</asp:Menu>
+			</td>
+			<td class="tdInput">
+				<div class="divMyTeamsContent">
+					<asp:ContentPlaceHolder ID="OrgContent" runat="server">
+					</asp:ContentPlaceHolder>
+				</div>
+			</td>
+		</tr>
+	</table>
+</asp:Content>

@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Advertisements xmlns="http://schemas.microsoft.com/AspNet/AdRotator-Schedule-File">
+	<Ad>
+    <ImageUrl>~/images/Advertising/BudweiserAd.png</ImageUrl>
+    <NavigateUrl>http://www.anheuser-busch.com/s/index.php/our-beers/</NavigateUrl>
+    <AlternateText>Ad for Budweiser</AlternateText>
+    <Impressions>100</Impressions>
+    <Keyword>small</Keyword>
+  </Ad>
+  <Ad>
+    <ImageUrl>~/images/Advertising/StarbucksAd.png</ImageUrl>
+    <NavigateUrl>http://www.Starbucks.com</NavigateUrl>
+    <AlternateText>Ad for Starbucks</AlternateText>
+    <Impressions>100</Impressions>
+    <Keyword>small</Keyword>
+  </Ad>
+  <Ad>
+    <ImageUrl>~/images/Advertising/BudweiserAd1.png</ImageUrl>
+    <NavigateUrl>http://www.anheuser-busch.com/s/index.php/our-beers/</NavigateUrl>
+    <AlternateText>Ad for Budweiser</AlternateText>
+    <Impressions>100</Impressions>
+    <Keyword>small</Keyword>
+  </Ad>
+  <Ad>
+    <ImageUrl>~/images/Advertising/StarbucksAd1.jpg</ImageUrl>
+    <NavigateUrl>http://www.Starbucks.com</NavigateUrl>
+    <AlternateText>Ad for Starbucks</AlternateText>
+    <Impressions>100</Impressions>
+    <Keyword>small</Keyword>
+  </Ad>
+  <Ad>
+    <ImageUrl>~/images/Advertising/BudweiserAd.png</ImageUrl>
+    <NavigateUrl>http://www.anheuser-busch.com/s/index.php/our-beers/</NavigateUrl>
+    <AlternateText>Ad for Budweiser</AlternateText>
+    <Impressions>100</Impressions>
+    <Keyword>small</Keyword>
+  </Ad>
+</Advertisements>

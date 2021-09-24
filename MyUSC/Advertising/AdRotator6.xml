@@ -1,0 +1,45 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Advertisements xmlns="http://schemas.microsoft.com/AspNet/AdRotator-Schedule-File">
+	<Ad>
+    <ImageUrl>~/images/Advertising/REIAd.png</ImageUrl>
+		<NavigateUrl>~/Advertising/AdRedirector.aspx?ad=REI_6_1&amp;target=http://www.REI.com&amp;source=6</NavigateUrl>
+    <AlternateText>Ad for REI</AlternateText>
+    <Impressions>100</Impressions>
+    <Keyword>small</Keyword>
+  </Ad>
+  <Ad>
+    <ImageUrl>~/images/Advertising/RedBullAd.jpg</ImageUrl>
+		<NavigateUrl>~/Advertising/AdRedirector.aspx?ad=RedBull_6_1&amp;target=http://www.RedBull.com&amp;source=6</NavigateUrl>
+    <AlternateText>Ad for Red Bull</AlternateText>
+    <Impressions>100</Impressions>
+    <Keyword>small</Keyword>
+  </Ad>
+  <Ad>
+    <ImageUrl>~/images/Advertising/REIAd1.jpg</ImageUrl>
+		<NavigateUrl>~/Advertising/AdRedirector.aspx?ad=REI_6_2&amp;target=http://www.REI.com&amp;source=6</NavigateUrl>
+    <AlternateText>Ad for REI</AlternateText>
+    <Impressions>100</Impressions>
+    <Keyword>small</Keyword>
+  </Ad>
+  <Ad>
+    <ImageUrl>~/images/Advertising/RedBullAd1.png</ImageUrl>
+		<NavigateUrl>~/Advertising/AdRedirector.aspx?ad=RedBull_6_2&amp;target=http://www.RedBull.com&amp;source=6</NavigateUrl>
+    <AlternateText>Ad for Red Bull</AlternateText>
+    <Impressions>100</Impressions>
+    <Keyword>small</Keyword>
+  </Ad>
+  <Ad>
+    <ImageUrl>~/images/Advertising/REIAd.png</ImageUrl>
+		<NavigateUrl>~/Advertising/AdRedirector.aspx?ad=REI_6_3&amp;target=http://www.REI.com&amp;source=6</NavigateUrl>
+    <AlternateText>Ad for REI</AlternateText>
+    <Impressions>100</Impressions>
+    <Keyword>small</Keyword>
+  </Ad>
+	<Ad>
+		<ImageUrl>~/images/Advertising/RedBullAd.jpg</ImageUrl>
+		<NavigateUrl>~/Advertising/AdRedirector.aspx?ad=RedBull_6_3&amp;target=http://www.RedBull.com&amp;source=6</NavigateUrl>
+		<AlternateText>Ad for Red Bull</AlternateText>
+		<Impressions>100</Impressions>
+		<Keyword>small</Keyword>
+	</Ad>
+</Advertisements>

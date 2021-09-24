@@ -1,0 +1,191 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="USC.Master.cs" Inherits="MyUSC.USCMaster" %>
+<%@ Register src="Scroller.ascx" tagname="Scroller" tagprefix="uc1" %>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns:fb="http://www.facebook.com/2008/fbml" xmlns:og="http://opengraphprotocol.org/schema/">
+
+<head id="Head1" runat="server">
+<meta http-equiv="X-UA-Compatible" content="IE=9"/> 
+
+    <title>Managing Sports Teams for Free | MySportsConnect</title>
+	<meta name="description" content="MySportsConnect is an online social platform for sports fans!  Visit us to get the latest sports news and make connections with other sports fans.  Views our top stories here!" />
+	<meta name="keywords" content="MySportsConnect, SportsConnect, Sports Team Management, Sport Management, Sports Management, Team Management, MyTeams, Sports Team Management Tools, Sport Management Tools, Sports Management Tools, Team Management Tools" /> 
+	<script type="text/javascript">
+		(function (i, s, o, g, r, a, m) {
+			i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () {
+				(i[r].q = i[r].q || []).push(arguments)
+			}, i[r].l = 1 * new Date(); a = s.createElement(o),
+			m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m)
+		})(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+
+		ga('create', 'UA-45321215-1', 'auto');
+		ga('send', 'pageview');
+
+		setTimeout('window.location = "LoginMSC.aspx"', 1800000);
+
+	</script>
+	<!--
+	<script type="text/javascript" src="~/js/MGA.js"></script>
+	-->
+    <link href="/Styles/Site.css" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="/bin/jqwidgets/styles/jqx.base.css" type="text/css" />
+	<link rel="icon" type="image/png" href="~/Images/Icons/SiteIcon.png" />
+    <script type="text/javascript" src="/scripts/jquery-1.10.2.min.js"></script>
+    <script type="text/javascript" src="/scripts/demos.js"></script>
+    <script type="text/javascript" src="/bin/jqwidgets/jqxcore.js"></script>
+    <asp:ContentPlaceHolder ID="HeadContent" runat="server">
+    </asp:ContentPlaceHolder>
+    <script type="text/javascript">
+        function setHourglass() {
+            document.body.style.cursor = 'wait';
+        }
+    </script>
+
+</head>
+<body onunload="setHourglass();">
+    <form id="mscMasterForm" runat="server" method="post">
+		<asp:HiddenField ID="HiddenField1" runat="server" Value=" " />
+		<asp:HiddenField ID="HiddenField2" runat="server" Value=" " />
+		<asp:ScriptManager ID="ScriptManager1" runat="server" EnablePartialRendering="True"/>
+        <asp:UpdateProgress runat="server" id="PageUpdateProgress">
+            <ProgressTemplate>
+            </ProgressTemplate>
+        </asp:UpdateProgress>
+    <asp:Timer ID="Timer1" Interval="2400000" runat="server" />
+    <div class="page">
+        <div class="header">
+            <table class="tblPage" style="width: 100%">
+                <tr>
+                    <td>
+                        <table id="Table1" runat="server" style="width: 100%">
+                            <tr>
+                                <td style="width: 250px">
+									<asp:ImageButton ID="btnHome" runat="server" ImageUrl="~/Images/Logo/RedLogoSmall.png" OnClick="OnClickHome" />
+                                </td>
+                                <td> 
+                                </td>
+                                <td align="left"> 
+									<asp:Panel ID="pnlAdsTopCenter" runat="server" >
+										<iframe src="http://rcm-na.amazon-adsystem.com/e/cm?t=myspornet-20&o=1&p=48&l=ur1&category=primemain&banner=1PREMK5A0BD4VB6F8Y02&f=ifr&linkID=RIGG2AGP2OIPIDGU" width="728" height="90" scrolling="no" border="0" marginwidth="0" style="border:none;" frameborder="0"></iframe>
+									</asp:Panel>
+                                </td>
+                                <td class="tdRight">
+									<asp:Panel ID="pnlAdsTopRight" runat="server">
+										<a href="/Advertise.aspx" style="border-color: #FFFFFF; color: #FF9933" ><img src="/Images/Advertising/AdvertRed.png" alt="Advertise with MySportsConnect" /></a>
+									</asp:Panel>
+                                </td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+						<table style="width: 1000px">
+							<tr>
+								<td>
+									<asp:Menu ID="NavMenu" Orientation="Horizontal" staticsubmenuindent="10" runat="server" Width="650px" >
+										<staticmenuitemstyle CssClass="miHomeNormal" ForeColor="Black" />
+										<StaticSelectedStyle  CssClass="miHomeSelected" ForeColor="Black" />
+										<statichoverstyle CssClass="miHomeHover" />
+										<Items>
+											<asp:MenuItem  Text="Home" NavigateUrl="~/Default.aspx" ToolTip="Home Page"></asp:MenuItem>
+											<asp:MenuItem Text="News" NavigateUrl="~/SportsNews.aspx" ToolTip="Sports News Page"></asp:MenuItem>
+											<asp:MenuItem Text="Teams" NavigateUrl="~/MyTeams/Dashboard.aspx" ToolTip="Teams Page (*requires login)" ></asp:MenuItem>
+											<asp:MenuItem Text="Friends" NavigateUrl="~/Friends.aspx" ToolTip="Friends Page (*requires login)" ></asp:MenuItem>
+											<asp:MenuItem Text="Profile" NavigateUrl="~/MyAccount/MyAccount.aspx" ToolTip="User Profile Page (*requires login)"></asp:MenuItem>
+											<asp:MenuItem Text="Help" NavigateUrl="~/Support.aspx" ToolTip="Help Page"></asp:MenuItem>
+											<asp:MenuItem Text="About" NavigateUrl="~/About2.aspx" ToolTip="About MyUSC"></asp:MenuItem>
+										</Items>
+									</asp:Menu>
+<!--
+											<asp:MenuItem Text="Forums" NavigateUrl="~/YForum/Forum.aspx" ToolTip="Fan Forums (*requires login)" ></asp:MenuItem>
+											<asp:MenuItem Text="Admin" NavigateUrl="~/Admin/AdminMain.aspx" ToolTip="Administrative pages" Enabled="False" Selectable="False"></asp:MenuItem>
+-->
+								</td>
+								<td align="right">
+									<asp:ImageButton ID="btnLogOff" ImageUrl="~/Images/Button/btnSignOut.png" runat="server" OnClick="OnClickLogoff" />
+								</td>
+							</tr>
+							<tr valign="top">
+								<td class="tdCenter">
+									<asp:LinkButton ID="LinkButton1" runat="server" PostBackUrl="~/SendInvite.aspx">Invite a Friend!</asp:LinkButton>
+								</td>
+							</tr>
+						</table>
+                    </td>
+                </tr>
+            </table>
+
+        </div>
+        <div class="main">
+            <table class="tblPage" id="tblBackground" runat="server">
+                <tr valign="top">
+                    <td align="left">
+                        <asp:ContentPlaceHolder ID="MainContent" runat="server">
+                        </asp:ContentPlaceHolder>
+                    </td>
+                    <td valign="top" align="right">
+						<asp:Panel ID="pnlAdsRight" runat="server">
+							<table>
+								<tr>
+									<td>
+										<asp:ImageButton ID="AdImageButton1" runat="server" ImageUrl="~/Images/Advertising/Boombah1.png" CssClass="btnHomePage" OnClick="OnClickAd1" BorderColor="Black" BorderStyle="Ridge" BorderWidth="3px" />
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<asp:ImageButton ID="AdImageButton2" runat="server" ImageUrl="~/Images/Advertising/Nike1.png" CssClass="btnHomePage" BorderColor="Black" BorderStyle="Inset" BorderWidth="3px" OnClick="OnClickAd2" />
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<asp:ImageButton ID="AdImageButton3" runat="server" ImageUrl="~/Images/Advertising/pssbl1.png" CssClass="btnHomePage" BorderColor="Black" BorderStyle="Outset" BorderWidth="3px" OnClick="OnClickAd3" />
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<asp:ImageButton ID="AdImageButton4" runat="server" ImageUrl="~/Images/Advertising/rawlings.png" CssClass="btnHomePage" BorderColor="Black" BorderStyle="Outset" BorderWidth="3px" OnClick="OnClickAd4" />
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<asp:ImageButton ID="AdImageButton5" runat="server" ImageUrl="~/Images/Advertising/starter.png" CssClass="btnHomePage" BorderColor="Black" BorderStyle="Outset" BorderWidth="3px" OnClick="OnClickAd5" />
+									</td>
+								</tr>
+							</table>
+						</asp:Panel>
+                    </td>
+                </tr>
+            </table>
+        </div>
+        <div class="footer">
+            <table style="width: 500px">
+                <tr>
+                    <td class="tdInput">
+                        &copy;Copyright 2012-2017 MySportsConnect. All Rights Reserved.
+                    </td>
+                </tr>
+				<tr>
+					<td>
+									<span class="smSiteColorTxt">
+										Use of the website signifies your agreement to the 
+										<a href="TOU.aspx" class="medSiteColorTxt">Terms of Use</a> and <a href="PrivacyStatement.aspx" class="medSiteColorTxt">Privacy Policy</a> (updated July 10, 2015)
+									</span>
+					</td>
+				</tr>
+            </table>
+        </div> 
+    </div>
+    </form>
+        <script type="text/javascript">
+            Sys.WebForms.PageRequestManager.getInstance().add_endRequest(End);
+            function End(sender, args) { }
+    </script>
+    <script type="text/javascript">
+        Sys.WebForms.PageRequestManager.getInstance().add_endRequest(End);
+
+        function End(sender, args) { }
+</script> 
+</body>
+</html>
+
+

@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Advertisements xmlns="http://schemas.microsoft.com/AspNet/AdRotator-Schedule-File">
+	<Ad>
+    <ImageUrl>~/images/Advertising/nikeAd.png</ImageUrl>
+    <NavigateUrl>http://www.nike.com</NavigateUrl>
+    <AlternateText>Ad for Nike</AlternateText>
+    <Impressions>100</Impressions>
+    <Keyword>small</Keyword>
+  </Ad>
+  <Ad>
+    <ImageUrl>~/images/Advertising/AdidasAd2.png</ImageUrl>
+    <NavigateUrl>http://www.Adidas.com</NavigateUrl>
+    <AlternateText>Ad for Adidas</AlternateText>
+    <Impressions>100</Impressions>
+    <Keyword>small</Keyword>
+  </Ad>
+  <Ad>
+    <ImageUrl>~/images/Advertising/NikeAd1.png</ImageUrl>
+    <NavigateUrl>http://www.nike.com</NavigateUrl>
+    <AlternateText>Ad for Nike</AlternateText>
+    <Impressions>100</Impressions>
+    <Keyword>small</Keyword>
+  </Ad>
+  <Ad>
+    <ImageUrl>~/images/Advertising/AdidasAd.png</ImageUrl>
+    <NavigateUrl>http://www.Adidas.com</NavigateUrl>
+    <AlternateText>Ad for Adidas</AlternateText>
+    <Impressions>100</Impressions>
+    <Keyword>small</Keyword>
+  </Ad>
+  <Ad>
+    <ImageUrl>~/images/Advertising/NikeAd1.png</ImageUrl>
+    <NavigateUrl>http://www.nike.com</NavigateUrl>
+    <AlternateText>Ad for Nike</AlternateText>
+    <Impressions>100</Impressions>
+    <Keyword>small</Keyword>
+  </Ad>
+</Advertisements>

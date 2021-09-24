@@ -1,0 +1,109 @@
+<table border='0' cellspacing='0' cellpadding='0' class='ConversationLayout' style='width:100%;' ID="Table1">
+	<tr>
+		<td colspan="3" nowrap valign="bottom">
+			<table cellspacing='0' cellpadding='0' ID="Table2">
+				<tr>
+					<td nowrap valign="bottom" style="padding:4px 0 0 3px;">
+						<div title="[[UI_MENU_Block]]" class="ConversationToolbarItem" hoverclass="MessengerSmallButtonHover"
+							onclick="CuteChatConversation.BubbleCommand('AddOrBlock',this,event)">
+							<img id='ccm_AddOrBlock' src="#__cc_urlbase#Images/icon-blocked.gif" />
+						</div>
+						<div title="[[UI_History]]" class="ConversationToolbarItem" hoverclass="MessengerSmallButtonHover"
+							onclick="CuteChatConversation.BubbleCommand('ShowHistory',this,event)">
+							<img src="#__cc_urlbase#Images/Transcripts.gif" />
+						</div>
+						<div title="[[Send_a_File]]" class="ConversationToolbarItem" hoverclass="MessengerSmallButtonHover"
+							onclick="CuteChatConversation.BubbleCommand('SendFile',this,event)">
+							<img src="#__cc_urlbase#Images/icon_file.gif" />
+						</div>
+						<div title="[[ShowWebCam]]" class="ConversationToolbarItem" hoverclass="MessengerSmallButtonHover"
+							id="ccm_SendVideo"
+							onclick="CuteChatConversation.BubbleCommand('SendVideo',this,event)">
+							<img src="#__cc_urlbase#Images/camera.png" />
+						</div>
+						<div title="[[UI_MENU_Invite]]" class="ConversationToolbarItem" hoverclass="MessengerSmallButtonHover"
+							onclick="CuteChatConversation.BubbleCommand('InviteDialog',this,event)">
+							<img src="#__cc_urlbase#Images/invite.png" />
+						</div>
+					</td>
+				</tr>
+			</table>
+		</td>
+	</tr>
+	<tr>
+		<td style="vertical-align:top;padding:4px;width:100%;">
+			<table border='0' cellspacing='0' cellpadding='0' style='width:100%;' ID="Table3">
+				<tr>
+					<td>
+						<div style="border:1px solid #A5B6DE;background-color:white;">
+							<div class="ConversationWarning" id="ccm_WarningText" style="display:none">Warning</div>
+							<div class="ConversationMessageList" id="ccm_MessageList"></div>
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<td style="height:5px;"><img src="Images/1x1.gif" style="visitility:hidden;width:1px;height:1px;" /></td>
+				</tr>
+				<tr>
+					<td>
+						<div style="border:1px solid #A5B6DE;overflow:hidden">
+							<table width="100%" border='0' cellspacing='0' cellpadding='0' ID="Table4">
+								<tr>
+									<td>
+	<div class="ConversationInputBar">
+		<div title="[[UI_Bold]]" class="ConversationInputButton" hoverclass="ConversationInputButtonHover" onclick="CuteChatConversation.BubbleCommand('ToggleBold',this,event)">
+			<img src="#__cc_urlbase#Images/bold.gif" style="height:18px;width:18px;margin-top:3px;margin-left:7px;" /></div>
+		<div title="[[UI_Italic]]" class="ConversationInputButton" hoverclass="ConversationInputButtonHover" onclick="CuteChatConversation.BubbleCommand('ToggleItalic',this,event)">
+			<img src="#__cc_urlbase#Images/italic.gif" style="height:18px;width:18px;margin-top:3px;margin-left:7px;" /></div>
+		<div title="[[UI_Underline]]" class="ConversationInputButton" hoverclass="ConversationInputButtonHover" onclick="CuteChatConversation.BubbleCommand('ToggleUnderline',this,event)">
+			<img src="#__cc_urlbase#Images/underline.gif" style="height:18px;width:18px;margin-top:3px;margin-left:7px;" /></div>
+		<div title="[[UI_Emotion]]" class="ConversationInputButton" hoverclass="ConversationInputButtonHover" onclick="CuteChatConversation.BubbleCommand('ShowEmotion',this,event)">
+			<img src="#__cc_urlbase#Images/IM_Emotion.png" style="height:24px;width:32px" /></div>
+		<div title="[[UI_Buzz]]" class="ConversationInputButton" hoverclass="ConversationInputButtonHover" onclick="CuteChatConversation.BubbleCommand('SendNudge',this,event)">
+			<img src="#__cc_urlbase#Images/IM_Nudge.png" style="height:24px;width:32px" /></div>
+	</div>
+								</td>
+								</tr>
+								<tr>
+									<td width="100%">
+										<textarea id="ccm_InputBox" style="height:60px;border:0;border-top:solid 1px #A5B6DE;width:100%;font-size:12px;overflow:auto;clear:both;" NAME="ccm_InputBox"></textarea>
+									</td>
+								</tr>
+							</table>
+						</div>
+						
+						<div style="float:right;padding-top:2px">
+							<div style="width:80px">
+								<div style="overflow:hidden;height:21px;width:69px" onmouseup="this.scrollTop='21'"
+									onmousedown="this.scrollTop='42'" onmouseover="this.scrollTop='21'" onmouseout="this.scrollTop='0'"
+									onclick="CuteChatConversation.BubbleCommand('SendMessage',this,event)">
+									<img src="#__cc_urlbase#Images/IM_BtnSendMsg.png" />
+								</div>
+							</div>
+						</div>
+						<div style="float:left;padding:4px;color:red;" id="ccm_typing">
+							
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<td style="height:3px;"><img src="Images/1x1.gif" style="visitility:hidden;width:1px;height:1px;" /></td>
+				</tr>
+			</table>
+		</td>
+		<td class="ConversationMain" style="vertical-align:top;width:128px;" id="ccm_AvatarPanel">
+			<div class="ConversationAvatarContainer" style="margin-top:4px;">
+				<img id="ccm_ContactAvatar" style="width:92px;height:92px;" />
+			</div>
+			<div style="height:117px;">&nbsp;</div>
+			<div class="ConversationAvatarContainer">
+				<img id="ccm_MyInfoAvatar" style="width:92px;height:92px;" />
+			</div>
+		</td>
+		<td class="ConversationMain" style="vertical-align:top;width:14px;padding-top:4px;text-align:right;">
+			<img src="#__cc_urlbase#Images/IM_Side2.png" title="[[HideDisplayPictures]]"
+				id="ccm_ToggleButton" onclick="CuteChatConversation.BubbleCommand('ToggleAvatarPanel',this,event)"
+				style="cursor:hand"" />
+		</td>
+	</tr>
+</table>

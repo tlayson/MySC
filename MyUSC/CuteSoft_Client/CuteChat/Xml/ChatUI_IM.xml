@@ -1,0 +1,1709 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Desktop>
+
+	<!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+		Advanced Controls 
+	- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -  -->
+
+	<Class TypeName="IMTabButton" BaseType="HtmlSource" Width="80">
+		<XmlData>
+			<nobr id="taboffset">
+			<img id="tabimg" align="absmiddle" style="width:16px;height:16px;"/>
+			<span id="tabtext" >Contacts</span>
+			</nobr>
+		</XmlData>
+		<Scripts>
+			<Constructor>
+				this.isactive=false;
+				this.SetCssClass("NormalIMTabButton");
+			</Constructor>
+
+			<OnContentReady>
+				this.tabimg=Html_FindChildById(this.GetElement(),"tabimg");
+				this.tabtext=Html_FindChildById(this.GetElement(),"tabtext");
+				this.tabimg.src=__cc_urlbase+"Images/group.png";
+				if(this._text)
+					this.SetText(this._text);
+				if(this._src)
+					this.SetImgSrc(this._src);
+			</OnContentReady>
+			
+			<Method Modifiers="public" Name="UpdateWidth">
+				<![CDATA[
+				var taboffset=Html_FindChildById(this.GetElement(),"taboffset");
+				if(!taboffset)return;
+				var w=taboffset.offsetWidth+8;
+				if(w<50)w=50;
+				if(w>200)w=200;
+				this.SetWidth( w );
+				]]>
+			</Method>
+			<OnShow>
+				this.UpdateWidth();
+			</OnShow>
+			
+			<Property Modifiers="public" Name="Text">
+				<Get>
+					if(this.tabtext)
+						return this.tabtext.innerText;
+					else
+						return this._text;
+				</Get>
+				<Set>
+					if(!this.tabtext)
+						return this._text=value;
+						
+					this.tabtext.innerHTML=Html_Encode(value);
+
+					this.UpdateWidth();
+				</Set>
+			</Property>
+			<Property Modifiers="public" Name="ImgSrc">
+				<Get>
+					if(this.tabimg)
+						return this.tabimg.src;
+					else
+						return this._src;
+				</Get>
+				<Set>
+					if(!this.tabimg)
+						return this._src=value;
+
+					this.tabimg.src=value;
+
+					this.UpdateWidth();					
+				</Set>
+			</Property>
+			<Property Modifiers="public" Name="IsActived">
+				<Get>
+					return this.isactive;
+				</Get>
+				<Set>
+					this.isactive=_SL_ToBoolean(value);
+					if(this.isactive)
+					{
+						this.SetCssClass("ActiveIMTabButton");
+					}
+					else
+					{
+						this.SetCssClass("NormalIMTabButton");
+					}
+					this.UpdateWidth();
+					if(this.isactive)
+					{
+						try
+						{
+							this.GetElement().scrollIntoView();
+						}
+						catch(x)
+						{
+						}
+					}
+				</Set>
+			</Property>
+			<OnClick>
+				this.tabcontrol.OnTabButtonClicked(PublicInstance(this));
+			</OnClick>
+		</Scripts>
+	</Class>
+	<!-- leave -1 bottom margin to be convered by the tabPanel -->
+	<Class TypeName="IMTabPage" BaseType="HtmlPanel" AutoDock="Fill" DockMargins="0,-1,0,0">
+		<Scripts>
+			<Constructor>
+				this.GetElement().style.zIndex=1;
+				this.tabname="Tab";
+			</Constructor>
+			<Property Modifiers="public" Name="TabName" Arguments="name,desc">
+				<Get>
+					return this.tabname;
+				</Get>
+				<Set>
+					var text=name;
+					if(text.length>12)text=text.substring(0,10)+"..";
+					if(desc)
+					{
+						if(name.length>10)name=name.substring(0,8)+"..";
+						text=name+" ("+desc+")";
+					}
+					this.tabname=text;
+					var p=this.GetParent();
+					if(p!=null)
+					{
+						p.OnTabPageChanged(PublicInstance(this));
+					}
+				</Set>
+			</Property>
+			<Property Modifiers="public" Name="Button">
+				<Get>
+					if(this.tabbutton==null)throw(new Error(this.tabname+":"+this.constructor.prototype.tabbutton+":"+PublicInstance(this).tabbutton));
+					return this.tabbutton;
+				</Get>
+			</Property>
+		</Scripts>
+	</Class>
+	
+	<Class TypeName="IMTabControl" BaseType="HtmlPanel">
+		<Scripts>
+			<Constructor>
+				this.GetElement().style.zIndex=1;
+				this.tabPanel=CreateInstance("HtmlPanel");
+				this.tabPanel.SetAutoDock("Top");
+				this.tabPanel.SetHeight(22);
+				this.tabPanel.SetDockMargins("0,0,50,0")
+				this.tabPanel.GetElement().style.zIndex=2;
+				this.tabPanel.SetCssClass("IMTabButtonPanel");
+				this.AppendControl(this.tabPanel);
+				
+				this.tabPanel.AttachEvent("Resize",this.LayoutButtons);
+			</Constructor>
+			<Property Modifiers="public" Name="ActiveTabPage">
+				<Get>
+					if(this.activebutton)
+					{
+						return this.activebutton.tabpage;
+					}
+				</Get>
+				<Set>					
+					this.OnTabButtonClicked(value.tabbutton);
+				</Set>
+			</Property>
+			<Method Modifiers="public" Name="OnTabPageChanged" Arguments="ctrl">
+				ctrl.tabbutton.SetText(ctrl.GetTabName());
+			</Method>
+			<Method Modifiers="public" Name="OnTabButtonClicked" Arguments="button">
+				if(ReferenceEquals(button,this.activebutton))return;
+				if(this.activebutton)
+				{
+					this.activebutton.SetIsActived(false);
+					this.activebutton.tabpage.SetVisible(false);
+				}
+				button.SetIsActived(true);
+				button.tabpage.SetVisible(true);
+				this.constructor.prototype.activebutton=button;
+				this.OnTabChanged();
+			</Method>
+			<Method Modifiers="protected virtual" Name="OnTabChanged">
+				
+			</Method>
+			<Method Modifiers="protected override" Name="InternalAppendControl" Arguments="ctrl">
+				this.base_InternalAppendControl(ctrl);
+				
+				if(ReferenceEquals(ctrl,this.tabPanel))return;
+				if(ctrl.ConvertAs("IMTabPage")==null)return;
+				
+				ctrl.constructor.prototype.tabbutton=CreateInstance("IMTabButton");
+				ctrl.constructor.prototype.tabcontrol=PublicInstance(this);
+				
+				ctrl.tabbutton.constructor.prototype.tabpage=ctrl;
+				ctrl.tabbutton.constructor.prototype.tabcontrol=PublicInstance(this);
+				
+				this.tabPanel.AppendControl(ctrl.tabbutton);
+				ctrl.tabbutton.SetText(ctrl.GetTabName());
+				
+				ctrl.SetVisible(false);
+				
+				if(!this.activebutton)
+				{
+					this.SetActiveTabPage(ctrl)
+				}
+				
+				ctrl.tabbutton.AttachEvent("Resize",this.LayoutButtons);
+				this.LayoutButtons();
+			</Method>
+			
+			<Method Modifiers="public virtual" Name="RemoveTabPage" Arguments="value">
+				this.RemoveControl(value);
+				this.tabPanel.RemoveControl(value.tabbutton);
+				if(ReferenceEquals(this.activebutton,value.tabbutton))
+				{
+					var page=this.GetControlAt(1);
+					if(page)
+					{
+						this.SetActiveTabPage(page)
+					}
+				}
+				
+				this.LayoutButtons();
+			</Method>
+
+			<Method Modifiers="protected override" Name="InternalRemoveControlAt" Arguments="index">
+				this.base_InternalRemoveControlAt(index);
+				
+				this.LayoutButtons();
+			</Method>
+			<Method Modifiers="protected" Name="LayoutButtons">
+			<!--
+				clearTimeout(this.timeoutid);
+				this.timeoutid=setTimeout(this.DoLayoutButtons,1);
+			</Method>
+			<Method Modifiers="protected" Name="DoLayoutButtons">
+			-->
+				<![CDATA[
+				var element=this.tabPanel.GetElement();
+				var width=element.offsetWidth;
+				var height=element.offsetHeight;
+				var left=0;
+				var cc=this.tabPanel.GetControlCount();
+				for(var i=0;i<cc;i++)
+				{
+					var child=this.tabPanel.GetControlAt(i);
+					child.SetLeft(left);
+					child.SetHeight(height);
+					left+=child.GetCurrentWidth();
+				}
+				//left now is the scroll width
+				if(left>width)
+				{
+					if(this._btnLeft==null)
+					{
+						this._btnLeft=CreateInstance("HtmlImage");
+						this._btnLeft.SetSrc("%CuteChatUrlBase%Images/arrow_left.gif");
+						this._btnLeft.SetPositionAnchor("TopRight");
+						this.AppendControl(this._btnLeft);
+						this._btnLeft.SetWidth(12);
+						this._btnLeft.SetHeight(12);
+						this._btnLeft.SetTop(5);
+						this._btnLeft.SetRight(34);
+						this._btnLeft.AttachEvent("MouseDown",this.ScrollToLeft);
+						
+						this._btnRight=CreateInstance("HtmlImage");
+						this._btnRight.SetSrc("%CuteChatUrlBase%Images/arrow_right.gif");
+						this._btnRight.SetPositionAnchor("TopRight");
+						this.AppendControl(this._btnRight);
+						this._btnRight.SetWidth(12);
+						this._btnRight.SetHeight(12);
+						this._btnRight.SetTop(5);
+						this._btnRight.SetRight(22);
+						this._btnRight.AttachEvent("MouseDown",this.ScrollToRight);
+
+					}
+					this._btnLeft.SetVisible(true);
+					this._btnRight.SetVisible(true);
+					
+				}
+				else
+				{
+					if(this._btnLeft!=null)
+					{
+						this._btnLeft.SetVisible(false);
+						this._btnRight.SetVisible(false);
+					}
+				}
+				]]>
+			</Method>
+			<Method Modifiers="public" Name="ScrollToLeft">
+				var element=this.tabPanel.GetElement();
+				element.scrollLeft-=100;
+			</Method>
+			<Method Modifiers="public" Name="ScrollToRight">
+				var element=this.tabPanel.GetElement();
+				element.scrollLeft+=100;
+			</Method>
+		</Scripts>
+	</Class>
+	
+
+	<!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+		Instant Class
+	- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
+	<!-- InstantMenuFragment -->
+	<Class TypeName="InstantMenuFragment" BaseType="Fragment">
+		<HtmlMenuItem Text="$UI_MENU_File">
+			<HtmlMenuItem Text="$UI_MENU_SignIn">
+				<Scripts>
+					<OnUpdate>
+						if(IsConnected())
+							this.SetEnable(false)
+						else{
+							if(IsConnecting())
+								this.SetEnable(false)
+							else
+								this.SetEnable(true)
+						}
+					</OnUpdate>
+					<OnClick>
+						Connect();
+					</OnClick>
+				</Scripts>
+			</HtmlMenuItem>
+			<HtmlMenuItem Text="$UI_MENU_Signout">
+				<Scripts>
+					<OnUpdate>
+						this.SetEnable( IsConnected() );
+					</OnUpdate>
+					<OnClick>
+						Disconnect();
+					</OnClick>
+				</Scripts>
+			</HtmlMenuItem>
+			<HtmlMenuItem Text="-" />
+			<HtmlMenuItem Text="$UI_MENU_Exit">
+				<Scripts>
+					<OnClick>
+						Disconnect(true);
+						window.close();
+					</OnClick>
+				</Scripts>
+			</HtmlMenuItem>
+		</HtmlMenuItem>
+		<HtmlMenuItem Text="$UI_MENU_Contacts">
+			<HtmlMenuItem Text="$UI_MENU_AddContact" Image="Images/icon_add.gif">
+				<Scripts>
+					<OnClick>
+						ChatUI_ShowAddContact();
+					</OnClick>
+				</Scripts>
+			</HtmlMenuItem>
+			<HtmlMenuItem Text="-" />
+			<HtmlMenuItem Text="$UI_MENU_Invite" Image="%CuteChatUrlBase%Images/invite.png">
+				<Scripts>
+					<OnClick Arguments="htmlEvent">
+						IMInviteDialog.Show();
+					</OnClick>
+				</Scripts>
+			</HtmlMenuItem>
+		</HtmlMenuItem>
+		<HtmlMenuItem Text="$UI_MENU_Tools">
+			<HtmlMenuItem Text="$UI_MENU_OfflineMessage" Image="Images/mail.png">
+				<Scripts>
+					<OnClick Arguments="htmlEvent">
+						ChatUI_ShowMessageHistory();
+					</OnClick>
+				</Scripts>
+			</HtmlMenuItem>
+			<HtmlMenuItem Text="$UI_MENU_ChangeInstantAvatar" Image="Images/DefaultAvatar.gif">
+				<Scripts>
+					<OnClick Arguments="htmlEvent">
+						ChatUI_ShowInstantAvatarDialog();
+					</OnClick>
+				</Scripts>
+			</HtmlMenuItem>
+		</HtmlMenuItem>
+		<HtmlMenuItem Text="$UI_Help">
+			<HtmlMenuItem Text="$UI_Help" Image="Images/help.png">
+				<Scripts>
+					<OnClick>
+						ChatUI_ShowMessengerHelp("IM");
+					</OnClick>
+				</Scripts>
+			</HtmlMenuItem>
+		</HtmlMenuItem>
+	</Class>
+	<Class TypeName="InstantMenuControl" BaseType="HtmlMenuControl"  BackColor="menu" Height="25">
+		<InstantMenuFragment />
+	</Class>
+	
+	
+	<!-- ContactMenuClass -->
+	<Class TypeName="ContactMenuClass" BaseType="HtmlContextMenu">
+		<HtmlMenuItem Text="$UI_MENU_ChatWith" Image="%CuteChatUrlBase%Images/invite.png">
+			<Scripts>
+				<OnClick Arguments="htmlEvent">
+					var contact=htmlEvent.GetParent();
+					ChatUI_IMOpenConversation(contact);
+				</OnClick>
+			</Scripts>
+		</HtmlMenuItem>
+		<ContactMenuFragment />
+	</Class>
+
+	<Class TypeName="ContactMenuFragment" BaseType="Fragment">
+		<HtmlMenuItem Text="$UI_MENU_Invite" Image="%CuteChatUrlBase%Images/privatechat.gif">
+			<Scripts>
+				<OnUpdate Arguments="htmlEvent">
+					var contact=htmlEvent.GetParent();
+					this.SetEnable(contact.IsOnline)
+				</OnUpdate>
+				<OnClick Arguments="htmlEvent">
+					var contact=htmlEvent.GetParent();
+					IMInviteDialog.Show(contact);
+				</OnClick>
+			</Scripts>
+		</HtmlMenuItem>
+		
+		<HtmlMenuItem Text="$UI_SendFile" Image="%CuteChatUrlBase%Images/icon_file.gif" _enable="^MessengerAllowSendFile">
+			<Scripts>
+				<OnClick Arguments="htmlEvent">
+					var user=htmlEvent.GetParent();
+					ChatUI_InstantShowSendFile(user);
+				</OnClick>
+			</Scripts>
+		</HtmlMenuItem>
+		<HtmlMenuItem Text="$UI_History" Image="%CuteChatUrlBase%Images/notebook.png">
+			<Scripts>
+				<OnClick Arguments="htmlEvent">
+					var user=htmlEvent.GetParent();;
+					ChatUI_ShowMessageHistory(user);
+				</OnClick>
+			</Scripts>
+		</HtmlMenuItem>		
+		
+		<HtmlMenuItem Text="$UI_MENU_ViewProfile" Image="%CuteChatUrlBase%Images/profile.gif">
+			<Scripts>
+				<OnClick Arguments="htmlEvent">
+					ChatUI_ShowProfile(htmlEvent.GetParent());
+				</OnClick>
+				<OnUpdate Arguments="htmlEvent">
+					this.SetEnable( !htmlEvent.GetParent().IsAnonymous );
+				</OnUpdate>
+			</Scripts>
+		</HtmlMenuItem>
+		<HtmlMenuItem Image="%CuteChatUrlBase%Images/im_blocked.png">
+			<Scripts>
+				<OnUpdate Arguments="htmlEvent">
+					var user=htmlEvent.GetParent();;
+					this.SetText(IsBlock(user)?TEXT("UI_MENU_UnBlock"):TEXT("UI_MENU_Block"));
+				</OnUpdate>
+				<OnClick Arguments="htmlEvent">
+					var user=htmlEvent.GetParent();;
+					SetBlock( user , !IsBlock(user) , true );
+				</OnClick>
+			</Scripts>
+		</HtmlMenuItem>
+		<HtmlMenuItem Image="%CuteChatUrlBase%Images/DefaultAvatar.gif">
+			<Scripts>
+				<OnUpdate Arguments="htmlEvent">
+					var user=htmlEvent.GetParent();;
+					this.SetText(IsContact(user)?TEXT("UI_MENU_RemoveContact"):TEXT("UI_MENU_AddContact"));
+				</OnUpdate>
+				<OnClick Arguments="htmlEvent">
+					var user=htmlEvent.GetParent();;
+					(IsContact(user)?RemoveContact:AddContact)(user);
+				</OnClick>
+			</Scripts>
+		</HtmlMenuItem>
+
+		
+		<!-- //TODO: 
+		<HtmlMenuItem Text="WhatName?">
+			<Scripts>
+				<OnClick Arguments="htmlEvent">
+					alert(htmlEvent.GetParent().DisplayName);
+				</OnClick>
+			</Scripts>
+		</HtmlMenuItem>
+		-->
+	</Class>
+	
+	
+	<Class TypeName="InstantLoginForm" BaseType="FullPageWindow">
+		<Scripts>
+			<Constructor>
+				AttachChatEvent("CONNECTION",this.OnChatEvent);
+				this.SetVisible( !IsConnected() );
+			</Constructor>
+			<OnDispose>
+				DetachChatEvent("CONNECTION",this.OnChatEvent);
+			</OnDispose>
+			<Method Modifiers="public" Name="OnChatEvent" Arguments="name,type,msg">
+				var element=this.GetElement();
+				var img1		=Html_FindChildById(element,"img1");
+				var div_signin	=Html_FindChildById(element,"div_signin");
+				var div_cancel	=Html_FindChildById(element,"div_cancel");
+				
+				if(name=="CONNECTION")
+				{
+					if(IsConnected())
+					{
+					
+						if(this.GetVisible())
+						{
+							if(!window.instantmainform)
+							{
+								window.instantmainform=CreateInstance("InstantMainForm");
+								
+								Desktop.AppendWindow( window.instantmainform );
+							}	
+					
+							this.SetVisible(false);
+							
+							window.instantmainform.SetVisible(true);
+							
+				
+							if(typeof(IsEmbed)=="undefined"||!IsEmbed)
+							{
+								try
+								{									
+							//		if(Html_IsWinIE)
+							//			window.resizeBy(200,0);
+							//		else
+							//			window.resizeTo(450,500);										
+							//		Html_DomWindowResize();
+								}
+								catch(x)
+								{
+								}
+							}
+						}
+						
+					}
+					else
+					{
+						if(!this.GetVisible())
+						{
+							this.SetVisible(true);
+							if(typeof(IsEmbed)=="undefined"||!IsEmbed)
+							{
+								try
+								{
+							//		window.resizeBy(-200,0);
+							//		Html_DomWindowResize();
+								}
+								catch(x)
+								{
+								}
+							}
+							
+						}
+						if(window.instantmainform)
+						{
+							window.instantmainform.SetVisible(false);
+						}
+
+						if( IsConnecting() )
+						{
+							div_signin.style.display='none';
+							div_cancel.style.display='';
+							img1.src=CuteChatUrlBase+"images/imsignin.gif";
+						}
+						else
+						{
+							div_signin.style.display='';
+							div_cancel.style.display='none';
+							img1.src=CuteChatUrlBase+"images/imbody.gif";
+						}
+						
+						if(type=="ERROR")
+						{
+							alert(msg);
+						}
+						else if(type=="CONNECTING")
+						{
+						}
+						else if(type!="DISCONNECT")
+						{
+							alert(TEXT("UI_CONNECTION_"+type));
+						}
+					}
+				}
+				
+			</Method>
+		</Scripts>
+		<HtmlSource   AutoDock="Fill"  Focusable="True">
+			<XmlData>
+				<table border="0" cellspacing="0" cellpadding="4" width="100%">
+					<tr>
+						<td style="background-image:url(images/bg_up.gif);height:80px;">
+							<span style="font-size:26px;font-weight:bold;font-family:arial">[[CuteChat_Messenger]]</span>
+						</td>
+					</tr>
+					<tr>
+						<td style="background-color:#E7EFF7">
+							<div style="padding:6px">
+								<table height="50">
+									<tr>
+										<td>
+											<img id="img1" src="[[CuteChatUrlBase]]images/imbody.gif" />
+										</td>
+										<td>
+											<div id="div_signin">
+												<a href="#" onclick="Connect('Messenger')" target="_self"><img id="btn_signin" border="0" src="[[CuteChatUrlBase]]Images/btn_signin.gif" align="absmiddle" /></a>
+											</div>
+											<div id="div_cancel">
+												<button id="btn_cancel" style="display:none" onclick="Disconnect()">[[Connect_Cancel]]</button>
+											</div>
+										</td>
+									</tr>
+								</table>
+							</div>
+						</td>
+					</tr>
+					<tr>
+						<td style="background-image:url(images/bg_down.gif);height:80px;"> </td>
+					</tr>
+				</table>
+				<div align="center">
+					<img src="[[CuteChatUrlBase]]images/web-messenger-banner.gif"  border="0" style="position:absolute;bottom:12px;right:20px" />
+				</div>
+			</XmlData>
+		</HtmlSource>
+	</Class>
+	
+	
+	<Class TypeName="InstantMyStatus" BaseType="HtmlSource"   AutoDock="Fill" Focusable="True">
+		<XmlData>
+			<table border="0" cellspacing="0" cellpadding="2" style="width:100%;height:48px;">
+				<tr>
+					<td rowspan="2" style="width:40px"><img id="avatarimg" style="width:48px;height:48px;cursor:hand;" onclick="ChatUI_ShowInstantAvatarDialog()"  src="[[CuteChatUrlBase]]images/imbody.gif" /></td>
+					<td>
+						<table border="0" cellspacing="0" cellpadding="0" width="100%">
+							<tr>
+								<td style="padding-left:2px;padding-right:2px;">
+									<div id="div_myname" style="font-weight:bold;cursor:text;padding-left:1px;">My Name</div>
+									<input id="inp_myname" style="font-weight:bold;display:none;color:darkgreen;font-size:12px;width:70%;border:none 0px;" />
+									<img id="btn_myname" style="display:none;" src="[[CuteChatUrlBase]]images/ok.gif" />
+								</td>
+								<td width="100" style="padding-left:2px;padding-right:2px;">
+									<select id="sel_status">
+										<option value="ONLINE">[[UI_MENU_Online]]</option>
+										<option value="AWAY">[[UI_MENU_Away]]</option>
+										<option value="BUSY">[[UI_MENU_Busy]]</option>
+										<option value="OnThePhone">[[UI_MENU_OnThePhone]]</option>
+										<option value="OutToLunch">[[UI_MENU_OutToLunch]]</option>
+										<option style="color:red" value="AppearOffline">[[UI_MENU_AppearOffline]]</option>
+										<option style="color:red" value="SignOut">[[UI_MENU_SignOut]]</option>
+									</select>
+								</td>
+								<td width="100" nowrap="nowrap" style='display:none'><nobr><a href="#" onclick="ChatUI_ShowAddContact();return false;"><img border="0" hspace="3" src="[[CuteChatUrlBase]]images/icon_add.gif" align="absmiddle" />[[UI_MENU_AddContact]]</a></nobr></td>
+							</tr>
+						</table>
+					</td>
+				</tr>
+				<tr height="24">
+					<td>
+						<table border="0" cellspacing="0" cellpadding="0" width="100%">
+							<tr>
+								<td style="padding-left:2px;padding-right:2px;">
+									<div align="left" id="div_mydesc" style="height:21px;padding-top:2px;padding-left:1px;cursor:text;">My Description</div>
+									<input id="inp_mydesc" style='height:18px;display:none;color:darkgreen;font-size:12px;width:80%;border:none 0px;' />
+									<img id="btn_mydesc" style="display:none;" src="[[CuteChatUrlBase]]images/ok.gif" />
+								</td>
+								<td style="width:30px;text-align:right">
+									<img src="[[CuteChatUrlBase]]Images/icon_add.gif" title="[[UI_MENU_AddContact]]" class="button" onmouseover="this.className='buttonover'" onmouseout="this.className='button'" onclick="ChatUI_ShowAddContact()" border="0" /> 
+								</td>
+							</tr>
+						</table>
+					</td>
+					
+				</tr>
+			</table>
+		</XmlData>
+		<Scripts>
+			<Constructor>
+				AttachChatEvent("MYINFO",this.OnChatEvent);
+			</Constructor>
+			<OnDispose>
+				DetachChatEvent("MYINFO",this.OnChatEvent);
+			</OnDispose>
+			<OnContentReady>
+				var element=this.GetElement();
+				var sel_status=Html_FindChildById(element,"sel_status");
+				this.avatarimg=Html_FindChildById(element,"avatarimg");
+				this.AttachDomEvent("change",function()
+				{
+					if("SignOut"==sel_status.value)
+					{
+						Disconnect();
+					}
+					else
+					{
+						SetOnlineStatus(sel_status.value);
+					}
+				},sel_status);
+				
+				if(GetMyInfo())
+				{
+					this.avatarimg.src=ChatUI_GetInstantAvatar(GetMyInfo());
+				}
+
+				function GetDisplayName(){return GetMyInfo().DisplayName}
+				function GetDescription(){return GetMyInfo().Description}
+				if( AllowChangeName )
+				{
+					this.HookEditable("div_myname","inp_myname","btn_myname",GetDisplayName,ChangeDisplayName);
+					this.HookEditable("div_mydesc","inp_mydesc","btn_mydesc",GetDescription,SetDescription);
+				}
+			</OnContentReady>
+			<Method Modifiers="public" Name="HookEditable" Arguments="dispname,editname,btnname,getfunc,setfunc">
+				var element=this.GetElement();
+				var span=Html_FindChildById(element,dispname);
+				var edit=Html_FindChildById(element,editname);
+				var btn=Html_FindChildById(element,btnname);
+				var hideTimerid;
+				this.AttachDomEvent("click",function(){
+					span.style.display="none";
+					edit.style.display="";
+					btn.style.display="";
+					edit.value=getfunc();
+					edit.focus();
+					clearTimeout(hideTimerid);
+				},span);
+				this.AttachDomEvent("blur",function(){
+					hideTimerid=setTimeout(function(){
+						span.style.display="";
+						edit.style.display="none";
+						btn.style.display="none";
+					},500);
+				},edit);
+				this.AttachDomEvent("keydown",function(event){
+					event=event||window.event;
+					if(event.keyCode==13||event.keyCode==27)
+					{
+						span.style.display="";
+						edit.style.display="none";
+						btn.style.display="none";
+						if(event.keyCode==13)
+						{
+							span.innerHTML=Html_Encode(edit.value);
+							setfunc(edit.value);
+						}
+					}
+				},edit);
+				this.AttachDomEvent("click",function(){
+					span.style.display="";
+					edit.style.display="none";
+					btn.style.display="none";
+					span.innerHTML=Html_Encode(edit.value);
+					setfunc(edit.value);
+				},btn);
+			</Method>
+			<Method Modifiers="public" Name="OnChatEvent" Arguments="name,type,info1,info2">
+				<![CDATA[
+				if(name=="MYINFO"&&type=="UPDATED")
+				{
+					var myinfo=GetMyInfo();
+					var element=this.GetElement();
+					Html_FindChildById(element,"div_myname").innerHTML=Html_Encode(myinfo.DisplayName||"");
+					var sel_status=Html_FindChildById(element,"sel_status");
+					sel_status.value=myinfo.AppearOffline?"AppearOffline":myinfo.OnlineStatus;
+					this.avatarimg.src=ChatUI_GetInstantAvatar(myinfo);
+					Html_FindChildById(element,"div_mydesc").innerHTML=Html_Encode(myinfo.Description||"< "+TEXT("UI_PersonalMessage")+" >")
+				}
+				]]>
+			</Method>
+		</Scripts>
+	</Class>
+	
+	<Class TypeName="InstantContactStatus" BaseType="HtmlSource"  AutoDock="Fill" Focusable="True">
+		<XmlData>
+			<table border="0" cellspacing="0" cellpadding="0" style="width:100%;" >
+				<tr style="vertical-align:bottom">
+					<td rowspan="3" style="width:40px"><img id='contactimg' style='width:48px;height:48px;' src="[[CuteChatUrlBase]]images/imbody.gif" /></td>
+					<td style="padding:2px;" nowrap='nowrap'>
+							<span id="span_contactname" style="font-weight:bold;display:none;">&#32;</span>
+							<span id="span_contactorigin" style="display:none;color:gray;margin-left:8px;">&#32;</span>
+							&#32;
+							<span id="span_contactstatus">&#32;</span>
+							&#160;
+					</td>
+				</tr>
+				<tr height="16" nowrap='nowrap'>
+					<td style="padding:2px;">
+						<span id="span_contactdesc"></span>
+					</td>
+				</tr>
+				<tr height="16" nowrap='nowrap'>
+					<td style="padding:2px;" align="right">
+							<img id="btn_contact" class="button"  onmouseover="this.className='buttonover'" onmouseout="this.className='button'" src="[[CuteChatUrlBase]]Images/icon_kick.gif" 
+							onclick="(IsContact(GetSelectedContact())?RemoveContact:AddContact)(GetSelectedContact());"
+							/>
+							<img id="btn_ignore" class="button"  onmouseover="this.className='buttonover'" onmouseout="this.className='button'" src="[[CuteChatUrlBase]]Images/im_blocked.png" 
+							onclick="SetBlock( GetSelectedContact() , !IsBlock(GetSelectedContact()) , true );"
+							/>
+							<img class="button"  onmouseover="this.className='buttonover'" onmouseout="this.className='button'" src="[[CuteChatUrlBase]]Images/notebook.png" 
+							onclick="ChatUI_ShowMessageHistory(GetSelectedContact());" title="[[UI_History]]"
+							/>
+					</td>
+				</tr>
+			</table>
+		</XmlData>
+		<Scripts>
+			<Constructor>
+				AttachChatEvent("CONTACT",this.OnChatEvent);
+				AttachChatEvent("IGNORE",this.OnChatEvent);
+			</Constructor>
+			<OnDispose>
+				DetachChatEvent("CONTACT",this.OnChatEvent);
+				DetachChatEvent("IGNORE",this.OnChatEvent);
+			</OnDispose>
+			<Method Modifiers="public" Name="SetContact" Arguments="contact">
+				this.constructor.prototype.contact=contact;
+
+				this.UpdateContact();
+			</Method>
+			<Method Modifiers="public" Name="OnAddClick">
+				AddContact(this.contact);
+			</Method>
+			<Method Modifiers="public" Name="OnRemoveClick">
+				RemoveContact(this.contact);
+			</Method>
+			<Method Modifiers="public" Name="OnBlockClick">
+				<![CDATA[
+				SetBlock( this.contact , !IsBlock(this.contact) );
+				]]>
+			</Method>
+			<Method Modifiers="public" Name="OnChatEvent" Arguments="name,type,info1,info2">
+				<![CDATA[
+						
+				if(name=="CONTACT")
+				{
+					if(!UserEquals(this.contact,info1))return;
+					this.constructor.prototype.contact=info1;
+					this.UpdateContact();
+				}
+				if(name=="IGNORE")
+				{
+					this.UpdateContact();
+				}
+				
+				
+				]]>
+			</Method>
+			<Method Modifiers="public" Name="UpdateContact">
+				<![CDATA[
+
+				var element=this.GetElement();
+				
+				var contactid=this.contact.UserId;
+				
+				var span_contactname=Html_FindChildById(element,"span_contactname");
+				span_contactname.innerHTML=Html_Encode(this.contact.DisplayName);
+				
+				var span_contactorigin=Html_FindChildById(element,"span_contactorigin");
+				if(this.contact.DisplayName!=this.contact.UserName)
+				{
+					span_contactorigin.innerHTML=Html_Encode("<"+this.contact.UserName+">");
+					span_contactorigin.style.display='';
+				}
+				else
+				{
+					span_contactorigin.style.display='none';
+				}
+				
+				var span_contactdesc=Html_FindChildById(element,"span_contactdesc");
+				span_contactdesc.innerHTML=Html_Encode(this.contact.Description||"");
+				
+				
+				var contact=this.contact;
+				
+				var contactimg=Html_FindChildById(element,"contactimg");
+				contactimg.src=ChatUI_GetInstantAvatar(this.contact);
+				
+				
+				var span_contactstatus=Html_FindChildById(element,"span_contactstatus");
+				
+				//strange , firefox not add this tag into...
+				if(!span_contactstatus)return;
+				
+				span_contactstatus.innerHTML=TEXT("UI_Unknown");
+				span_contactstatus.style.color='';
+				
+				
+				if(GetContactById(contact.UserId))
+				{
+					if(IsBlock(this.contact))
+					{
+						span_contactstatus.style.color='red';
+						span_contactstatus.innerHTML=TEXT("UI_BLOCKED");
+					}
+					else
+					{
+						switch(contact.OnlineStatus)
+						{
+							case "OFFLINE":
+								span_contactstatus.style.color='#cc0000';
+								span_contactstatus.innerHTML=TEXT("UI_USER_Offline");
+								break;
+							case "ONLINE":
+								span_contactstatus.style.color='darkblue';
+								span_contactstatus.innerHTML=TEXT("UI_USER_Online");
+								break;
+							case "BUSY":
+								span_contactstatus.style.color='red';
+								span_contactstatus.innerHTML=TEXT("UI_USER_Busy");
+								break;
+							case "AWAY":
+								span_contactstatus.style.color='red';
+								span_contactstatus.innerHTML=TEXT("UI_USER_Away");
+								break;
+							default:
+								span_contactstatus.innerHTML=TEXT("UI_USER_"+contact.OnlineStatus);
+								break;
+						}
+					}
+				}
+				else
+				{
+					span_contactstatus.style.color='firebrick';
+					span_contactstatus.innerHTML=TEXT("UI_CONTACT_NotContact");
+				}
+				
+				
+				var btn_contact=Html_FindChildById(element,"btn_contact");
+				if(IsContact(this.contact))
+				{
+					btn_contact.title=TEXT("UI_MENU_RemoveContact")
+					btn_contact.src=__cc_urlbase+"Images/icon_kick.gif";
+				}
+				else
+				{
+					btn_contact.title=TEXT("UI_MENU_AddContact")
+					btn_contact.src=__cc_urlbase+"Images/icon_add.png";
+				}
+				
+				var btn_ignore=Html_FindChildById(element,"btn_ignore");
+				if(IsBlock(this.contact))
+				{
+					btn_ignore.title=TEXT("UI_MENU_UnBlock")
+					btn_ignore.src=__cc_urlbase+"Images/accept.gif";
+				}
+				else
+				{
+					btn_ignore.title=TEXT("UI_MENU_Block")
+					btn_ignore.src=__cc_urlbase+"Images/im_blocked.png";
+				}
+				]]>
+			</Method>
+		</Scripts>
+	</Class>
+
+	<Class TypeName="InstantContactList" BaseType="HtmlSource"  Focusable="True" AutoScroll="True">
+		<XmlData>
+			<div id="ctrl_onlines" style="padding-top:6px;font-weight:bold;"
+				>
+				<span
+					onclick="if(div_onlinecontacts.style.display=='none'){div_onlinecontacts.style.display='';img_ctrl_onlines.src=CuteChatUrlBase+'images/btn_sub.gif';}else{div_onlinecontacts.style.display='none';img_ctrl_onlines.src=CuteChatUrlBase+'images/btn_plus.gif';}"
+				>
+				<img id="img_ctrl_onlines" src="[[CuteChatUrlBase]]images/btn_sub.gif" align="absmiddle"/>&#160;Online
+				<span id="span_onlinecount">&#160;</span>
+				</span>
+			</div>
+			<div id="div_onlinecontacts" style="padding-left:18px;padding-top:4px;">
+				<div id="div_noonlinecontacts" style="padding-left:8px">(No Online Contacts)</div>
+			</div>
+			<div id="ctrl_offlines" style="padding-top:6px;font-weight:bold;"
+				>
+				<span
+					onclick="if(div_offlinecontacts.style.display=='none'){div_offlinecontacts.style.display='';img_ctrl_offlines.src=CuteChatUrlBase+'images/btn_sub.gif';}else{div_offlinecontacts.style.display='none';img_ctrl_offlines.src=CuteChatUrlBase+'images/btn_plus.gif';}"
+				>
+				<img id="img_ctrl_offlines" src="[[CuteChatUrlBase]]images/btn_sub.gif" align="absmiddle"/>&#160;Offline
+				<span id="span_offlinecount">&#160;</span>
+				</span>
+			</div>
+			<div id="div_offlinecontacts" style="padding-left:18px;padding-top:4px;">
+				<div id="div_noofflinecontacts" style="padding-left:8px">(No Offline Contacts)</div>
+			</div>
+			<div id="ctrl_blockeds" style="padding-top:6px;font-weight:bold;"
+				>
+				<span
+					onclick="if(div_blockedcontacts.style.display=='none'){div_blockedcontacts.style.display='';img_ctrl_blockeds.src=CuteChatUrlBase+'images/btn_sub.gif';}else{div_blockedcontacts.style.display='none';img_ctrl_blockeds.src=CuteChatUrlBase+'images/btn_plus.gif';}"
+				>
+				<img id="img_ctrl_blockeds" src="[[CuteChatUrlBase]]images/btn_sub.gif" align="absmiddle"/>&#160;Blocked
+				<span id="span_blockedcount">&#160;</span>
+				</span>
+			</div>
+			<div id="div_blockedcontacts" style="padding-left:18px;padding-top:4px;">
+				<div id="div_noblockedcontacts" style="padding-left:8px">(No Blocked Contacts)</div>
+			</div>
+		</XmlData>
+		<Scripts>
+			<Constructor>
+				AttachChatEvent("CONTACT",this.OnChatEvent);
+				AttachChatEvent("IGNORE",this.OnChatEvent);
+				AttachChatEvent("MESSAGE",this.OnChatEvent);
+				AttachChatEvent("SELECTEDCONTACT",this.OnChatEvent);
+				this.divmap={};
+			</Constructor>
+			<OnDispose>
+				DetachChatEvent("CONTACT",this.OnChatEvent);
+				DetachChatEvent("IGNORE",this.OnChatEvent);
+				DetachChatEvent("MESSAGE",this.OnChatEvent);
+				DetachChatEvent("SELECTEDCONTACT",this.OnChatEvent);
+				this.divmap=null;
+			</OnDispose>
+			<OnContentReady>
+				this.OnChatEvent("CONTACT","RELIST");
+			</OnContentReady>
+			<OnClick>
+				SetSelectedContact(null);
+			</OnClick>
+			<Method Modifiers="public" Name="OnChatEvent" Arguments="name,type,info1,info2">
+				<![CDATA[
+				
+				var element=this.GetElement();
+				
+				if(name=="MESSAGE")
+				{
+					if(type!="NEW")return;
+					
+					var msg=info1;
+					if(msg.Type!="USER")return;
+					if(!msg.Sender)return;
+					if(IsBlock(msg.Sender))
+					{
+						return;
+					}
+					
+					if(!UserEquals(msg.Sender,GetMyInfo()))
+					{
+						var divcontact=this.divmap[msg.Sender.UserId.toLowerCase()];
+						if(divcontact)
+						{
+							var floatdiv=document.createElement("DIV");
+						//	floatdiv.style.border="dashed 1px gray";
+							floatdiv.style.padding="4px";
+							floatdiv.style.position="absolute";
+							if(msg.Text)
+								floatdiv.innerHTML=Html_Encode(msg.Text);
+							else
+								floatdiv.innerHTML=msg.Html;
+								
+							divcontact.appendChild(floatdiv);
+							
+							var pos=CalcPosition(floatdiv,divcontact)
+							pos.left+=divcontact.firstChild.offsetWidth;
+							floatdiv.style.left=pos.left+"px";
+							floatdiv.style.top=pos.top+"px";
+							
+							if(divcontact.floatdiv)
+								divcontact.removeChild(divcontact.floatdiv);
+							divcontact.floatdiv=floatdiv;
+							
+							setTimeout(function(){
+								if(divcontact.floatdiv==floatdiv)
+								{
+									divcontact.removeChild(floatdiv);
+									divcontact.floatdiv=null;
+								}
+							},10000);
+						}
+					}
+					return;
+				}
+				
+				
+				var div_noonlinecontacts=Html_FindChildById(element,"div_noonlinecontacts");
+				var div_noofflinecontacts=Html_FindChildById(element,"div_noofflinecontacts");
+				var div_noblockedcontacts=Html_FindChildById(element,"div_noblockedcontacts");
+				var div_onlinecontacts=Html_FindChildById(element,"div_onlinecontacts");
+				var div_offlinecontacts=Html_FindChildById(element,"div_offlinecontacts");
+				var div_blockedcontacts=Html_FindChildById(element,"div_blockedcontacts");
+	
+				
+				var selectedContact=GetSelectedContact();
+					
+				function HandleSelectedContactDiv(div)
+				{
+					if(div.nodeType!=1)return;
+					var exp=div.getAttribute("contactexp");
+					if(!exp)return;
+					var contact=ChatUI_ContactFromExp(exp);
+					if(UserEquals(contact,selectedContact))
+					{
+						div.style.backgroundColor='#dfdfdf';
+					}
+					else
+					{
+						div.style.backgroundColor='';
+					}
+				}
+					
+					
+				if(name=="CONTACT"||name=="IGNORE")
+				{
+					this.divmap={};
+
+					while(div_onlinecontacts.childNodes.length)
+					{
+						div_onlinecontacts.removeChild(div_onlinecontacts.childNodes.item(0));
+					}
+					while(div_offlinecontacts.childNodes.length)
+					{
+						div_offlinecontacts.removeChild(div_offlinecontacts.childNodes.item(0));
+					}
+					while(div_blockedcontacts.childNodes.length)
+					{
+						div_blockedcontacts.removeChild(div_blockedcontacts.childNodes.item(0));
+					}
+					
+					div_onlinecontacts.appendChild(div_noonlinecontacts);
+					div_offlinecontacts.appendChild(div_noofflinecontacts);
+					div_blockedcontacts.appendChild(div_noblockedcontacts);
+					
+					div_noonlinecontacts.style.display="";
+					div_noofflinecontacts.style.display="";
+					div_noblockedcontacts.style.display="";
+					
+					var contacts=[];
+					
+					var arr=GetContacts();
+					
+					var added={};
+					for(var i=0;i<arr.length;i++)
+					{
+						added[arr[i].UserId]=arr[i];
+						contacts.push(arr[i]);
+						
+					}
+					var arr=GetIgnores();
+					for(var i=0;i<arr.length;i++)
+					{
+						if(!added[arr[i].UserId])
+						{
+							contacts.push(arr[i]);
+						}
+					}
+					
+					
+					for(var i=0;i<contacts.length;i++)
+					{
+						var contact=contacts[i];
+						var divcontact=document.createElement("DIV");
+						divcontact.setAttribute("contactexp",ChatUI_ContactToExp(contact));
+						Html_SetCssText(divcontact,"margin:2px;padding-left:8px;padding-top:2px;padding-bottom:2px;");
+						ChatUI_AppendContact(divcontact,contact);
+						
+						this.divmap[contact.UserId.toLowerCase()]=divcontact;
+						
+						HandleSelectedContactDiv(divcontact);
+						
+						//of cause , we could check IsBlock(contact) at first
+						
+						if(IsBlock(contact))
+						{
+							divcontact.className="BlockedContactItem";
+							div_blockedcontacts.appendChild(divcontact);
+							div_noblockedcontacts.style.display="none";
+						}
+						else if(contact.OnlineStatus!="OFFLINE")
+						{
+							divcontact.className="OnlineContactItem";
+							div_onlinecontacts.appendChild(divcontact);
+							div_noonlinecontacts.style.display="none";
+						}
+						else
+						{
+							divcontact.className="OfflineContactItem";
+							div_offlinecontacts.appendChild(divcontact);
+							div_noofflinecontacts.style.display="none";
+						}
+					}
+				}
+				if(name=="SELECTEDCONTACT")
+				{
+					
+					for(var i=0;i<div_onlinecontacts.childNodes.length;i++)
+					{
+						HandleSelectedContactDiv(div_onlinecontacts.childNodes.item(i));
+					}
+					for(var i=0;i<div_offlinecontacts.childNodes.length;i++)
+					{
+						HandleSelectedContactDiv(div_offlinecontacts.childNodes.item(i));
+					}
+					
+				}
+				
+				]]>
+			</Method>
+		</Scripts>
+	</Class>
+	
+	<Class TypeName="InstantToolbar" BaseType="HtmlSource">
+		<XmlData>	
+			<img class="button" id="itb_bold" title="[[Bold]]" src="[[CuteChatUrlBase]]Images/bold.gif"	/>
+			<img class="button" id="itb_italic" title="[[Italic]]" src="[[CuteChatUrlBase]]Images/italic.gif" />
+			<img class="button" id="itb_underline" title="[[Underline]]" src="[[CuteChatUrlBase]]Images/underline.gif" />
+			<img class="button" id="itb_file" onmouseover="this.className='buttonover'" onmouseout="this.className='button'" src="[[CuteChatUrlBase]]Images/icon_file.gif" onclick="ChatUI_InstantShowSendFile(GetSelectedContact());" title="[[UI_SendFile]]" />
+			<img class="button" id="itb_nudge" onmouseover="this.className='buttonover'" onmouseout="this.className='button'" src="[[CuteChatUrlBase]]Images/nudge.gif" onclick="ChatUI_SendEmotionWithFloodCoontrol('BUZZ');" title="[[UI_Buzz]]" />
+		</XmlData>
+		<Scripts>
+			<Constructor>
+				AttachChatEvent("OPTION",this.OnChatEvent);
+			</Constructor>
+			<OnDispose>
+				DetachChatEvent("OPTION",this.OnChatEvent);
+			</OnDispose>
+			<Method Modifiers="public override" Name="SetContent" Arguments="html">
+				<![CDATA[
+				this.base_SetContent(html);
+				
+				var element=this.GetElement();
+				if(!MessengerAllowSendFile)
+				{
+					Html_FindChildById(element,"itb_file").style.display="none";
+				}
+				
+				var itb_bold=Html_FindChildById(element,"itb_bold");
+				itb_bold.GetFunc=GetFontBold;
+				itb_bold.SetFunc=SetFontBold;
+				
+				var itb_italic=Html_FindChildById(element,"itb_italic")
+				itb_italic.GetFunc=GetFontItalic;
+				itb_italic.SetFunc=SetFontItalic;
+				
+				var itb_underline=Html_FindChildById(element,"itb_underline")
+				itb_underline.GetFunc=GetFontUnderline;
+				itb_underline.SetFunc=SetFontUnderline;
+				
+				function _DoUpdate()
+				{
+					var itb=this;
+					var clsname=itb.GetFunc()?"buttonover":"button";
+					itb.className=clsname;
+					itb._class=clsname;
+				}
+				
+				var arr=[itb_bold,itb_italic,itb_underline]
+				for(var i=0;i<arr.length;i++)
+				{
+					var itb=arr[i];
+					itb._class="button";
+					itb.onmouseover=new Function("","this.className='buttonover'");
+					itb.onmouseout=new Function("","this.className=this._class");
+					itb.onclick=new Function("","this.SetFunc(!this.GetFunc());");
+					itb.DoUpdate=_DoUpdate;
+					itb.DoUpdate();
+				}
+				]]>
+			</Method>
+			<Method Modifiers="protected" Name="OnChatEvent" Arguments="name,type,info1,info2">
+			<![CDATA[
+				var element=this.GetElement();
+				var arr=["itb_bold","itb_italic","itb_underline"]
+				for(var i=0;i<arr.length;i++)
+				{
+					Html_FindChildById(element,arr[i]).DoUpdate();
+				}
+			]]>
+			</Method>
+		</Scripts>
+	</Class>
+	
+	<Class TypeName="InstantInputBox" BaseType="InputBox">
+		<Scripts>
+			<Method Modifiers="public override" Name="IsActiveInputBox">
+				var tabpage=this.FindParentByType("ContactTabPage")
+				return tabpage.GetVisible();
+			</Method>
+			<OnKeyPress>
+				var tabpage=this.FindParentByType("ContactTabPage");
+				InstantSetIsTyping(tabpage.contact)
+			</OnKeyPress>
+		</Scripts>
+	</Class>
+	
+	
+	<Class TypeName="InstantIMTabControl" BaseType="IMTabControl">
+		
+		<Scripts>
+			<Constructor>
+				AttachChatEvent("IMCOMMAND",this.OnChatEvent);
+				AttachChatEvent("MESSAGE",this.OnChatEvent);
+				AttachChatEvent("RAWSTCMSG",this.OnChatEvent);
+			</Constructor>
+			<OnDispose>
+				DetachChatEvent("IMCOMMAND",this.OnChatEvent);
+				DetachChatEvent("MESSAGE",this.OnChatEvent);
+				AttachChatEvent("RAWSTCMSG",this.OnChatEvent);
+			</OnDispose>
+			<Method Modifiers="public" Name="OnChatEvent" Arguments="name,type,info1,info2">
+				<![CDATA[
+				if(name=="RAWSTCMSG"&&type=="OPENCONTACT")
+				{
+					var userid=info1[0]
+					var contact=GetContactById(userid);
+					if(!contact)
+					{
+						contact={};
+						contact.UserId=info1[0];
+						contact.UserName=info1[1];
+						contact.DisplayName=info1[1];
+						contact.Description="";
+						contact.PublicProperties={};
+						contact.PrivateProperties={};
+						contact.IsContact=false;
+					}
+					var page=this.GetTabByUserId(contact.UserId);
+					if(page==null)
+					{
+						page=this.AllocatePage();
+						page.SetContact(contact);
+						page.constructor.prototype.contactid=contact.UserId;
+						this.AppendControl(page);
+						page.UpdateUI();
+					}
+					this.SetActiveTabPage(page);
+				}
+				if(name=="IMCOMMAND"&&type=="CHATCONTACT")
+				{
+					var contact=info1;
+					var page=this.GetTabByUserId(contact.UserId);
+					if(page==null)
+					{
+						page=this.AllocatePage();
+						page.SetContact(contact);
+						page.constructor.prototype.contactid=contact.UserId;
+						this.AppendControl(page);
+						page.UpdateUI();
+					}
+					this.SetActiveTabPage(page);
+				}
+				if(name=="MESSAGE"&&type=="NEW")
+				{
+					var msg=info1;
+					if(msg.Type=="USER")
+					{
+						var contact=GetContactById(msg.Sender.UserId);
+						if(!contact)
+						{
+							contact=msg.Sender;
+						}
+						if(UserEquals(contact,GetMyInfo()))
+						{
+							contact=null;
+							if(msg.Target)
+							{
+								contact=GetContactById(msg.Target.UserId);
+							}
+							if(contact==null||UserEquals(contact,GetMyInfo()))
+							{
+								return;
+							}
+						}
+						var page=this.GetTabByUserId(contact.UserId);
+						if(page==null)
+						{
+							if(IsBlock(contact))return;
+							page=this.AllocatePage();
+							page.SetContact(contact);
+							page.constructor.prototype.contactid=contact.UserId;
+							this.AppendControl(page);
+							page.UpdateUI();
+						}
+						//this.SetActiveTabPage(page);
+						if(!Equals(page,this.GetActiveTabPage()))
+						{
+							page._sl_state.msgcount=(page._sl_state.msgcount||0)+1;
+							page.SetTabName(contact.DisplayName,page._sl_state.msgcount);
+							//TODO:PlaySound..
+						}
+						
+					}
+				}
+				]]>
+			</Method>
+			<Method Modifiers="protected" Name="GetTabByUserId" Arguments="userid">
+				<![CDATA[
+				var cc=this.GetControlCount();
+				for(var i=1;i<cc;i++)
+				{
+					var eachpage=this.GetControlAt(i);
+					if(eachpage.contactid==userid)
+						return eachpage;
+				}
+				]]>
+			</Method>
+			<Method Modifiers="protected override" Name="OnTabChanged">
+				<![CDATA[
+				var page=this.GetActiveTabPage();
+				if(!page)return;
+				var contactid=page.contactid;
+				var user=GetContactById(contactid)||GetUserById(contactid)||page.contact;
+				if(user!=null)
+				{
+					page._sl_state.msgcount=0;
+					page.SetTabName(user.DisplayName);
+					SetSelectedContact(user);
+				}
+				]]>
+			</Method>
+			<Method Modifiers="public" Name="StopTrack" Arguments="msglist">
+				var page=msglist.GetParent();
+				this.RecyclePage(page);
+			</Method>
+			<Method Modifiers="public" Name="AllocatePage">
+				if(this._pages==null||this._pages.length==0)
+					return CreateInstance("ContactTabPage");
+				var p=this._pages[0];
+				this._pages.splice(0,1);
+				return p;
+			</Method>
+			<Method Modifiers="public" Name="RecyclePage" Arguments="page">
+				this.RemoveTabPage(page);
+				if(this._pages==null)this._pages=[];
+				this._pages.push(page);
+			</Method>
+		</Scripts>
+	</Class>
+	
+	
+	<Class TypeName="ContactTabPage" BaseType="IMTabPage">
+		
+		<!--
+		<HtmlMenuControl AutoDock="None" ButtonDock="Right" DockPaddings="2,2,2,2" Height="24" Width="80" Top="3" Right="3" PositionAnchor="TopRight" >
+			<Scripts>
+				<OnPrepair>
+					var contact=this.FindParentByType("ContactTabPage").contact;
+					this.SetContextParent(contact);
+				</OnPrepair>
+			</Scripts>
+			<HtmlMenuItem Text="$UI_MENU">
+				<HtmlMenuItem Text="$UI_Menu_Close">
+					<Scripts>
+						<OnClick Arguments="htmlEvent">
+							var menu=htmlEvent.GetEventSource();
+							var ctrl=menu.GetRootContainer();
+							var page=ctrl.FindParentByType("ContactTabPage");
+							var tabc=page.GetParent();
+							tabc.RecyclePage(page);
+						</OnClick>
+					</Scripts>
+				</HtmlMenuItem>
+				<HtmlMenuItem Text="$UI_Buzz" Image="%CuteChatUrlBase%Images/nudge.gif">
+					<Scripts>
+						<OnClick>
+							ChatUI_SendEmotionWithFloodCoontrol("BUZZ");
+						</OnClick>
+					</Scripts>
+				</HtmlMenuItem>
+				<ContactMenuFragment />
+			</HtmlMenuItem>
+		</HtmlMenuControl>
+		-->
+		
+		<InstantContactStatus _member="_status" AutoDock="Top" Height="60" DockMargins="0,0,4,0" />
+		
+		<BottomPanel AutoDock="Bottom" Height="64" DockMargins="3,3,3,3">
+			<InstantToolbar AutoDock="Top" Height="22" DockMargins="2,2,2,2"/>
+			<SendButton AutoDock="Right" Width="40" DockMargins="5,3,3,5"/>
+			<InstantInputBox AutoDock="Fill" DockMargins="2,2,2,2"/>
+		</BottomPanel>
+
+		<MessageList _member="_msglist" AutoDock="Fill" DockMargins="3,3,3,3" BorderWidth="0" />
+
+		<Scripts>
+			<Constructor>
+				AttachChatEvent("CONTACT",this.OnChatEvent);
+			</Constructor>
+			<OnDispose>
+				DetachChatEvent("CONTACT",this.OnChatEvent);
+			</OnDispose>
+			<Method Modifiers="public" Name="SetContact" Arguments="contact">
+				this.constructor.prototype.contact=contact;
+				
+				this._status.SetContact(this.contact);
+
+				this._msglist.SetMessageMode("TRACK");
+				this._msglist._sl_state._track_userid=this.contact.UserId;
+				this._msglist._sl_state._username=this.contact.DisplayName;
+				this._msglist.Clear();
+				this._msglist.Reload();
+			</Method>
+			<Method Modifiers="public" Name="OnChatEvent" Arguments="evt,msg,contact">
+				if(!UserEquals(this.contact,contact))return;
+				this.constructor.prototype.contact=contact;
+				this.UpdateUI();
+			</Method>
+			<Method Modifiers="public" Name="UpdateUI">
+				this.SetTabName(this.contact.DisplayName);
+				var img="";
+				if(this.contact.OnlineStatus=="OFFLINE")
+					img=CuteChatUrlBase+"Images/im_offline.png";
+				else if(this.contact.OnlineStatus=="ONLINE")
+					img=CuteChatUrlBase+"Images/im_online.png";
+				else if(this.contact.OnlineStatus=="AWAY")
+					img=CuteChatUrlBase+"Images/im_away.png";
+				else if(this.contact.OnlineStatus=="BUSY")
+					img=CuteChatUrlBase+"Images/im_busy.png";
+				else
+					img=CuteChatUrlBase+"Images/im_away.png";
+				this.GetButton().SetImgSrc(img);
+			</Method>
+			<OnShow>
+				//set which the message should send to.
+				SetInstantContact(this.contact);
+			</OnShow>
+		</Scripts>
+
+	</Class>
+	
+	<Class TypeName="MessengerAds" BaseType="HtmlPanel">
+		<HtmlSource AutoDock="Fill">
+			<Scripts>
+				<Execute>
+					if(typeof(MessengerAds)!="undefined")
+					{
+						this.GetElement().appendChild(MessengerAds);
+					}
+					else
+					{
+						this.SetVisible(false);
+					}
+				</Execute>
+			</Scripts>
+		</HtmlSource>
+	</Class>
+	
+		
+	<Class TypeName="InstantMainForm" BaseType="FullPageWindow" Width="1000">
+		<InstantMenuControl AutoDock="Top">
+			<Scripts>
+				<Execute>
+					<![CDATA[
+					if(typeof(IsEmbed)!="undefined"&&IsEmbed)
+					{
+						this.SetVisible(false);
+					}
+					]]>
+				</Execute>
+			</Scripts>
+		</InstantMenuControl>
+		<InstantMyStatus AutoDock="Top" Height="60" DockMargins="2,6,2,2" />
+		
+		<DebugList AutoDock="Right" DockMargins="2,4,2,4" EnableSizing="True" Width="180" BorderWidth="1" BorderStyle="solid"></DebugList>
+		
+		<TypingUserList AutoDock="Bottom" Height="18" DockMargins="12,0,12,0"/>
+
+		<HtmlPanel AutoDock="Fill">
+			<HtmlImage Src="%CuteChatUrlBase%Images/Close.gif" Width="15" Height="15" PositionAnchor="TopRight" Top="6" Right="1" BackColor="transparent" BorderStyle="none">
+				<Scripts>
+					<Execute>
+						//For firefox!
+						this.GetElement().style.zIndex=88888888;
+					</Execute>
+					<OnClick>
+						var tabc=this.GetParent().FindChildByType("InstantIMTabControl")
+						var page=tabc.GetActiveTabPage()
+						if(page.ConvertAs("ContactTabPage"))
+						{
+							tabc.RecyclePage(page);
+						}
+					</OnClick>
+				</Scripts>
+			</HtmlImage>
+			<InstantIMTabControl AutoDock="Fill"  DockMargins="2,4,2,4">
+				<IMTabPage TabName="Contacts">
+					<MessengerAds AutoDock="Bottom" Height="60" DockMargins="4,4,4,4"></MessengerAds>				
+					<InstantContactList AutoDock="Fill" DockMargins="4,4,4,4">
+						<MyInfoMenuClass _property="ContextMenu" />
+					</InstantContactList>
+				</IMTabPage>
+			</InstantIMTabControl>
+			
+		</HtmlPanel>
+		
+		<Scripts>
+			<OnDoubleClick Arguments="Arg">
+				if(Arg.GetCtrlKey())
+				{
+					var debuglist=this.GetWindow().FindChildByType("DebugList");
+					debuglist.SetVisible( !debuglist.GetVisible() )
+				}
+			</OnDoubleClick>
+		</Scripts>
+					
+	</Class>
+	
+	<Class TypeName="IMInviteDialogClass" BaseType="HtmlDialogBase" Visible="False">
+		<HtmlPanel AutoDock="Bottom" Height="26">
+			<HtmlButton AutoDock="Right" _member="cancel" Text="$Cancel" DockMargins="2,2,2,2">
+				<Scripts>
+					<OnClick>
+						var dialog=this.FindParentByType("IMInviteDialogClass")
+						dialog.SetVisible(false);
+					</OnClick>
+				</Scripts>
+			</HtmlButton>
+			<HtmlButton AutoDock="Fill" _member="button" Text="Invite" DockMargins="2,2,2,2">
+				<Scripts>
+					<OnClick>
+						<![CDATA[
+						var dialog=this.FindParentByType("IMInviteDialogClass")
+						var element=dialog.container.GetElement();
+						var grid=Html_FindChildById(element,"grid");
+						dialog.SetVisible(false);
+						if(grid!=null)
+						{
+							var contacts=[];
+							for(var i=0;i<grid.rows.length;i++)
+							{
+								var row=grid.rows.item(i);
+								var cb=row.cells.item(0).firstChild;
+								var contact=row.contact;
+								if(cb.checked)
+								{
+									contacts.push(contact)
+								}
+							}
+							if(contacts.length==0)return;
+							InvitePrivateChatBatch(contacts);
+						}
+						]]>
+					</OnClick>
+				</Scripts>
+			</HtmlButton>
+		</HtmlPanel>
+		<HtmlSource AutoDock="Fill" _member="container"></HtmlSource>
+		<Scripts>
+			<Method Modifiers="public" Name="Show" Arguments="contact">
+				<![CDATA[
+				if(contact!=null)
+				{
+					if(!IsContact(contact))return;
+					if(!contact.IsOnline)return;
+				}
+
+				var element=this.container.GetElement();
+				var grid=Desktop.CreateElement("TABLE");
+				grid.id="grid";
+				grid.style.width="100%";
+				grid.cellSpacing=0;
+				grid.cellPadding=4;
+				
+				element.innerHTML="";
+				element.appendChild(grid);
+				
+				var count=0;
+				var contacts=GetContacts();
+				for(var i=0;i<contacts.length;i++)
+				{
+					var c=contacts[i];
+					
+					if(!c.IsOnline)continue;//do not show the offline ?
+				
+					var row=grid.insertRow(-1);
+					
+					row.contact=c;
+					
+					var c1=row.insertCell(-1);
+					var cb=Desktop.CreateElement("<input type=checkbox>");
+					cb.disabled=!c.IsOnline;
+					c1.appendChild(cb);
+					
+					if(contact!=null)
+					{
+						cb.checked=UserEquals(contact,c);
+					}
+					
+					var c2=row.insertCell(-1);
+					var lb=Desktop.CreateElement("label");
+					lb.innerHTML=Html_Encode(c.DisplayName);
+					c2.appendChild(lb);
+					
+					count++;
+				}
+				
+				if(count==0)
+				{
+					element.innerHTML="<div style='padding:4px;text-align:center;'>No online contacts!</div>";
+				}
+				
+				if(contact==null)
+				{
+					this.SetTitle("Invite");
+				}
+				else
+				{
+					this.SetTitle(contact.DisplayName);
+				}
+				this.SetVisible(true);
+				]]>
+			</Method>
+		</Scripts>
+	</Class>
+	
+	<IMInviteDialogClass _global="IMInviteDialog" />
+	
+	<ContactMenuClass _global="ContactMenu" _property="null"/>
+	
+</Desktop>

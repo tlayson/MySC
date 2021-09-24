@@ -1,0 +1,1693 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Desktop>
+	
+	
+	
+	<!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+		Menus 
+	- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -  -->
+	<Class TypeName="AdminMenuItem" BaseType="HtmlMenuItem">
+		<Scripts>
+			<OnUpdate>
+				<![CDATA[
+				var visible=true;
+				if( GetLocation()!="Lobby" && GetLocation()!="Private" )
+					visible=false;
+				if(!GetMyInfo() || !GetMyInfo().IsAdmin)
+					visible=false;
+				this.SetVisible(  visible  );
+				]]>
+			</OnUpdate>
+		</Scripts>
+	</Class>
+	
+	<!-- MyInfoMenuFragment -->
+	<Class TypeName="MyInfoMenuFragment" BaseType="Fragment">
+		<HtmlMenuItem Text="$UI_ChangeName" _enable="^AllowChangeName">
+			<Scripts>
+				<OnClick Arguments="htmlEvent">
+					var myinfo=GetMyInfo();
+					function OnChangeMyName(newname)
+					{
+						if(newname)
+						{
+							ChangeDisplayName(newname);
+						}
+					}
+					Desktop.Prompt(OnChangeMyName,"Please specify new display name","Rename",myinfo.DisplayName);
+				</OnClick>
+			</Scripts>
+		</HtmlMenuItem>
+		<HtmlMenuItem Text="$UI_Avatar">
+			<Scripts>
+				<OnClick Arguments="htmlEvent">
+					ChatUI_ShowAvatarDialog();
+				</OnClick>
+				<OnUpdate>
+					var myinfo=GetMyInfo();
+					this.SetImage(ChatUI_GetAvatar(GetMyInfo()));
+				</OnUpdate>
+			</Scripts>
+		</HtmlMenuItem>
+		<HtmlMenuItem Text="$UI_MENU_ShowMyCamera" Image="%CuteChatUrlBase%Images/camera.png" _enable="ShowVideoButton&amp;&amp;GetLocation()!='Messenger'">
+			<Scripts>
+				<OnClick>
+					ChatUI_PublishVideo(GetPlace().Name);
+				</OnClick>
+			</Scripts>
+		</HtmlMenuItem>
+		<HtmlMenuItem Text="$UI_MENU_Online" Image="%CuteChatUrlBase%Images/im_online.png">
+			<Scripts>
+				<OnClick Arguments="htmlEvent">
+					SetOnlineStatus("ONLINE");
+				</OnClick>
+			</Scripts>
+		</HtmlMenuItem>
+		<HtmlMenuItem Text="$UI_MENU_Away" Image="%CuteChatUrlBase%Images/im_away.png">
+			<Scripts>
+				<OnClick Arguments="htmlEvent">
+					SetOnlineStatus("AWAY");
+				</OnClick>
+			</Scripts>
+		</HtmlMenuItem>
+		<HtmlMenuItem Text="$UI_MENU_Busy" Image="%CuteChatUrlBase%Images/im_busy.png">
+			<Scripts>
+				<OnClick Arguments="htmlEvent">
+					SetOnlineStatus("BUSY");
+				</OnClick>
+			</Scripts>
+		</HtmlMenuItem>
+		<AdminMenuItem Text="$UI_MENU_AppearOffline" Image="%CuteChatUrlBase%Images/im_invisible.png">
+			<Scripts>
+				<OnClick Arguments="htmlEvent">
+					SetOnlineStatus("APPEAROFFLINE");
+				</OnClick>
+			</Scripts>
+		</AdminMenuItem>
+	</Class>
+	
+	<!-- MyInfoMenuClass -->
+	<Class TypeName="MyInfoMenuClass" BaseType="HtmlContextMenu">
+		<MyInfoMenuFragment />
+	</Class>
+	<!-- UserMenuClass -->
+	<Class TypeName="UserMenuClass" BaseType="HtmlContextMenu">
+		<UserMenuFragment />
+	</Class>
+	<Class TypeName="UserMenuFragment" BaseType="Fragment">
+		<HtmlMenuItem Text="$UI_MENU_TargetIt" Image="%CuteChatUrlBase%Images/icon_target.gif">
+			<Scripts>
+				<OnClick Arguments="htmlEvent">
+					SetSelectedUser(htmlEvent.GetParent());
+				</OnClick>
+			</Scripts>
+		</HtmlMenuItem>
+		
+		<HtmlMenuItem Text="$UI_InvitePrivate" Image="%CuteChatUrlBase%Images/invite.png">
+			<Scripts>
+				<OnClick Arguments="htmlEvent">
+					InvitePrivateChat(htmlEvent.GetParent());
+				</OnClick>
+				<OnUpdate Arguments="htmlEvent">
+					this.SetEnable( GlobalAllowPrivateMessage );
+					if(GetPlace().ModerateMode)
+						this.SetEnable(false);
+				</OnUpdate>
+			</Scripts>
+		</HtmlMenuItem>
+		<HtmlMenuItem Text="$UI_MENU_AddContact" Image="%CuteChatUrlBase%Images/DefaultAvatar.gif">
+			<Scripts>
+				<OnUpdate Arguments="htmlEvent">
+					var user=htmlEvent.GetParent();
+					if(user.IsAnonymous)
+					{
+						this.SetEnable(false);
+						this.SetText(TEXT("UI_MENU_AddContact"));
+					}
+					else
+					{
+						if(IsContact(user))
+						{
+							this.SetText(TEXT("UI_MENU_RemoveContact"));
+						}
+						else
+						{
+							this.SetText(TEXT("UI_MENU_AddContact"));
+						}
+					}
+				</OnUpdate>
+				<OnClick Arguments="htmlEvent">
+					var user=htmlEvent.GetParent();
+					if(IsContact(user))
+					{
+						RemoveContact(user);
+					}
+					else
+					{
+						AddContact(user);
+					}
+				</OnClick>
+			</Scripts>
+		</HtmlMenuItem>
+		<HtmlMenuItem Text="$UI_Menu_Block" Image="%CuteChatUrlBase%Images/im_blocked.png">
+			<Scripts>
+				<OnUpdate Arguments="htmlEvent">
+					var user=htmlEvent.GetParent();
+					if(IsBlock(user))
+					{
+						this.SetText(TEXT("UI_Menu_UnBlock"));
+						this.SetImage("%CuteChatUrlBase%Images/im_blocked.png");
+					}
+					else
+					{
+						this.SetText(TEXT("UI_Menu_Block"));
+						this.SetImage("%CuteChatUrlBase%Images/im_blocked.png");
+					}
+				</OnUpdate>
+				<OnClick Arguments="htmlEvent">
+					var user=htmlEvent.GetParent();
+					SetBlock( user , !IsBlock(user) );
+				</OnClick>
+			</Scripts>
+		</HtmlMenuItem>
+		<HtmlMenuItem Text="$UI_MENU_ViewProfile" Image="%CuteChatUrlBase%Images/profile.gif">
+			<Scripts>
+				<OnClick Arguments="htmlEvent">
+					ChatUI_ShowProfile(htmlEvent.GetParent());
+				</OnClick>
+				<OnUpdate Arguments="htmlEvent">
+					this.SetEnable( !htmlEvent.GetParent().IsAnonymous );
+				</OnUpdate>
+			</Scripts>
+		</HtmlMenuItem>
+		<!-- sample game menu -->
+		<HtmlMenuItem Text="Play TicTacToe" Image="%CuteChatUrlBase%Images/invite.png">
+			<Scripts>
+				<OnClick Arguments="htmlEvent">
+					TicTacToeCommand(htmlEvent.GetParent().Guid);
+				</OnClick>
+				<OnUpdate Arguments="htmlEvent">
+					//when this game installed:
+					this.SetVisible( typeof(TicTacToeCommand)!="undefined" );
+				</OnUpdate>
+			</Scripts>
+		</HtmlMenuItem>
+		<AdminMenuItem Text="$UI_Menu_UserLevel"  _enable="^IsAdministrator">
+			<HtmlMenuItem Text="$UI_Menu_UserLevel_Silence" Image="%CuteChatUrlBase%Images/silence.gif">
+				<Scripts>
+					<OnClick Arguments="htmlEvent">
+						AdminSetUserLevel(htmlEvent.GetParent(),"Silence");
+					</OnClick>
+				</Scripts>
+			</HtmlMenuItem>
+			<HtmlMenuItem Text="$UI_Menu_UserLevel_Normal" Image="%CuteChatUrlBase%Images/im_online.png">
+				<Scripts>
+					<OnClick Arguments="htmlEvent">
+						AdminSetUserLevel(htmlEvent.GetParent(),"Normal");
+					</OnClick>
+				</Scripts>
+			</HtmlMenuItem>
+			<HtmlMenuItem Text="$UI_Menu_UserLevel_VIP" Image="%CuteChatUrlBase%Images/vip.gif">
+				<Scripts>
+					<OnClick Arguments="htmlEvent">
+						AdminSetUserLevel(htmlEvent.GetParent(),"VIP");
+					</OnClick>
+				</Scripts>
+			</HtmlMenuItem>
+			<HtmlMenuItem Text="$UI_Menu_UserLevel_Speaker" Image="%CuteChatUrlBase%Images/speaker.gif">
+				<Scripts>
+					<OnClick Arguments="htmlEvent">
+						AdminSetUserLevel(htmlEvent.GetParent(),"Speaker");
+					</OnClick>
+				</Scripts>
+			</HtmlMenuItem>
+			<HtmlMenuItem Text="$UI_Menu_UserLevel_Moderator" Image="%CuteChatUrlBase%Images/moderator.png">
+				<Scripts>
+					<OnClick Arguments="htmlEvent">
+						AdminAddModerator(htmlEvent.GetParent().DisplayName);
+					</OnClick>
+				</Scripts>
+			</HtmlMenuItem>
+		</AdminMenuItem>
+		<AdminMenuItem Text="$UI_MENU_Kick" Image="%CuteChatUrlBase%Images/icon_kick.gif">
+			<Scripts>
+				<OnClick Arguments="htmlEvent">
+					AdminKickUserWithPrompt(htmlEvent.GetParent());
+				</OnClick>
+			</Scripts>
+		</AdminMenuItem>
+		<AdminMenuItem Text="$UI_MENU_DenyIP" _enable="^IsAdministrator">
+			<Scripts>
+				<OnUpdate Arguments="htmlEvent">
+					var ip=htmlEvent.GetParent().IPAddress;
+					if(ip=="::1")ip="loopback";
+					this.SetText(TEXT("UI_MENU_DenyIP")+" - "+ip);
+				</OnUpdate>
+				<OnClick Arguments="htmlEvent">
+					AdminDenyUserIPWithPrompt(htmlEvent.GetParent());
+				</OnClick>
+			</Scripts>
+		</AdminMenuItem>
+		<!-- //TODO: 
+		<HtmlMenuItem Text="WhatName?">
+			<Scripts>
+				<OnClick Arguments="htmlEvent">
+					alert(htmlEvent.GetParent().DisplayName);
+				</OnClick>
+			</Scripts>
+		</HtmlMenuItem>
+		-->
+	</Class>
+	
+	<!-- UserListContextMenu -->
+	<Class TypeName="UserListContextMenu" BaseType="HtmlContextMenu">
+		<HtmlMenuItem Text="$UI_MENU_TargetAll" Image="%CuteChatUrlBase%Images/group.png">
+			<Scripts>
+				<OnClick Arguments="htmlEvent">
+					SetSelectedUser(null);
+				</OnClick>
+			</Scripts>
+		</HtmlMenuItem>
+		<HtmlMenuItem Text="$UI_SendFile" Image="%CuteChatUrlBase%Images/icon_file.gif" _enable="^GlobalAllowSendFile">
+			<Scripts>
+				<OnClick>
+					ChatUI_ShowSendFile();
+				</OnClick>
+			</Scripts>
+		</HtmlMenuItem>
+		<HtmlMenuItem Text="-" />
+		<MyInfoMenuFragment />
+	</Class>
+	<!-- DebugListContextMenu -->
+	<Class TypeName="DebugListContextMenu" BaseType="HtmlContextMenu">
+		<HtmlMenuItem Text="$UI_MENU_Clear">
+			<Scripts>
+				<OnClick Arguments="htmlEvent">
+					htmlEvent.GetParent().Clear();
+				</OnClick>
+			</Scripts>
+		</HtmlMenuItem>
+		<HtmlMenuItem Text="SkipTrace">
+			<Scripts>
+				<OnUpdate Arguments="htmlEvent">
+					this.SetText( htmlEvent.GetParent().GetSkipTrace()?"ShowTrace":"SkipTrace" );
+				</OnUpdate>
+				<OnClick Arguments="htmlEvent">
+					var debuglist=htmlEvent.GetParent();
+					debuglist.SetSkipTrace( !debuglist.GetSkipTrace() );
+				</OnClick>
+			</Scripts>
+		</HtmlMenuItem>
+		<HtmlMenuItem Text="SkipError">
+			<Scripts>
+				<OnUpdate Arguments="htmlEvent">
+					this.SetText( htmlEvent.GetParent().GetSkipError()?"ShowError":"SkipError" );
+				</OnUpdate>
+				<OnClick Arguments="htmlEvent">
+					var debuglist=htmlEvent.GetParent();
+					debuglist.SetSkipError( !debuglist.GetSkipError() );
+				</OnClick>
+			</Scripts>
+		</HtmlMenuItem>
+	</Class>
+	
+	<!-- MessageListContextMenu -->
+	<Class TypeName="MessageListContextMenu" BaseType="HtmlContextMenu">
+		<HtmlMenuItem Text="$UI_MENU_TargetAll" Image="%CuteChatUrlBase%Images/group.png">
+			<Scripts>
+				<OnClick Arguments="htmlEvent">
+					SetSelectedUser(null);
+				</OnClick>	
+				<OnUpdate>
+					<![CDATA[
+					if(IsMessenger())
+					{
+						this.SetVisible( false );
+					}
+					]]>
+				</OnUpdate>	
+			</Scripts>
+		</HtmlMenuItem>
+		<HtmlMenuItem Text="$UI_MENU_Clear" Image="%CuteChatUrlBase%Images/cleanup.png">
+			<Scripts>
+				<OnClick Arguments="htmlEvent">
+					htmlEvent.GetParent().Clear();
+				</OnClick>	
+			</Scripts>
+		</HtmlMenuItem>
+		<HtmlMenuItem Text="$UI_MENU_ReloadMessages" Image="%CuteChatUrlBase%Images/refresh.png">
+			<Scripts>
+				<OnClick Arguments="htmlEvent">
+					htmlEvent.GetParent().Reload();
+				</OnClick>
+			</Scripts>
+		</HtmlMenuItem>
+		<HtmlMenuItem Text="$UI_MENU_SaveMessages" Image="%CuteChatUrlBase%Images/save.png">
+			<Scripts>
+				<OnClick Arguments="htmlEvent">
+					SaveMessages( htmlEvent.GetParent().GetElement() )
+				</OnClick>
+			</Scripts>
+		</HtmlMenuItem>
+		<HtmlMenuItem Text="$UI_MENU_AutoScroll">
+			<Scripts>
+				<OnUpdate Arguments="htmlEvent">
+					var list=htmlEvent.GetParent();
+					this.SetText(
+							list.GetAutoScrollMessages()?
+							TEXT("UI_MENU_StopScroll")
+							:
+							TEXT("UI_MENU_AutoScroll")
+						);
+				</OnUpdate>
+				<OnClick Arguments="htmlEvent">
+					var list=htmlEvent.GetParent();
+					list.SetAutoScrollMessages( ! list.GetAutoScrollMessages())
+				</OnClick>
+			</Scripts>
+		</HtmlMenuItem>
+		<LobbyAdminContextMenuFragment />
+	</Class>
+	
+	
+	<Class TypeName="InputBoxHistoryMenuClass" BaseType="HtmlMenuItem" Image="%CuteChatUrlBase%Images/notebook.png">
+		<Scripts>
+			<Constructor>
+				AttachChatEvent("SENDMESSAGE",this.OnChatEvent);
+			</Constructor>
+			<OnDispose>
+				DetachChatEvent("SENDMESSAGE",this.OnChatEvent);
+			</OnDispose>
+			<Method Modifiers="public" Name="OnChatEvent" Arguments="name,type,msg">
+			<![CDATA[
+			if(name=="SENDMESSAGE")
+			{
+				if(type=="SENDING")
+				{
+					var child=CreateInstance("HtmlMenuItem");
+					
+					var text1=msg.Text;
+					var text="";
+					var utflen=0;
+					for(var i=0;i<text1.length;i++)
+					{
+						text+=text1.charAt(i);
+						utflen++;
+						if(text1.charCodeAt(i)>256)
+						{
+							utflen+=2;
+						}
+						if(utflen>14)
+						{
+							text+="..";
+							break;
+						}
+					}
+
+					child.SetText( text );
+					child.AttachEvent("Click",this.OnChildClick);
+					child.message=msg;
+					
+					this.AppendMenuItem(child);
+					
+					var items=this.GetMenuItems();
+					if(items.length>20)
+					{
+						this.RemoveMenuItem(items[0]);
+					}
+				}
+			}
+			]]>
+			</Method>
+			<Method Modifiers="public" Name="OnChildClick" Arguments="htmlEvent">
+				var child=htmlEvent.GetEventSource();
+				var inputbox=htmlEvent.GetParent();
+				var msg=child.message;
+				
+				if(inputbox.tagName=="DIV")//IE
+				{
+					inputbox.innerHTML=msg.Html;
+				}
+				else
+				{
+					inputbox.value=msg.Text;
+				}
+				_InvokeChatEvent("UICOMMAND",["UICOMMAND","FOCUSINPUT"]);
+			</Method>
+		</Scripts>
+	</Class>
+	<Class TypeName="InputBoxMenuClass" BaseType="HtmlContextMenu">
+		<HtmlMenuItem Text="$UI_SEND" Image="%CuteChatUrlBase%Images/sendmenu.gif">
+			<Scripts>
+				<OnClick>
+					DoSendMessage();
+				</OnClick>
+			</Scripts>
+		</HtmlMenuItem>
+		<HtmlMenuItem Text="$UI_MENU_TargetAll" Image="%CuteChatUrlBase%Images/group.png">
+			<Scripts>
+				<OnClick Arguments="htmlEvent">
+					SetSelectedUser(null);
+				</OnClick>		
+				<OnUpdate>
+					<![CDATA[
+					if(IsMessenger())
+					{
+						this.SetVisible( false );
+					}
+					]]>
+				</OnUpdate>
+			</Scripts>
+		</HtmlMenuItem>
+		<HtmlMenuItem Text="$UI_MENU_Clear" Image="%CuteChatUrlBase%Images/cleanup.png">
+			<Scripts>
+				<OnClick Arguments="htmlEvent">
+					var child=htmlEvent.GetEventSource();
+					var inputbox=htmlEvent.GetParent();
+					inputbox.value=inputbox.innerHTML='';
+					try{inputbox.focus()}catch(x){}
+				</OnClick>
+			</Scripts>
+		</HtmlMenuItem>
+		<HtmlMenuItem Text="-" />
+		<InputBoxHistoryMenuClass Text="$UI_MENU_SentList" />
+		
+	</Class>
+	<Class TypeName="UIOptionMenuFragment" BaseType="Fragment">
+		<HtmlMenuItem Text="$UI_Avatar">
+			<Scripts>
+				<OnClick Arguments="htmlEvent">
+					ChatUI_ShowAvatarDialog();
+				</OnClick>
+				<OnUpdate>
+					var myinfo=GetMyInfo();
+					if(myinfo)
+					{
+						this.SetImage(ChatUI_GetAvatar(myinfo));
+					}
+				</OnUpdate>
+			</Scripts>
+		</HtmlMenuItem>
+		<HtmlMenuItem Text="$UI_EnableAutoFocus">
+			<Scripts>
+				<OnClick>
+					ChatUI_SetAutoFocus( !ChatUI_GetAutoFocus() );
+				</OnClick>
+				<OnUpdate>
+					this.SetText(TEXT( ChatUI_GetAutoFocus()?"UI_DisableAutoFocus":"UI_EnableAutoFocus" ));
+					this.SetImage(ChatUI_GetAutoFocus()?"%CuteChatUrlBase%Images/focus-on.gif":"%CuteChatUrlBase%Images/focus-off.gif");
+				</OnUpdate>
+			</Scripts>
+		</HtmlMenuItem>
+		<HtmlMenuItem Text="$UI_EnableSound">
+			<Scripts>
+				<OnClick>
+					ChatUI_SetEnableSound( !ChatUI_GetEnableSound() );
+				</OnClick>
+				<OnUpdate>
+					this.SetText(TEXT( ChatUI_GetEnableSound()?"UI_DisableSound":"UI_EnableSound" ));
+					this.SetImage(ChatUI_GetEnableSound()?"%CuteChatUrlBase%Images/sound_on.png":"%CuteChatUrlBase%Images/sound_off.png");
+				</OnUpdate>
+			</Scripts>
+		</HtmlMenuItem>
+		<HtmlMenuItem Text="$UI_Help" Image="%CuteChatUrlBase%Images/help.png">
+			<Scripts>
+				<OnClick Arguments="htmlEvent">
+					ChatUI_ShowHelp("MENU");
+				</OnClick>
+			</Scripts>
+		</HtmlMenuItem>
+		<LobbyAdminContextMenuFragment />
+	</Class>
+
+	<!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+		Admin Menu
+	- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
+	<Class TypeName="LobbyAdminContextMenuFragment" BaseType="Fragment">
+		<AdminMenuItem Text="$UI_MENU_Admin" Clickable="False"  Image="%CuteChatUrlBase%Images/admin.gif">			
+			<HtmlMenuItem Text="$UI_Menu_OpenModeratorMode" Image="%CuteChatUrlBase%Images/ModeratorMode.gif">
+				<Scripts>
+					<OnUpdate>
+						if(GetPlace().ModerateMode)
+							this.SetText(TEXT("UI_Menu_CloseModeratorMode"));
+						else
+							this.SetText(TEXT("UI_Menu_OpenModeratorMode"));
+					</OnUpdate>
+					<OnClick>
+						AdminSetModerateMode(!GetPlace().ModerateMode);
+					</OnClick>
+				</Scripts>
+			</HtmlMenuItem>
+			<HtmlMenuItem Text="$UI_Menu_SetPassword" Image="%CuteChatUrlBase%Images/password.png">
+				<Scripts><OnClick>
+					AdminPromptSetPassword();
+				</OnClick></Scripts>
+			</HtmlMenuItem>
+			<HtmlMenuItem Text="$UI_PROMPT_ENABLEANONYMOUS" Image="%CuteChatUrlBase%Images/Anonymous.gif">
+				<Scripts>
+					<OnUpdate>
+						if(GetPlace().AllowAnonymous)
+							this.SetText(TEXT("UI_Menu_DisableAnonymous"));
+						else
+							this.SetText(TEXT("UI_PROMPT_ENABLEANONYMOUS"));
+					</OnUpdate>
+					<OnClick>
+						if(GetPlace().AllowAnonymous)
+							AdminPromptSetDisableAnonymous();
+						else
+							AdminPromptSetEnableAnonymous();
+					</OnClick>
+				</Scripts>
+			</HtmlMenuItem>
+			<HtmlMenuItem Text="$UI_Menu_LockChannel" Image="%CuteChatUrlBase%Images/lock.png">
+				<Scripts>
+					<OnUpdate>
+						if(GetPlace().Locked)
+							this.SetText(TEXT("UI_Menu_UnLockChannel"));
+						else
+							this.SetText(TEXT("UI_Menu_LockChannel"));
+					</OnUpdate>
+					<OnClick>
+						AdminSetLockChannel(!GetPlace().Locked);
+					</OnClick>
+				</Scripts>
+			</HtmlMenuItem>
+			<HtmlMenuItem Text="$UI_SetMaxUsers" Image="%CuteChatUrlBase%Images/group.png">
+				<Scripts><OnClick>
+					AdminPromptSetMaxOnline();
+				</OnClick></Scripts>
+			</HtmlMenuItem>
+			<HtmlMenuItem Text="$UI_MENU_UnKickUsers">
+				<Scripts>
+					<OnClick>
+						AdminUnkickUsers();
+					</OnClick>
+				</Scripts>
+			</HtmlMenuItem>
+			<HtmlMenuItem Text="$UI_MENU_UnDenyIPs">
+				<Scripts>
+					<OnClick>
+						AdminUnDenyIPs();
+					</OnClick>
+				</Scripts>
+			</HtmlMenuItem>
+			<HtmlMenuItem Text="$UI_Menu_GoAdminPage" _enable="^IsAdministrator">
+				<Scripts>
+					<OnClick>
+						window.open(CuteChatUrlBase+"ChatAdmin/");
+					</OnClick>
+				</Scripts>
+			</HtmlMenuItem>
+			
+		</AdminMenuItem>
+	</Class>
+	
+		
+	<!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+		Classes
+	- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
+	!-- ChannelTitle -->
+	<Class TypeName="ChannelTitle" BaseType="HtmlSource" >
+		<XmlData>
+			<span id="channel_title" class="ChannelTitle">TITLE</span>
+		</XmlData>
+		<Scripts>
+			<Constructor>
+				AttachChatEvent("PLACE",this.OnChatEvent);
+			</Constructor>
+			<OnDispose>
+				DetachChatEvent("PLACE",this.OnChatEvent);
+			</OnDispose>
+			<Method Modifiers="public override" Name="SetContent" Arguments="html">
+				this.base_SetContent(html)
+				if(GetPlace())
+				{
+					this.OnChatEvent("PLACE","UPDATED")
+				}
+			</Method>
+			<Method Modifiers="public" Name="OnChatEvent" Arguments="name,type,info1,info2">
+				if(name=="PLACE")
+				{
+					var element=this.GetElement();
+					var span=Html_FindChildById(element,"channel_title");
+					var title=window.channeldescription||GetPlace().Title||"";
+					if(GetLocation()=="Private")title+="'s room";
+					span.innerHTML=Html_Encode(title);
+					if(GetPlace().Locked)
+					{
+						span.innerHTML+=" (Locked)";
+					}
+				}
+			</Method>
+		</Scripts>
+	</Class>
+	<!-- Class NumberOnline -->
+	<Class TypeName="NumberOnline" BaseType="HtmlSource" >
+		<XmlData>
+			<table>
+			<tr>
+			<td>
+				<img src="[[CuteChatUrlBase]]images/users_icon.gif" />
+			</td>
+			<td>
+				<span id="number_online">NUMBER</span>
+			</td>
+			</tr>
+			</table>
+		</XmlData>
+		<Scripts>
+			<Constructor>
+				AttachChatEvent("USER",this.OnChatEvent);
+			</Constructor>
+			<OnDispose>
+				DetachChatEvent("USER",this.OnChatEvent);
+			</OnDispose>
+			<OnContentReady>
+				this.OnChatEvent("USER","RELIST");
+			</OnContentReady>
+			<Method Modifiers="public" Name="OnChatEvent" Arguments="name,type,info1,info2">
+				<![CDATA[
+				if(name=="USER")
+				{
+					var element=this.GetElement();
+					var span=Html_FindChildById(element,"number_online");
+					span.innerHTML=GetUsers().length+" "+ TEXT("UI_USER_Users");
+				}
+				]]>
+			</Method>
+		</Scripts>
+	</Class>
+	<Class TypeName="ChannelList" BaseType="HtmlSource"  Focusable="True" Height="42">
+		<Scripts>
+			<Constructor>
+				<![CDATA[
+				var list=document.getElementById("channellistid")
+				if((typeof(IsEmbed)!="undefined"&&IsEmbed)||!DisplayLobbyList||list==null || GetLocation()=="Private")
+				{
+					this.SetVisible(false);
+				}
+				else
+				{
+					var element=this.GetElement();
+					element.appendChild(list);
+				}				
+				]]>
+			</Constructor>
+			<Method Modifiers="public override" Name="SetContent" Arguments="html">
+				//this.base_SetContent(html);
+			</Method>
+		</Scripts>
+	</Class>
+	<!-- Class UserList -->
+	<Class TypeName="UserList" BaseType="HtmlSource"  AutoScroll="True" Focusable="True">
+		<UserListContextMenu _property="ContextMenu" />
+		<Scripts>
+			<Constructor>
+				AttachChatEvent("CONNECTION",this.OnChatEvent);
+				AttachChatEvent("USER",this.OnChatEvent);
+				AttachChatEvent("MYINFO",this.OnChatEvent);
+				AttachChatEvent("SELECTEDUSER",this.OnChatEvent);
+				
+				this.OnChatEvent("USER","RELIST");
+				this.OnChatEvent("SELECTEDUSER","UPDATE");
+			</Constructor>
+			<OnDispose>
+				DetachChatEvent("CONNECTION",this.OnChatEvent);
+				DetachChatEvent("USER",this.OnChatEvent);
+				DetachChatEvent("MYINFO",this.OnChatEvent);
+				DetachChatEvent("SELECTEDUSER",this.OnChatEvent);
+			</OnDispose>
+			
+			<Method Modifiers="public" Name="OnChatEvent" Arguments="name,type,info1,info2">
+				<![CDATA[
+				var element=this.GetElement();
+				var myinfo=GetMyInfo();
+				if(myinfo.IsUnknown)//not connected.
+				{
+					element.innerHTML="";
+					return;
+				}
+
+				function RelistUser()
+				{
+					element.innerHTML="";
+					if(myinfo.Guid!="0")
+					{
+						element.appendChild(this.FormatUser(myinfo));//put myself on the front
+						var arr=GetUsers();
+						for(var i=0;i<arr.length;i++)
+						{
+							if(UserEquals(myinfo,arr[i]))continue;
+							element.appendChild(this.FormatUser(arr[i]));
+						}
+					}
+				}
+				function UpdateUser(user)
+				{
+					var childs=element.childNodes;
+					for(var i=0;i<childs.length;i++)
+					{
+						var div=childs.item(i);
+						var divuser=ChatUI_UserFromExp(div.getAttribute("userexp"));
+						if(UserEquals(divuser,user))
+						{
+							div.innerHTML="";
+							ChatUI_AppendUser(div,user,"USERLIST")
+							return;
+						}
+					}
+					element.appendChild(this.FormatUser(user));
+				}
+				function RemoveUser(user)
+				{
+					var childs=element.childNodes;
+					for(var i=0;i<childs.length;i++)
+					{
+						var div=childs.item(i);
+						var divuser=ChatUI_UserFromExp(div.getAttribute("userexp"));
+						if(UserEquals(divuser,user))
+						{
+							element.removeChild(div);
+							i--;
+						}
+					}
+				}
+
+				
+				if(name=="CONNECTION"&&type=="READY")RelistUser.call(this);
+				if(name=="USER"&&type=="RELIST")RelistUser.call(this);
+				if(name=="USER"&&type=="ADDED")UpdateUser.call(this,info1);
+				if(name=="USER"&&type=="UPDATED")UpdateUser.call(this,info1);
+				if(name=="USER"&&type=="REMOVED")RemoveUser.call(this,info1);
+				if(name=="MYINFO"&&type=="UPDATED")UpdateUser.call(this,myinfo);
+				
+				if(name=="SELECTEDUSER")
+				{
+					var selecteduser=GetSelectedUser();
+					var childs=element.childNodes;
+					for(var i=0;i<childs.length;i++)
+					{
+						var div=childs.item(i);
+						var divuser=ChatUI_UserFromExp(div.getAttribute("userexp"));
+						if(UserEquals(divuser,selecteduser))
+						{
+							div.style.backgroundColor='#dfdfdf';
+						}
+						else
+						{
+							div.style.backgroundColor='';
+						}
+					}
+				}
+				]]>
+			</Method>
+			<Method Modifiers="public" Name="FormatUser" Arguments="user">
+				var div=document.createElement("DIV");
+				div.setAttribute("userexp",ChatUI_UserToExp(user));
+				Html_SetCssText(div,"margin:2px;padding-left:8px;padding-top:2px;padding-bottom:2px;");
+				div.className="UserListItem";
+				ChatUI_AppendUser(div,user,"USERLIST");
+				return div;
+			</Method>
+			<OnDoubleClick>
+				SetSelectedUser(null);
+				_InvokeChatEvent("UICOMMAND",["UICOMMAND","FOCUSINPUT"]);
+			</OnDoubleClick>
+		</Scripts>
+	</Class>
+	<!-- Class DebugList -->
+	<Class TypeName="DebugList" BaseType="HtmlSource" Visible="False"  AutoScroll="True" Focusable="True">
+		<DebugListContextMenu _property="ContextMenu" />
+		<Scripts>
+			<Constructor>
+				<![CDATA[
+				
+				if(CHATUI_DEBUG)
+				{
+					var div=document.createElement("DIV");
+					div.innerHTML="turn chatui.js.aspx-CHATUI_DEBUG off to hide this frame for default";
+					div.innerHTML+=". use CTRL+DBLCLICK the MessageList to show or hide the DebugList";
+					var element=this.GetElement();
+					Html_AppendChildAndScrollDown(element,div);
+				}
+				
+				AttachChatEvent("ERROR",this.OnChatEvent);
+				AttachChatEvent("TRACE",this.OnChatEvent);
+				var arr=GetErrors();
+				for(var i=0;i<arr.length;i++)this.ShowErrorItem(arr[i]);
+				var arr=GetTraces();
+				for(var i=0;i<arr.length;i++)this.ShowTraceItem(arr[i]);
+				
+				]]>
+			</Constructor>
+			<OnDispose>
+				DetachChatEvent("ERROR",this.OnChatEvent);
+				DetachChatEvent("TRACE",this.OnChatEvent);
+			</OnDispose>
+			<Method Modifiers="public" Name="OnChatEvent" Arguments="name,info1,info2">
+				if(name=="ERROR")
+				{
+					this.ShowErrorItem(info1);
+				}
+				if(name=="TRACE")
+				{
+					this.ShowTraceItem(info1);
+				}
+			</Method>
+			<Property Modifiers="public virtual" Name="SkipTrace">
+				<Get>
+					return this._skiptrace;
+				</Get>
+				<Set>
+					this._skiptrace=_SL_ToBoolean(value);
+				</Set>
+			</Property>
+			<Property Modifiers="public virtual" Name="SkipError">
+				<Get>
+					return this._skiperror;
+				</Get>
+				<Set>
+					this._skiperror=_SL_ToBoolean(value);
+				</Set>
+			</Property>
+			<Method Modifiers="public virtual" Name="ShowTraceItem" Arguments="msg">
+				<![CDATA[
+				if(this._skiptrace)return;
+				
+				var div=document.createElement("DIV");
+				div.innerHTML="TRACE : "+msg;
+				var element=this.GetElement();
+				Html_AppendChildAndScrollDown(element,div);
+				
+				if(element.childNodes.length>300)
+				{
+					for(var i=0;i<100;i++)
+					{
+						element.removeChild(element.firstChild);
+					}
+				}
+				]]>
+			</Method>
+			<Method Modifiers="public virtual" Name="ShowErrorItem" Arguments="err">
+				<![CDATA[
+				if(this._skiperror)return;
+				
+				var div=document.createElement("DIV");
+				div.innerHTML="Error : "+err.message;
+				div.title=err.description;
+				div.ondblclick=new Function("","with(window.open('').document){write('<pre>');write(this.title);write('</pre>');close()}");
+				Html_AppendChildAndScrollDown(this.GetElement(),div);
+				]]>
+			</Method>
+			<Method Modifiers="public virtual" Name="Clear">
+				this.GetElement().innerHTML='';
+			</Method>
+		</Scripts>
+	</Class>
+	<!-- Class MessageList -->
+	<Class TypeName="MessageList" BaseType="HtmlSource"  AutoScroll="True" Focusable="True">
+		<MessageListContextMenu _property="ContextMenu" />
+		<Scripts>
+			<Constructor>
+				<![CDATA[
+				this._autoscrollmsg=true;
+				this._msgmode="GENERAL";
+				AttachChatEvent("MESSAGE",this.OnChatEvent);
+				AttachChatEvent("UICOMMAND",this.OnChatEvent);
+				var paddingBottom=document.createElement("DIV");
+				paddingBottom.style.height='12px';
+				this.constructor.prototype._paddingBottom=paddingBottom;
+				
+				this.Reload();
+				
+				]]>
+			</Constructor>
+			<OnDispose>
+				DetachChatEvent("MESSAGE",this.OnChatEvent);
+				DetachChatEvent("UICOMMAND",this.OnChatEvent);
+			</OnDispose>
+			<Property Modifiers="public" Name="AutoScrollMessages">
+				<Get>
+					return this._autoscrollmsg;
+				</Get>
+				<Set>
+					this._autoscrollmsg=_SL_ToBoolean(value);
+					if(this._autoscrollmsg)
+					{
+						var element=this.GetElement();
+						element.scrollTop=element.scrollHeight;
+					}
+				</Set>
+			</Property>
+			<Property Modifiers="public" Name="MessageMode">
+				<Get>
+					return this._msgmode;
+				</Get>
+				<Set>
+					this._msgmode=value;
+				</Set>
+			</Property>
+			<Method Modifiers="public" Name="OnChatEvent" Arguments="name,type,info1,info2">
+				<![CDATA[
+				if(name=="UICOMMAND")
+				{
+					if(type=="CLEAR")
+					{
+						this.Clear();
+					}
+					if(type=="RELOAD")
+					{
+						this.Reload();
+					}
+				}
+				if(name=="MESSAGE")
+				{
+					switch(type)
+					{
+						case "RELIST":
+							//this.GetElement().innerHTML="";
+							var arr=GetMessages();
+							for(var i=0;i<arr.length;i++)this.ShowMessageItem(arr[i]);
+							break;
+						case "NEW":
+							this.ShowMessageItem(info1);
+							
+							break;
+						case "ERROR":
+							this.ShowHtml(TEXT("MessageNotSend")+" : "+info2+"<br/>Message:"+info1.Text);
+							break;
+					}
+				}
+				]]>
+			</Method>
+			<Method Modifiers="public virtual" Name="Reload" Arguments="msgHtml">
+				<![CDATA[
+				var element=this.GetElement();
+				element.innerHTML='';
+				var arr=GetMessages();
+				for(var i=0;i<arr.length;i++)this.ShowMessageItem(arr[i]);
+				]]>
+			</Method>
+			<Method Modifiers="public virtual" Name="ShowHtml" Arguments="msgHtml">
+				<![CDATA[
+				var div=document.createElement("DIV");
+				div.innerHTML=msgHtml;
+				var element=this.GetElement();
+				if(this._autoscrollmsg)
+				{
+					Html_AppendChildAndScrollDown(element,div);
+					Html_AppendChildAndScrollDown(element,this._paddingBottom);
+				}
+				else
+				{
+					element.appendChild(div);
+					element.appendChild(this._paddingBottom);
+				}
+				if(element.childNodes.length > CHATUI_MAX_MESSAGE_ITEM_COUNT)
+				{
+					for(var i=0;i<100;i++)
+					{
+						element.removeChild(element.firstChild);
+					}
+				}
+				]]>
+			</Method>
+			<Method Modifiers="public virtual" Name="ShowMessageItem" Arguments="msg,noblock">
+				<![CDATA[
+				var blocksender=false;
+				if(msg.Sender)
+				{
+					blocksender=IsBlock(msg.Sender);
+				}
+				if(noblock)
+				{
+					blocksender=false;
+				}
+				
+				var myid=GetMyInfo()==null?null:GetMyInfo().UserId;
+				var pass=false;
+				if(this._msgmode=="MYSELF")
+				{
+					if(!blocksender)
+					{
+						if( msg.Sender!=null&&UserEquals(msg.Sender,GetMyInfo()) )
+						{
+							pass=true;
+						}
+						if( msg.Target!=null&&UserEquals(msg.Target,GetMyInfo()))
+						{
+							pass=true;
+						}
+					}
+				}
+				else if(this._msgmode=="TRACK")
+				{
+					var targetid=this._sl_state._track_userid;
+					
+					//TODO:
+					if(false)//mode 1 , 'and'
+					{
+						if(msg.Sender&&msg.Target)
+						{
+							if( msg.Sender.UserId.toLowerCase()==myid.toLowerCase() && msg.Target.UserId.toLowerCase()==targetid.toLowerCase() )
+							{
+								pass=true;
+							}
+							if( msg.Sender.UserId.toLowerCase()==targetid.toLowerCase() && msg.Target.UserId.toLowerCase()==myid.toLowerCase() )
+							{
+								pass=true;
+							}
+						}
+					}
+					else	//mode 2 , 'or'
+					{
+						if(msg.Sender&&msg.Sender.UserId.toLowerCase()==targetid.toLowerCase())
+						{
+							pass=true;
+						}
+						if(msg.Target&&msg.Target.UserId.toLowerCase()==targetid.toLowerCase())
+						{
+							pass=true;
+						}
+					}
+					
+					if(blocksender)
+					{
+						if(msg.Sender.UserId.toLowerCase()!=targetid.toLowerCase())
+						{
+							pass=false;
+						}
+					}
+				}
+				else
+				{
+					if(!blocksender)
+					{
+						pass=true;
+					}
+				}
+				
+				if(!pass)return;				
+				
+				var div=document.createElement("DIV");
+				
+				ChatUI_AppendMessage(div,msg,this._msgmode);
+
+				var element=this.GetElement();
+				if(this._autoscrollmsg)
+				{
+					Html_AppendChildAndScrollDown(element,div);
+					Html_AppendChildAndScrollDown(element,this._paddingBottom);
+				}
+				else
+				{
+					element.appendChild(div);
+					element.appendChild(this._paddingBottom);
+				}
+				if(element.childNodes.length > CHATUI_MAX_MESSAGE_ITEM_COUNT)
+				{
+					for(var i=0;i<100;i++)
+					{
+						element.removeChild(element.firstChild);
+					}
+				}
+				]]>
+			</Method>
+			<Method Modifiers="public virtual" Name="Clear">
+				var element=this.GetElement();
+				element.innerHTML='';
+				Html_AppendChildAndScrollDown(element,this._paddingBottom);
+			</Method>
+		</Scripts>
+
+	</Class>
+
+	
+	<!-- Class InputBox -->
+	<Class TypeName="InputBox" BaseType="HtmlSource"  Focusable="True">
+		<Scripts>
+			<Constructor>
+				<![CDATA[
+				var box;
+				if(Html_IsWinIE && GlobalEnableHtmlBox)
+				{
+					box=ChatUI_CreateWinIEInputElement();
+				}
+				else
+				{
+					box=ChatUI_CreateInputTextArea();
+				}
+				
+				box.className="InputBoxElement";
+
+				Html_SetCssText(box,
+					"width:"+this.GetCurrentWidth()+";height:"+this.GetCurrentHeight()
+					+";padding:2px;background-color:white;overflow:auto;cursor:text;"
+					);
+				this.constructor.prototype._box=box;
+
+				this.GetElement().appendChild(box);
+				
+				AttachChatEvent("SENDMESSAGE",this.OnChatEvent);
+				AttachChatEvent("UICOMMAND",this.OnChatEvent);
+				
+				this._focustimerid=setTimeout(this.FocusMe,100);
+
+				]]>
+			</Constructor>
+
+			<OnDispose>
+
+				clearTimeout(this._focustimerid);
+				DetachChatEvent("SENDMESSAGE",this.OnChatEvent);
+				DetachChatEvent("UICOMMAND",this.OnChatEvent);
+				this.constructor.prototype._box=null;
+			</OnDispose>
+			<OnResize>
+				this._box.style.width=Math.max(0,this.GetCurrentWidth()-2)+"px";
+				this._box.style.height=Math.max(0,this.GetCurrentHeight()-2)+"px";
+			</OnResize>
+			<Method Modifiers="public override" Name="Focus">
+				this._box.focus();
+				this.FocusMe();
+			</Method>
+			<Method Modifiers="public" Name="FocusMe">
+				if(Html_IsWinIE)
+				{
+					try{this._box.focus();}catch(x)
+					{
+						this._focustimerid=setTimeout(this.FocusMe,100);
+					}
+				}
+				else
+				{
+					this._box.blur();
+					var ctrl=this;
+					setTimeout(function(){
+						if(ctrl._box)
+						{
+							ctrl._box.focus();
+						}
+					},100);
+				}
+			</Method>
+			<Method Modifiers="public virtual" Name="IsActiveInputBox">
+				return true;
+			</Method>
+			<Method Modifiers="public" Name="OnChatEvent" Arguments="name,type,info1,info2">
+				<![CDATA[
+				if(!this.IsActiveInputBox())return;
+				
+				if(name=="UICOMMAND")
+				{
+					if(type=="FOCUSINPUT")
+					{
+						this.FocusMe();
+					}
+					if(type=="EMOTION")
+					{
+						var chat_input=this._box;
+						var emotion=info1;
+						
+						if(chat_input.tagName=="TEXTAREA")
+						{
+							chat_input.value+="[Emotion="+emotion+"]";;
+						}
+						else
+						{
+							var range=document.body.createTextRange();
+							range.moveToElementText(chat_input);
+							range.collapse(false);
+							range.pasteHTML('<IMG src="'+CuteChatUrlBase+'images/emotions/'+emotion+'" meaning="'+'[Emotion='+emotion+']'+'" border=0>')
+						}
+					}
+				}
+				if(name=="SENDMESSAGE")
+				{
+					if(type=="COMMAND")
+					{
+						this.SendMessage();
+					}
+				}
+				]]>
+			</Method>
+			<Method Modifiers="public" Name="SendMessage">
+				<![CDATA[
+				if(GetWhisper()&&!GetSelectedUser())
+				{
+					var message={};
+					message.Type="LOCAL";
+					message.Text=TEXT("CANTNOTWHISPERTONOTARGET");
+					FireMessage(message,true);
+					return;
+				}
+			
+				var text=null;
+				var html=null;
+				
+				if(Html_IsWinIE)
+				{
+					text=this._box.innerText;
+					html=this._box.innerHTML;
+				}
+				else
+				{
+					text=this._box.value;
+				}
+				
+				if(text.replace(/\s/g,'').length || (html&&html.length>10) )
+				{
+					if(ChatUI_SendMessageWithFloodControl(text,html))
+					{
+						this._box.innerHTML='';
+						this._box.value='';
+					}
+				}
+				
+				this.FocusMe();
+				]]>
+			</Method>
+		</Scripts>
+	</Class>
+	
+	<!-- Class ConnectionButton -->
+	<Class TypeName="ConnectionButton" BaseType="HtmlButton">
+		<Scripts>
+			<Constructor>
+				AttachChatEvent("CONNECTION",this.OnChatEvent);
+				this.UpdateButton();
+			</Constructor>
+			<OnDispose>
+				DetachChatEvent("CONNECTION",this.OnChatEvent);
+			</OnDispose>
+			<Method Modifiers="public" Name="OnChatEvent" Arguments="name,type,info1,info2">
+				if(name=="CONNECTION")
+				{
+					this.UpdateButton();
+				}
+			</Method>
+			<Method Modifiers="public virtual" Name="UpdateButton">
+				if(IsConnecting()){this.SetText(TEXT("CANCEL"));}
+				else if(IsConnected()){this.SetText(TEXT("UI_Menu_Disconnect"));}
+				else{this.SetText(TEXT("UI_Menu_Connect"));}
+			</Method>
+			<OnClick>
+				if(IsConnecting()){Disconnect();}
+				else if(IsConnected())
+				{
+					function HandleConfirm(res)
+					{
+						if(res)Disconnect();
+					}
+					Desktop.Confirm(HandleConfirm,TEXT("UI_AreYouSureDisconnect"),TEXT("UI_MENU_Signout"));
+				}
+				else{Connect();}
+			</OnClick>
+		</Scripts>
+	</Class>
+	<!-- Class SendButton -->
+	<Class TypeName="SendButton" BaseType="HtmlButton" Text="$UI_SEND">
+		<Scripts>
+			<OnClick>
+				DoSendMessage();
+			</OnClick>
+		</Scripts>
+	</Class>
+	
+	<!-- Class SelectTarget -->
+	<Class TypeName="SelectTarget" BaseType="HtmlSource"  Focusable="True" Width="124">
+		<XmlData>
+			<div style="padding:2px">				
+				<table border="0" cellspacing="0" cellpadding="2" id="table_selecttarget">
+					<tr>
+						<td>
+							<select id="select_targetuser" title="tips : Right click to target 'All'" style="vertical-align:middle;width:120px;">
+								<option value="">[[UI_MENU_TargetAll]]</option>
+							</select>
+						</td>
+						<td style="width:18px;" id="cell1">
+							<input type="checkbox" id="checkbox_whisper" onchange="SetWhisper(this.checked);"/>
+						</td>
+						<td>
+							<label id="label_whisper" for="checkbox_whisper">[[UI_Whisper]]</label>
+						</td>
+					</tr>
+				</table>
+			</div>
+		</XmlData>
+		<Scripts>
+			<Execute>
+				var nowhisper=DisableWhisper;
+				if(GetLocation()=="Private")
+				{
+					nowhisper=DisablePrivateChatWhisper;
+					if(nowhisper)
+					{
+						this.SetVisible(false);
+					}
+				}
+				if(nowhisper)
+				{
+					var element=this.GetElement();
+					var checkbox_whisper=Html_FindChildById(element,"checkbox_whisper");
+					var label_whisper=Html_FindChildById(element,"label_whisper");
+					label_whisper.style.visibility="hidden";
+					checkbox_whisper.style.visibility="hidden";
+				}
+			</Execute>				
+			<Constructor>
+				AttachChatEvent("USER",this.OnChatEvent);
+				AttachChatEvent("SELECTEDUSER",this.OnChatEvent);
+			</Constructor>
+			<Method Modifiers="public override" Name="Dispose">
+				var element=this.GetElement();
+				var select=Html_FindChildById(element,"select_targetuser");
+				select.onchange=select.oncontextmenu=select.ondblclick=new Function("","");
+				
+				DetachChatEvent("USER",this.OnChatEvent);
+				DetachChatEvent("SELECTEDUSER",this.OnChatEvent);
+				this.base_Dispose();												
+			</Method>
+			<Method Modifiers="public override" Name="SetContent" Arguments="html">
+				<![CDATA[
+				this._html=html;
+				this.base_SetContent(html);
+				
+				var element=this.GetElement();
+				var select=Html_FindChildById(element,"select_targetuser");
+
+				select.onchange=this.OnSelectChange;
+				select.oncontextmenu=select.ondblclick=this.OnSelectAll;
+
+				this.OnChatEvent("USER","RELIST");
+				this.OnChatEvent("SELECTEDUSER","UPDATE");
+				
+				if(this._virtical)
+				{
+					var table=Html_FindChildById(element,"table_selecttarget");
+					var row1=table.rows.item(0);
+					var row2=table.insertRow(-1);
+					row2.appendChild(row1.cells.item(1));
+					row2.appendChild(row1.cells.item(1));
+					row1.cells.item(0).colSpan=2;
+				}
+				]]>
+			</Method>
+			<Property Modifiers="public" Name="VerticalMode" Arguments="val">
+				<Get>
+					return !!this._virtical;
+				</Get>
+				<Set>
+					val=_SL_ToBoolean(val);
+					if(this._virtical==val)return;
+					this._virtical=val;
+					if(this._html)this.SetContent(this._html);
+				</Set>
+			</Property>
+			<Method Modifiers="public" Name="OnChatEvent" Arguments="name,type,info1">
+				<![CDATA[
+				var element=this.GetElement();
+				var select=Html_FindChildById(element,"select_targetuser");
+				if(name=="USER")
+				{
+					switch(type)
+					{
+						case "RELIST":
+							select.options.length=1;
+							var users=GetUsers();
+							for(var i=0;i<users.length;i++)
+							{
+								var user=users[i];
+								if(UserEquals(user,GetMyInfo()))
+									continue;
+
+								var option=document.createElement("OPTION");
+								option.value=ChatUI_UserToExp(user);
+								option.innerHTML=Html_Encode(user.DisplayName);
+								select.appendChild(option);
+							}
+							break;
+						case "ADDED":
+							var user=info1;
+							if(UserEquals(user,GetMyInfo()))
+								break;
+							var option=document.createElement("OPTION");
+							option.value=ChatUI_UserToExp(user);
+							option.innerHTML=Html_Encode(user.DisplayName);
+							select.appendChild(option);
+							break;
+						case "REMOVED":
+							var user=info1;
+							if(UserEquals(user,GetMyInfo()))
+								break;
+							var exp=ChatUI_UserToExp(user);
+							for(var i=0;i<select.options.length;i++)
+							{
+								if(select.options[i].value==exp)
+								{
+									select.removeChild(select.options[i]);
+									break;
+								}
+							}
+							break;
+						case "UPDATED":
+							break;
+					}
+				}
+				if(name=="SELECTEDUSER")
+				{
+					if(type=="UPDATED")
+					{
+						var user=GetSelectedUser();
+						if(user==null)
+						{
+							select.selectedIndex=0;
+						}
+						else
+						{
+							var exp=ChatUI_UserToExp(user);
+							for(var i=0;i<select.options.length;i++)
+							{
+								var option=select.options.item(i);
+								if(option.value==exp)
+								{
+									select.selectedIndex=i;
+									//IE BUG:force it update.
+									try{option.selected=true;}catch(x){}
+									break;
+								}
+							}
+						}
+					}
+				}
+				]]>
+			</Method>
+			<Method Modifiers="public virtual" Name="OnSelectChange" Arguments="event">
+				var element=this.GetElement();
+				var select=Html_FindChildById(element,"select_targetuser");
+				var option=select.options[select.selectedIndex];
+				var user=ChatUI_UserFromExp(option.value);
+				SetSelectedUser(user);
+			</Method>
+			<Method Modifiers="public virtual" Name="OnSelectAll" Arguments="event">
+				SetSelectedUser(null);
+				
+				event=event||window.event;
+				event.cancelBubble=true;
+				event.returnValue=false;
+			</Method>
+		</Scripts>
+	</Class>
+	
+	<!-- Class TypingUserList -->
+	<Class TypeName="TypingUserList" BaseType="HtmlSource" Focusable="False">
+		<Scripts>			
+			<Constructor>
+				if(!ShowTypingIndicator)
+				{
+					this.SetVisible( false );
+				}
+				else
+				{
+					this.updateid=setInterval(this.UpdateList,500);
+				}
+			</Constructor>
+			<OnDispose>
+				clearInterval(this.updateid);
+			</OnDispose>
+			<Method Modifiers="protected" Name="UpdateList">
+				<![CDATA[
+				var element=this.GetElement();
+				var tusers=GetTypingUsers();
+				if(tusers.length==0)
+				{
+					element.innerHTML="";
+					this._oldhtml="";
+				}
+				else
+				{
+					var html="";
+					for(var i=0;i<tusers.length;i++)
+					{
+						if(html!="")
+							html+=",";
+							
+						var username=tusers[i];
+						html+=Html_Encode(username);
+					}
+					if(html!=this._oldhtml)
+					{
+						element.innerHTML=html+" "+TEXT("UI_USER_TYPING");
+						this._oldhtml="";
+					}
+					
+				}
+				]]>
+			</Method>
+		</Scripts>
+	</Class>
+	
+	<!-- Class Toolbar -->
+	<Class TypeName="Toolbar" BaseType="HtmlPanel" Focusable="True">
+		<ConnectionButton AutoDock="Right" Width="90" DockMargins="5,2,4,1"/> 
+		<HtmlSource AutoDock="Fill" >
+			<Scripts>
+				<Execute>
+					if(typeof(toolbarArea)!="undefined")
+						this.GetElement().appendChild(toolbarArea);
+					this.GetElement().style.padding="1px";
+				</Execute>
+			</Scripts>
+		</HtmlSource>
+	</Class>
+
+	<Class TypeName="TopPanel" BaseType="HtmlPanel">
+		<HtmlSource AutoDock="Fill" DockMargins="0,0,0,0">
+			<Scripts>
+				<Execute>
+					if(typeof(toptable)!="undefined")
+					{
+						this.GetElement().appendChild(toptable);
+					}
+				</Execute>
+			</Scripts>
+		</HtmlSource>
+		<Scripts>
+			<Constructor>
+				AttachChatEvent("PLACE",this.UpdateVisible);
+				this.UpdateVisible();
+			</Constructor>
+			<Method Modifiers="public override" Name="Dispose">
+				DetachChatEvent("PLACE",this.UpdateVisible);
+				this.base_Dispose();
+			</Method>
+			<Method Modifiers="public" Name="UpdateVisible">
+				
+				<![CDATA[
+				if(GetLocation()=="Private" || GetLocation()=="Support" || !DisplayHeaderPanel || (typeof(IsEmbed)!="undefined"&&IsEmbed))
+				{
+					this.SetVisible( false );
+				}
+				else
+				{
+					this.SetVisible( true );
+				}
+				]]>
+			</Method>
+		</Scripts>
+	</Class>	
+	<Class TypeName="BottomAdsPanel" BaseType="HtmlPanel">
+		<HtmlSource AutoDock="Fill">
+			<Scripts>
+				<Execute>
+					if(typeof(BottomAds)!="undefined")
+					{
+						this.GetElement().appendChild(BottomAds);
+					}
+				</Execute>
+			</Scripts>
+		</HtmlSource>
+		<Scripts>
+			<Constructor>
+				AttachChatEvent("PLACE",this.UpdateVisible);
+				this.UpdateVisible();
+			</Constructor>
+			<Method Modifiers="public override" Name="Dispose">
+				DetachChatEvent("PLACE",this.UpdateVisible);
+				this.base_Dispose();
+			</Method>
+			<Method Modifiers="public" Name="UpdateVisible">
+				<![CDATA[
+				if(GetLocation()=="Private" || GetLocation()=="Support" || !DisplayBottomBanner || (typeof(IsEmbed)!="undefined"&&IsEmbed))
+				{
+					this.SetVisible( false );
+				}
+				else
+				{
+					this.SetVisible( true );
+				}
+				]]>
+			</Method>
+		</Scripts>
+	</Class>
+
+	<Class TypeName="BottomPanel" BaseType="HtmlPanel"></Class>
+	<Class TypeName="LeftPanel" BaseType="HtmlPanel"></Class>
+	<Class TypeName="RightPanel" BaseType="HtmlPanel"></Class>
+	<Class TypeName="ContentPanel" BaseType="HtmlPanel"></Class>
+	<Class TypeName="FullPageWindow" BaseType="HtmlWindow" AutoDock="Fill" TitleVisible="False"
+		BorderStyle="None" BorderWidth="0"></Class>
+	
+	<Class TypeName="DefaultInstantMainLayout" BaseType="Fragment">
+		
+	</Class>
+	
+	<!--will overrided by Skins/Skin/ChatUI.xml-->
+	<Class TypeName="ChannelMainForm" BaseType="FullPageWindow" Width="1000">
+		<TopPanel AutoDock="Top" Height="80"></TopPanel>
+		<BottomAdsPanel AutoDock="Bottom" Height="60"></BottomAdsPanel>
+		<TypingUserList AutoDock="Bottom" Height="18" DockMargins="12,0,12,0"/>
+		<BottomPanel AutoDock="Bottom" Height="90" DockMargins="8,4,8,4">
+			<Toolbar AutoDock="Top" Height="24"/>
+			<SelectTarget AutoDock="Bottom" Height="28"/>
+			<SendButton AutoDock="Right" Width="90" DockMargins="5,3,3,5"/>
+			<InputBox AutoDock="Fill" DockMargins="2,2,2,2"/>					
+		</BottomPanel>
+
+		<DebugList DockMargins="8,4,2,4" AutoDock="Right" EnableSizing="True" Width="180" BorderWidth="1" BorderStyle="solid"></DebugList>
+
+		<RightPanel AutoDock="Right" Width="240" EnableSizing="True" DockMargins="8,4,8,4">
+				<ChannelTitle AutoDock="Top" Height="40"></ChannelTitle>
+				<NumberOnline AutoDock="Top" Height="30"></NumberOnline>
+				<ChannelList AutoDock="Bottom"></ChannelList>
+				<UserList AutoDock="Fill"></UserList>
+		</RightPanel>
+
+		<MessageList DockMargins="8,4,2,4" AutoDock="Fill">
+		</MessageList>
+		
+		<Scripts>
+			<OnDoubleClick Arguments="Arg">
+				if(Arg.GetCtrlKey())
+				{
+					var debuglist=this.GetWindow().FindChildByType("DebugList");
+					debuglist.SetVisible( !debuglist.GetVisible() )
+				}
+			</OnDoubleClick>
+		</Scripts>
+	</Class>
+	
+		
+	<!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+		Global Objects
+	- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
+
+	<InputBoxMenuClass _global="InputBoxMenu" _property="null" />
+	<MyInfoMenuClass _global="MyInfoMenu" _property="null"/>
+	<UserMenuClass _global="UserMenu" _property="null"/>
+	<HtmlContextMenu _global="OptionMenu" _property="null">
+		<UIOptionMenuFragment />
+	</HtmlContextMenu>
+	
+	
+</Desktop>

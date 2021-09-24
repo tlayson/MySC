@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Desktop>
+	<Class TypeName="RoyaleBackGround" BaseType="HtmlPanel" AutoDock="Fill" DockMargins="-3,-17,-3,-3">
+		<HtmlSource   AutoDock="Fill">
+			<XmlData>
+				<table ondragstart="return false" onmousedown="if(!Html_IsWinIE)return false" border="0" cellSpacing="0" cellPadding="0" style="border:0x none;width:100%;height:100%">
+					<tr height="3">
+						<td width="3">
+							<img src="[[CuteChatUrlBase]]Skins/Royale/Images/top_left.gif" width="3" height="17" /></td>
+						<td>
+							<img src="[[CuteChatUrlBase]]Skins/Royale/Images/top_center.gif" width="100%" height="17" /></td>
+						<td width="3">
+							<img src="[[CuteChatUrlBase]]Skins/Royale/Images/top_right.gif" width="3" height="17" /></td>
+					</tr>
+					<tr height="100%">
+						<td width="3">
+							<img src="[[CuteChatUrlBase]]Skins/Royale/Images/mdl_left.gif" width="3" height="100%" /></td>
+						<td></td>
+						<td width="3">
+							<img src="[[CuteChatUrlBase]]Skins/Royale/Images/mdl_right.gif" width="3" height="100%" /></td>
+					</tr>
+					<tr height="3">
+						<td width="3">
+							<img src="[[CuteChatUrlBase]]Skins/Royale/Images/btm_left.gif" width="3" height="3" /></td>
+						<td>
+							<img src="[[CuteChatUrlBase]]Skins/Royale/Images/btm_center.gif" width="100%" height="3" /></td>
+						<td width="3">
+							<img src="[[CuteChatUrlBase]]Skins/Royale/Images/btm_right.gif" width="3" height="3" /></td>
+					</tr>
+				</table>
+			</XmlData>
+		</HtmlSource>
+	</Class>
+	<Class TypeName="RoyaleFrameFragment" BaseType="Fragment" DockPaddings="3,17,3,3">
+		<RoyaleBackGround />
+	</Class>	
+	<Class TypeName="ChannelMainForm" BaseType="FullPageWindow" Width="1000" DockPaddings="4,0,4,0" DockMargins="2,2,2,2">
+		<TopPanel AutoDock="Top" Height="60"></TopPanel>
+		<BottomAdsPanel AutoDock="Bottom" Height="60"></BottomAdsPanel>
+		<BottomPanel AutoDock="Bottom" Height="132" DockMargins="8,4,8,4">
+			<Object _class="RoyaleFrameFragment"/>
+			<Toolbar AutoDock="Top" Height="28" DockPaddings="0,2,0,0" />
+			<HtmlPanel AutoDock="Bottom" Height="28">
+				<SelectTarget AutoDock="Left" Height="28" Width="240"/>
+				<TypingUserList AutoDock="Fill" Height="28">
+					<Scripts>
+						<Execute>
+							this.GetElement().style.padding="8px";
+						</Execute>
+					</Scripts>
+				</TypingUserList>
+			</HtmlPanel>			
+			<SendButton AutoDock="Right" Width="90" DockMargins="8,3,3,3"/>
+			<InputBox AutoDock="Fill" BorderWidth="1" BorderStyle="solid" BorderColor="#3161BD" DockMargins="2,2,2,2"/>					
+		</BottomPanel>
+		<RightPanel AutoDock="Right" Width="200" DockPaddings="3,3,3,3" EnableSizing="True" DockMargins="4,4,10,4">
+			<Object _class="RoyaleFrameFragment"/>
+			<ChannelTitle AutoDock="Top" Height="40"></ChannelTitle>
+			<NumberOnline AutoDock="Top" Height="30"></NumberOnline>
+			<ChannelList AutoDock="Bottom"></ChannelList>
+			<UserList AutoDock="Fill"></UserList>
+		</RightPanel>
+		
+		<DebugList DockMargins="4,4,2,4" AutoDock="Right" EnableSizing="True" Width="180" BorderWidth="1" BorderStyle="solid"></DebugList>
+
+		<ContentPanel AutoDock="Fill" DockMargins="4,4,2,4" DockPaddings="5,5,5,0">
+			<Object _class="RoyaleFrameFragment"/>
+			<MessageList DockMargins="4,4,2,4" AutoDock="Fill">
+			</MessageList>
+		</ContentPanel>
+		
+		<Scripts>
+			<OnDoubleClick Arguments="Arg">
+				if(Arg.GetCtrlKey())
+				{
+					var debuglist=this.GetWindow().FindChildByType("DebugList");
+					debuglist.SetVisible( !debuglist.GetVisible() )
+				}
+			</OnDoubleClick>
+		</Scripts>
+		
+	</Class>
+
+</Desktop>

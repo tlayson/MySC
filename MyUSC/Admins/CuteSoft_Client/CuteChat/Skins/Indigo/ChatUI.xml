@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Desktop>
+	<Class TypeName="FrameFragment" BaseType="Fragment" DockPaddings="3,22,3,22" BorderWidth="1"
+		BorderStyle="solid" BorderColor="#aaaaaa"></Class>	
+	<Class TypeName="ChannelMainForm" BaseType="FullPageWindow" Width="1000" DockPaddings="0,0,0,0" DockMargins="2,2,2,2">
+		<TopPanel AutoDock="Top" Height="60" ></TopPanel>
+		<BottomAdsPanel AutoDock="Bottom" Height="60"></BottomAdsPanel>
+		<BottomPanel AutoDock="Bottom" Height="90" DockMargins="8,4,8,4">
+			<Toolbar AutoDock="Top" Height="24" />
+			<HtmlPanel AutoDock="Bottom" Height="28">
+				<SelectTarget AutoDock="Left" Height="28" Width="240"/>
+				<TypingUserList AutoDock="Fill" Height="28">
+					<Scripts>
+						<Execute>
+							this.GetElement().style.padding="8px";
+						</Execute>
+					</Scripts>
+				</TypingUserList>
+			</HtmlPanel>			
+			<SendButton AutoDock="Right" Width="90" DockMargins="5,3,3,5" />
+			<InputBox AutoDock="Fill" BorderWidth="1" BorderStyle="solid" BorderColor="#aaaaaa" DockMargins="2,2,2,2"/>
+		</BottomPanel>
+		<RightPanel AutoDock="Right" Width="200" DockPaddings="3,3,3,3" EnableSizing="True" DockMargins="4,4,10,4" BorderWidth="1"
+			BorderStyle="solid" BorderColor="#aaaaaa">
+			<ChannelTitle AutoDock="Top" Height="40"></ChannelTitle>
+			<NumberOnline AutoDock="Top" Height="30"></NumberOnline>
+			<ChannelList AutoDock="Bottom"></ChannelList>
+			<UserList AutoDock="Fill"></UserList>
+		</RightPanel>
+		<DebugList DockMargins="4,4,2,4" AutoDock="Right" EnableSizing="True" Width="180" BorderWidth="1"
+			BorderStyle="solid"></DebugList>
+		<ContentPanel AutoDock="Fill" DockMargins="4,4,2,4" DockPaddings="5,5,5,0" BorderWidth="1" BorderStyle="solid"
+			BorderColor="#aaaaaa">
+			<MessageList DockMargins="4,4,2,4" AutoDock="Fill"></MessageList>
+		</ContentPanel>
+		<Scripts>
+			<OnDoubleClick Arguments="Arg">
+				if(Arg.GetCtrlKey())
+				{
+					var debuglist=this.GetWindow().FindChildByType("DebugList");
+					debuglist.SetVisible( !debuglist.GetVisible() )
+				}
+			</OnDoubleClick>
+		</Scripts>
+	</Class>
+
+</Desktop>

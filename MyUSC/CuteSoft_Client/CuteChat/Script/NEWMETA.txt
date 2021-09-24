@@ -1,0 +1,228 @@
+THIS FILE IS NOT USED.
+
+
+-------- -------- -------- -------- -------- -------- -------- -------- 
+		ChatClient Type:
+-------- -------- -------- -------- -------- -------- -------- -------- 
+Place
+{
+	Guid	ChatPlace.ObjectGuid
+	Name	Messenger or Lobby-1 or...
+	Title	description of the place
+	Location	"Lobby","Messenger","Private","Support"...
+}
+Item	-	see ChatPlaceItem.GetItemInfo
+{
+	Type	USER,...
+	Guid	ChatPlaceItem.ObjectGuid
+	Args	Args[0]=>Type,Args[1]=>Guid,others return by GetItemInfo
+	Nvc
+	Exists	if this item have been removed , then return false;
+}
+User
+{
+	Guid - ChatPlaceUser.ObjectGuid , use ChatPlace.FindItem
+	UserId - ChatIdentity.UniqueId
+	DisplayName - ChatPlaceUser.DisplayName , default=ChatIdentity.Display , can be changed at runtime
+	IsAnonymous - ChatIdentity.IsAnonymous
+	IsModerator - Is channel admin
+	IsAdmin - equals to IsModerator
+	OnlineStatus - "ONLINE","AWAY","BUSY"..
+	RemoveReason - after the user be removed , null or EXPIRED,BYCLIENT,KICK,OVERRIDE(re join and kick self)
+	PublicProperties - other properties that share to all others. only the owner can modify this by function SetPublicProperty(name,strval)
+		Avatar
+	PrivateProperties - only useful for GetMyInfo()
+	IsOnline - when use GetUserByGuid(guid) or GetUserById(userid) , get the user is still online
+}
+Contact/Ignore
+{
+	UserId
+	DisplayName
+	Description - more information provide by the user
+	PublicProperties	- same as the User
+	IsContact
+	IsIgnore
+}
+Message
+{
+	Type	USER,SYS_INFO,SYS_ERROR,LOCAL
+	Text
+	Html
+	Font
+	Whisper
+	Sender	//not null when Type=USER
+	ToUser	//not null when Whisper
+}
+
+
+
+
+
+
+-------- -------- -------- -------- -------- -------- -------- -------- 
+		ChatClient API:
+-------- -------- -------- -------- -------- -------- -------- -------- 
+
+SetGuestName(name)	-	set the default guest name
+SetPassword(pwd)	-	set the default password for channel.
+GetFontName()/SetFontName(fontname)
+GetFontSize()/SetFontSize(fontsize)
+GetFontColor()/SetFontColor(fontcolor)
+GetFontBold()/SetFontBold(fontbold)
+GetFontItalic()/SetFontItalic(fontitalic)
+GetFontUnderline()/SetFontUnderline(fontunderline)
+GetWhisper()/SetWhisper(whisper)
+
+GetTraces()
+GetErrors()
+_Trace(message)
+_Error(error)
+
+IsConnected()
+IsConnecting()
+Connect(placename)	//if placename specify , then init/change the place
+
+//get/set item temp infomration
+GetItemInfo(guid,name) name->"TYPINGTIME"
+SetItemInfo(guid,name,value)
+
+Disconnect(rightNow)
+
+
+
+
+
+
+
+
+-------- -------- -------- -------- -------- -------- -------- -------- 
+		ChatClient EVENT:
+-------- -------- -------- -------- -------- -------- -------- -------- 
+
+_InvokeChatEvent("OPTION",["OPTION","FONTNAME",fontname]);
+_InvokeChatEvent("OPTION",["OPTION","FONTSIZE",fontsize]);
+_InvokeChatEvent("OPTION",["OPTION","FONTCOLOR",fontcolor]);
+_InvokeChatEvent("OPTION",["OPTION","FONTBOLD",fontbold]);
+_InvokeChatEvent("OPTION",["OPTION","FONTITALIC",fontitalic]);
+_InvokeChatEvent("OPTION",["OPTION","FONTUNDERLINE",fontunderline]);
+_InvokeChatEvent("OPTION",["OPTION","WHISPER",whisper]);
+
+_InvokeChatEvent("TRACE",["TRACE",message]);
+_InvokeChatEvent("ERROR",["ERROR",error]);
+
+
+_InvokeChatEvent("CONNECTION",["CONNECTION","CONNECTING"]);
+_InvokeChatEvent("CONNECTION",["CONNECTION","READY"]);
+_InvokeChatEvent("CONNECTION",["CONNECTION","INQUEUE"]);//when INQUEUE,it will not stop the Connect
+_InvokeChatEvent("CONNECTION",["CONNECTION","CANCELLED"]);//when the user cancel connecting..
+_InvokeChatEvent("CONNECTION",["CONNECTION","DISCONNECT"]);//disconnect by client
+_InvokeChatEvent("CONNECTION",["CONNECTION",res.ReturnCode,res.ServerMessage]);
+//CHECK THE ChatMetaData.ReturnCode_
+{
+//place not found
+public const string ReturnCode_NOPLACE="NOPLACE";
+//return ok
+public const string ReturnCode_READY="READY";
+//custom error message
+public const string ReturnCode_ERROR="ERROR";
+//inqueue
+public const string ReturnCode_INQUEUE="INQUEUE";
+//be rejected or kicked
+public const string ReturnCode_REJECTED="REJECTED";
+//need login , not allow anonymous
+public const string ReturnCode_NEEDLOGIN="NEEDLOGIN";
+//anonymous user need give name...
+public const string ReturnCode_NEEDNAME="NEEDNAME";
+//the place is locked
+public const string ReturnCode_LOCKED="LOCKED";
+//the place is disabled
+public const string ReturnCode_NOTENABLE="NOTENABLE";
+//the place need a password
+public const string ReturnCode_NEEDPASSWORD="NEEDPASSWORD";
+//reach the portal connections limit
+public const string ReturnCode_LIMITED="LIMITED";
+
+//the same user already in place and not expires
+public const string ReturnCode_IDEXISTS="IDEXISTS";
+//the server side do not find current connection
+public const string ReturnCode_NOCONNECTION="NOCONNECTION";
+}
+
+_InvokeChatEvent("RAWSTCMSG",["RAWSTCMSG",msg,args,nvc]);
+
+_InvokeChatEvent("PLACE",["PLACE","UPDATED",channel,oldchannel]);//if oldchannel is null , it just connected
+_InvokeChatEvent("MYINFO",["MYINFO","UPDATED",newuser,oldinfo]);//if oldinfo is null , it just connected
+
+
+msg.substring(5) -> ADDED,UPDATED,REMOVED
+_InvokeChatEvent("ITEM",["ITEM",msg.substring(5),newitem,olditem]);
+
+_InvokeChatEvent("USER",["USER","ADDED",newuser]);
+_InvokeChatEvent("USER",["USER","UPDATED",newuser,user]);
+_InvokeChatEvent("USER",["USER","REMOVED",newuser,user]);
+
+_InvokeChatEvent("CONTACT",["CONTACT","ADDED",newcontact,contact]);
+_InvokeChatEvent("CONTACT",["CONTACT","UPDATED",newcontact,contact]);
+_InvokeChatEvent("CONTACT",["CONTACT","REMOVED",newcontact,contact]);
+
+_InvokeChatEvent("IGNORE",["IGNORE","ADDED",newcontact,contact]);
+_InvokeChatEvent("IGNORE",["IGNORE","UPDATED",newcontact,contact]);
+_InvokeChatEvent("IGNORE",["IGNORE","REMOVED",newcontact,contact]);
+
+_InvokeChatEvent("MESSAGE",["MESSAGE","NEW",msg]);
+
+_InvokeChatEvent("SENDMESSAGE",["SENDMESSAGE","COMMAND"]);
+
+_InvokeChatEvent("SELECTEDUSER",["SELECTEDUSER","UPDATED"]);
+
+_InvokeChatEvent("SELECTEDIGNORE",["SELECTEDIGNORE","UPDATED"]);
+
+_InvokeChatEvent("SELECTEDCONTACT",["SELECTEDCONTACT","UPDATED"]);
+
+_InvokeChatEvent("UICOMMAND",["UICOMMAND","FOCUSINPUT"]);
+
+_InvokeChatEvent("UICOMMAND",["UICOMMAND","EMOTION",emotion]);
+_InvokeChatEvent("UICOMMAND",["UICOMMAND","TRACKUSER",user]);
+
+
+
+
+
+
+
+
+-------- -------- -------- -------- -------- -------- -------- -------- 
+Languages:
+-------- -------- -------- -------- -------- -------- -------- -------- 
+
+
+UI_LOADING
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

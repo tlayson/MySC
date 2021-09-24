@@ -1,0 +1,302 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<root>
+	<resource name="CuteChat_Messenger">Cute Messenger</resource>
+	
+	<resource name="UI_MENU_AddContact">Tilfj kontakt</resource>
+	<resource name="UI_MENU_RemoveContact">Fjern kontakt</resource>
+	<resource name="UI_MENU_ViewProfile">Vis profil</resource>
+	<resource name="UI_MENU_Block">Bloker bruger</resource>
+	<resource name="UI_MENU_UnBlock">Tillad bruger</resource>
+	<resource name="UI_MENU_ChatWith">Send en besked</resource>
+	<resource name="UI_MENU_TargetAll">til alle</resource>
+	<resource name="UI_MENU_Refresh">opdater</resource>
+	<resource name="UI_MENU_Clear">Ryd</resource>
+	<resource name="UI_MENU_SaveMessages">Gem</resource>
+	<resource name="UI_MENU_ReloadMessages">Opdater</resource>
+	<resource name="UI_MENU_Invite">Inviter</resource>
+	<resource name="UI_MENU_Kick">Smid ud</resource>
+	<resource name="UI_MENU_TargetIt">Snak med</resource>
+	<resource name="UI_MENU_AutoScroll">Auto Scroll</resource>
+	<resource name="UI_MENU_StopScroll">Stop Scroll</resource>	
+	<resource name="UI_MENU_Online">Online</resource>
+	<resource name="UI_MENU_Offline">Offline</resource>
+	<resource name="UI_MENU_Away">Vk</resource>
+	<resource name="UI_MENU_Busy">Optaget</resource>	
+	<resource name="UI_MENU_Blocked">Blokeret</resource>	
+	<resource name="UI_MENU_SentList">Historie</resource>
+	<resource name="UI_MENU_Admin">Administrator</resource>
+	<resource name="UI_MENU_SetPassword">St kodeord</resource>
+	<resource name="UI_MENU_DisableAnonymous">Tillad ikke annonym</resource>
+	<resource name="UI_MENU_LockChannel">Ls kanalen</resource>
+	<resource name="UI_MENU_UnLockChannel">Ls kanalen op</resource>
+	<resource name="UI_MENU_Contacts">Kontakter</resource>
+	<resource name="UI_MENU_View">Se</resource>
+	<resource name="UI_MENU_Exit">Luk</resource>
+	<resource name="UI_MENU_Signout">Log af</resource>
+	<resource name="UI_MENU_SignIn">Log p</resource>
+	<resource name="UI_MENU_File">Fil</resource>
+	<resource name="UI_MENU_OfflineMessage">Offline besked</resource>	
+	<resource name="UI_MENU_Add">Tilfj</resource>
+	<resource name="UI_Menu_GoAdminPage">G til administrations siden</resource>
+	<resource name="UI_PROMPT_ENABLEANONYMOUS">Tillad annonym bruger</resource>
+	<resource name="UI_Menu_Connect">Forbind</resource>
+	<resource name="UI_Menu_Disconnect">Afbryd forbindelsen</resource>
+	
+	<resource name="UI_MENU_Online">Online</resource>
+	<resource name="UI_MENU_Away">Vk</resource>
+	<resource name="UI_MENU_Busy">Optaget</resource>
+	<resource name="UI_MENU_OnThePhone">Snakker i tlf.</resource>
+	<resource name="UI_MENU_OutToLunch">Til frokost</resource>
+	<resource name="UI_MENU_Offline">(Offline)</resource>	
+	<resource name="UI_MENU_AppearOffline">Fremst Offline</resource>
+	
+	<resource name="UI_USER_Online"><!--Vis intet--></resource>
+	<resource name="UI_USER_Away">(Vk)</resource>
+	<resource name="UI_USER_Busy">(Optaget)</resource>
+	<resource name="UI_USER_OutToLunch">(Til frokost)</resource>
+	<resource name="UI_USER_OnThePhone">(Snakker i tlf.)</resource>
+	<resource name="UI_USER_Offline">(Offline)</resource>	
+	
+	<resource name="UI_USER_All">Til alle</resource>
+	<resource name="UI_Whisper">Hvisk</resource>	
+	<resource name="UI_Lobbies">Vlg en kanal</resource>	
+	
+	<resource name="UI_PROMPT_KICKUSER">Er du sikker p at du nsker at smide brugeren ud af kanalen?</resource>
+	
+	<resource name="UI_UnknownUserName">(Ukendt)</resource>
+	<resource name="UI_Unknown">(Ukendt)</resource>
+	
+	<resource name="UI_FloodControlMessage">Du kan ikke sende s mange beskeder i s kort tid. Vent venligst et par sekunder imellem beskeder.</resource>
+	<resource name="UI_AreYouSureQuit">Er du sikker p at du nsker at lukke denne samtale?</resource>
+	<resource name="UI_AreYouSureDisconnect">Er du sikker p at du nsker at afbryde forbindelsen?</resource>
+	<resource name="UI_NotAllowedFunction">Du har ikke lov til at udfre den nskede handling.</resource>
+
+	<resource name="UI_PopupBlockedMessage">Pop-up blocker opdaget.</resource>
+	<resource name="UI_popupblocked">Pop-up blocker opdaget.</resource>
+	
+	<resource name="CANTNOTWHISPERTONOTARGET">Du kan ikke hviske til alle brugere.</resource>
+	<resource name="UI_CONNECTION_CONNECTING">Vent venligst, forbinder til server...</resource>
+	<resource name="UI_CONNECTION_ERROR">Din forbindelse til serveren blev afbrudt. {0}</resource>
+	<resource name="UI_CONNECTION_READY">Forbundet!</resource>
+	<resource name="UI_CONNECTION_Disconnect">Du er ikke lngere forbundet.</resource>
+	<resource name="UI_CONNECTION_CANCELLED">Forbindelse afbrudt.</resource>
+	<resource name="UI_CONNECTION_NOTENABLE">Det lykkedes ikke at oprette forbindelse. Serveren er ikke klar.</resource>
+	<resource name="UI_CONNECTION_NeedName">Vlg et kaldenavn for at begynde at chatte. Dit kaldenavn vil identificere dig for de andre i chatten. Kaldenavnet kan maks vre 20 tegn, skal begynde med et bogstav og m ikke indeholde mellemrum.</resource>
+	<resource name="UI_CONNECTION_NEEDLOGIN">Anonym adgang er ikke tilladt. Log in p sitet frst.</resource>
+	<resource name="UI_CONNECTION_NeedName_Title">Gstenavn</resource>
+	<resource name="UI_CONNECTION_NeedName_Message">Skriv venligst dit navn.</resource>
+	<resource name="UI_CONNECTION_NeedPassword">Kodeord er krvet.</resource>
+	<resource name="UI_CONNECTION_NeedPassword_Title">Kodeord</resource>
+	<resource name="UI_PROMPT_CHANNELPASSWORD">Skriv venligst kanal koden.</resource>
+	<resource name="UI_CONNECTION_NeedPassword_Message">Denne kanal er beskyttet med et kodeord. Skriv venligst koden.</resource>
+	<resource name="UI_CONNECTION_Kick">Du er blevet smidt ud af kanalen.</resource>	
+	<resource name="UI_CONNECTION_MissingNickName">Kaldenavn feltet er tomt.</resource>
+	<resource name="UI_CONNECTION_MissingPassword">Kodeords feltet er tomt.</resource>
+	<resource name="UI_CONNECTION_ShortNickName">Dit kaldenavn er for kort.</resource>
+	<resource name="UI_CONNECTION_LongNickName">Dit kaldenavn er for langt.</resource>
+	
+	
+	<resource name="UI_USER_JOIN">{0} er kommet ind i rummet.</resource>
+	<resource name="UI_USER_LEAVE">{0} forlod rummet.</resource>
+	<resource name="UI_USER_KICK">{0} er blevet smidt ud.</resource>
+	<resource name="UI_USER_DROP">{0} forlod rummet.</resource>
+	<resource name="UI_USER_BLOCK">{0} er blevet blokeret!</resource>
+	<resource name="UI_USER_UNBLOCK">{0} er ikke lngere blokeret!</resource>
+	<resource name="UI_USER_ADD">{0} er blevet tilfjet til din kontakt liste.</resource>
+	<resource name="UI_USER_REMOVE">{0} er blevet fjernet fra din kontakt liste.</resource>
+	<resource name="UI_USER_EXPIRED">{0} er blevet fjernet fra rummet pga. inaktivitet.</resource>
+	<resource name="UI_USER_HELLO">{0} siger hej til alle i rummet.</resource>
+	<resource name="UI_USER_LOGINMESSENGER">{0} er logget p messenger.</resource>
+	<resource name="UI_USER_LOGOFFMESSENGER">{0} er logget af messenger.</resource>
+	<resource name="UI_USER_UPDATE">{0} har opdateret sin profil.</resource>
+	
+	
+	<resource name="UI_ADMIN_NOTADMIN">Kun administratoren kan udfre denne funktion.</resource>
+	
+	
+	<!-- Add Contact -->
+	<resource name="UI_CONTACT_Detach"></resource>
+	<resource name="Select">Vlg</resource>
+	<resource name="DisplayName">Brugernavn</resource>
+	<resource name="Search">Sg</resource>
+	<resource name="SearchResults">Sgeresultater</resource>
+	<resource name="UI_CONTACT_CantAddSelf">Du kan ikke tilfje dig selv.</resource>
+	<resource name="UI_CONTACT_FinishAddContact">Denne bruger er tilfjet din kontaktliste.</resource>
+	<resource name="UI_CONTACT_SelectContact">Sg venligst efter venner p navn, email eller kn.</resource>
+	<resource name="UI_CONTACT_AddContact_subTitle">Du kan tilfje personer til din kontakt liste.</resource>
+	<resource name="UI_CONTACT_TargeAnonymous">Den valgte bruger er anonym!</resource>
+	<resource name="UI_CONTACT_AnonymousCantAddContact">Anonyme brugere kan ikke tilfje kontakter.</resource>
+	<resource name="FileformatNotsupported">Filformatet er ikke tilladt og filen kan derfor ikke uploades.</resource>
+	<!-- End Add Contact -->
+	
+	<resource name="My_USER_BLOCK">Du er blokeret af den valgte bruger!</resource>
+	
+	<resource name="UI_NewMessage">Ny besked</resource>
+	<resource name="UI_Message">Besked</resource>
+	<resource name="UI_UserMessageBlocked">Du har modtaget en besked fra {0}. Chat vinduet er blevet blokeret af din popup blocker.</resource>
+	
+	<resource name="UI_UnknownSplashCommand">Kommandoen '{0}' er ikke supporteret af systemet.</resource>
+	
+	<resource name="UI_WindowBlocked">Et nyt chat vindue er blevet blokeret, klik venligst OK for at bne det.</resource>
+	
+	<resource name="UI_MSGTAB_GENERAL">Generelt</resource>
+	<resource name="UI_MSGTAB_MYSELF">Mig</resource>
+	
+	<resource name="UI_DisableAutoFocus">Sl fokus fra</resource>
+	<resource name="UI_EnableAutoFocus">Auto fokus</resource>
+	<resource name="UI_DisableSound">Sl lyde fra</resource>
+	<resource name="UI_EnableSound">Afspil lyd</resource>
+	<resource name="UI_InvitePrivate">Privat Chat</resource>
+	<resource name="UI_INVITEPRIVATECHAT">{0} invitere dig til at komme ind i en privat kanal.</resource>
+	<resource name="UI_ChangeAvatar">Vlg avatar</resource>
+	<resource name="UI_AvatarDialogSubTitle">Avatare er sm ikoner eller grafik der reprsentere dig. Vlg en passende avatar fra denne liste. </resource>
+	<resource name="UI_SendAsOffline">Din besked er send som en offline besked.</resource>
+	<resource name="UI_FeatureDisabled">Administratoren har slet denne mulighed fra.</resource>
+	
+	<!-- Toolbar -->	
+	<resource name="UI_MENU_SendFiles">Send filer</resource>	
+	<resource name="UI_Send_NoFile">Vlg venligst den fil du vil sende.</resource>
+	<resource name="UI_Send_a_File_subTitle">Vlg en fil, og klik send knappen.</resource>	
+	<resource name="MaxFileSizeMustBeLessThan">Filen skal vre mindre end </resource>
+	<resource name="UI_Send_UploadSuccessfully">Filen er uploadet.</resource>
+	<!-- Toolbar -->
+	
+	<!-- Toolbar -->
+	<resource name="UI_Bold">Fed</resource>
+	<resource name="UI_Italic">Italic</resource>
+	<resource name="UI_Underline">Understreget</resource>
+	<resource name="UI_Help">Hjlp</resource>
+	<resource name="UI_ControlPanel">Kontrol panel</resource>
+	<resource name="UI_Emotion">Indst flelsesikon</resource>
+	<resource name="UI_FontColor">Skrift farve</resource>
+	<resource name="UI_Save">Gem</resource>
+	<resource name="UI_SaveChat">Gem chat loggen</resource>
+	<resource name="UI_Avatar">Vlg en avatar</resource>
+	<resource name="UI_PlaySound">Afspil lyde</resource>
+	<resource name="UI_AutoFocus">Hold fokus</resource>
+	<resource name="UI_AutoScroll">Scroll vindue</resource>
+	<resource name="UI_SelectSkin">Vlg skin</resource>
+	<resource name="UI_Clear">Ryd skrmen</resource>
+	<resource name="UI_Font">Font</resource>
+	<resource name="UI_Size">Str.</resource>
+	<resource name="UI_Close">Luk</resource>
+	
+	<resource name="IEonly_Feature">Denne mulighed er kun tilgngelig for brugere med Explorer 5.0 og over.</resource>
+	<resource name="CantSaytoYourself">for at sende en privat besked, skal du vlge en anden person end dig selv.</resource>
+	<resource name="PrivateChatTitle">Privat chat</resource>
+	<resource name="TargetUserNotOnline">Modtageren er ikke online.</resource>
+	<resource name="PrivateChatTitle">Privat chat</resource>
+	<resource name="ConnectingToServer">Opretter forbindelse, vent venligst...</resource>
+	<resource name="ConnectionFailed">Forbindelsen kunne ikke oprettes.</resource>
+	<resource name="ConnectionOK">Forbundet!</resource>
+	<resource name="Details">Detaljeret fejl</resource>
+	<resource name="NotInvited">Du er ikke inviteret ind i denne kanal, og har derfor ikke adgang.</resource>
+	<resource name="NumPeoplesChatting">chattende personer</resource>
+	<resource name="DenyAllAnonymous">Anonyme brugere er ikke tilladt p denne server.</resource>
+	<resource name="CommandPtopOnly">Denne komando kan kun bruges i et privat vindue.</resource>
+	<resource name="CantInviteSelf">Du kan ikke invitere dig selv.</resource>
+	<resource name="TargetUserOffline">Modtageren er ikke online.</resource>
+	<resource name="TargetUserInvalid">Invalid modtagernavn.</resource>
+	<resource name="YouCantInvite">Kun den som har oprettet kanalen kan invitere brugere.</resource>
+	<resource name="DenyPrivateMessage">Private beskeder er ikke tilladt i denne kanal.</resource>
+	<resource name="ConnectedUsingNewPC">er tilbage i kanalen.</resource>
+	<resource name="blockuser">bloker</resource>
+	<resource name="unblockuser">fjern blokering</resource>
+	<resource name="ManageChannel">Administrer denne kanal</resource>
+	<resource name="IsAnonymous">er en anonym bruger.</resource>	
+	<resource name="LOGINNEWACCOUNT">Denne konto bliver brugt af en anden.</resource>
+	
+	<!-- End Toolbar -->
+	
+	
+	<!-- GENERAL -->
+	<resource name="UI_Loading">Loading</resource>
+	<resource name="OK">OK</resource>
+	<resource name="CANCEL">Afbryd</resource>	
+	<resource name="UI_SEND">Send</resource>
+	<resource name="Send">Send</resource>
+	
+	<resource name="MessageNotSend">Beskeden kunne ikke sendes!</resource>
+	<resource name="MsgMessageContainsBadWord">Din besked indeholder et "ulovligt" ord: </resource>
+	<resource name="DenyChannelAnonymous">Anonyme brugere er ikke tilladt i denne kanal.</resource>
+	<resource name="NickNameIsExists">Kaldenavnet er allerede i brug.</resource>
+	<resource name="YouAreRejected">Du blev afvist.</resource>
+	<resource name="YouAreNotConnect">Du har ikke oprettet forbindelse med kanalen.</resource>
+	<resource name="YouCantGetin">Du kan ikke komme ind i chat kanalen.</resource>
+	<resource name="YouAreNotModerator">Du er ikke moderator for kanalen.</resource>
+	<resource name="NoModerators">Ingen moderators.</resource>
+	<resource name="WrongPassword">Forkert password. Prv igen.</resource>
+	<resource name="TargetUserNotPtop">{0} afviste din private besked.</resource>
+	<resource name="TargetUserAlreadyHere">Modtageren er online.</resource>
+	<resource name="SpecifyUserName">Skriv et brugernavn</resource>
+	<resource name="AnonymousCantChangeAvatar">Anonyme brugere kan ikke skifte avatar.</resource>
+	<resource name="CommandChannelOnly">Kommandoen kan kun bruges i en kanal. </resource>
+	<resource name="NoManagerWindow">Management vinduet er ikke tilgngelig.</resource>
+	<resource name="NoAccountInfo">Kontoinformation kunne ikke findes.</resource>
+	<resource name="IPAddressRejected">Din IP adresse er afvist.</resource>
+	<resource name="WordExceededMaxLen">Et af ordene i stningen overskrider maks grnsen for enkelte ord.</resource>
+	<resource name="MsgExceededMaxLen">Din besked er for lang.</resource>
+	<resource name="MsgUserExpired">Forbindelsen er udlbet.</resource>
+	<resource name="MsgUserTryJoinChannel">opfordres til at komme ind i kanalen.</resource>
+	<resource name="MsgChooseAvatar">Vlg avatar</resource>
+	<resource name="MsgAvatarChanged">Din avatar er ndret.</resource>
+	<resource name="MsgCommandError">Kommando fejl</resource>
+	<resource name="MsgCommandUnknown">Ukendt kommando</resource>
+	<resource name="ConnectionRejected">Forbindelse afvist.</resource>
+	<resource name="RequirePassword">Kodeord er krvet</resource>
+	<resource name="MessageSendFailed">Det lykkedes ikke at sende beskeden.</resource>
+	<resource name="SelectChannel">Vlg en kanal</resource>
+	<resource name="NickNameRestriction">Vlg venligst et kaldenavn for at begynde at chatte. Dit kaldenavn vil identificere dig overfor de andre chattere. Kaldenavnet kan maks vre 20 tegn langt, skal begynde med et bogstav og m ikke indeholde mellemrum eller de flgende tegn: ! @ # $ % ( ) + = ' " ; : &lt; &gt; ? &amp; /.</resource>
+	<resource name="GuestNameMessage">Kaldenavnet kan maks vre 20 tegn langt, skal begynde med et bogstav og m ikke indeholde mellemrum eller de flgende tegn: ! @ # $ % ( ) + = ' " ; : &lt; &gt; ? &amp; /. Vlg venligst et kaldenavn for at begynde at chatte.</resource>
+	<resource name="PleaseInputChannelPassword">Skriv venligst kanal kodeordet</resource>
+	<resource name="ChatPtopWelcomeMessage">Du deltager nu i en privat chat. Vent venligst p at andre chattere ankommer.</resource>
+	<resource name="Name">Dit navn:</resource>
+	<resource name="Email">Email:</resource>
+	<resource name="Enquiry">Besked:</resource>
+	<resource name="Subject">Emne:</resource>
+	<resource name="ExpiredTask">Opgave udlbet.</resource>
+	
+	<resource name="Send_a_File">Send en fil</resource>
+	
+	<resource name="MSG_TO">&#32;til&#32;</resource>
+	<resource name="WHISPER_TO">&#32;hvisker&#32;</resource>
+	
+	<resource name="Connect_Cancel">Afbryd</resource>
+	<resource name="NumPeoplesChatting">chattere</resource>
+	<resource name="TargetUserNotPtop">afvis anmodningen om privat chat.</resource>
+	<resource name="IsNotOnline">er ikke online.</resource>
+	<resource name="TargetBusyTryagain">er optaget. Prv igen senere.</resource>
+	<resource name="Conversations">Samtaler</resource>
+	<resource name="NoConversations">Ingen aktive samtaler</resource>
+	<resource name="NoOnlineContacts">Alle dine kontaktpersoner er offline.</resource>
+	<resource name="NoOfflineContacts">Ingen offline kontaktpersoner.</resource>
+	
+	<!-- Messenger Invite -->
+	<resource name="Invite_subTitle">Vlg de personer du nsker at tilfje til denne samtale og klik OK. Du kan tilfje mere end en af gangen.</resource>
+	<resource name="InvitationSent">Invitationen er afsendt.</resource>
+	<!-- End Messenger Invite -->
+	<!-- User Profile -->
+	<resource name="ViewUserProfile_Title">Ser brugerprofilen</resource>
+	<!-- End User Profile -->
+	
+	
+	
+	<!-- added by terry -->
+	<resource name="UI_InviteIntoPrivate">Inviter personer til at deltage i samtalen</resource>
+	<resource name="UI_SpecifyInviteName">Hvem nsker du at invitere?</resource>
+	<resource name="UI_USER_TYPING"> skriver en besked.</resource>	
+	
+	<resource name="UI_LeaveMessage">Skriv venligst en besked</resource>
+	<resource name="NumberOnly">Skriv venligst et tal.</resource>
+	<resource name="ModeratorList">Moderator liste:</resource>
+	<resource name="ModeratorList_subTitle">Du kan tilfje s mange moderatorer til systemet som du har behov for.</resource>
+	<resource name="OperatorList">Operatr liste:</resource>
+	<resource name="OperatorList_subTitle">Du kan tilfje ligs mange operatorer til systemet som du nsker.</resource>
+	
+	<resource name="UI_MENU_UnKickUsers">Fjern blokering</resource>
+	<resource name="UI_MENU_CheckIP">Tjek IP</resource>
+	<resource name="UI_MENU_DenyIP">Afvis IP</resource>
+	<resource name="UI_PROMPT_DENYUSERIP">Er du sikker p at du nsker at afvise denne IP?</resource>
+	<resource name="UI_PROMPT_CHANNELPASSWORD">Angiv et kodeord.</resource>
+	<resource name="UI_MessageHistory">Beskeds historie</resource>
+</root>

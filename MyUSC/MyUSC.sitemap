@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<siteMap>
+  <siteMapNode url="~/Default.aspx" title="Home"  description="Home" />
+  <siteMapNode url="~/MyTeams.aspx" title="Teams"  description="Teams" />
+  <siteMapNode url="~/SportsNews.aspx" title="Sports News"  description="Sports News" />
+  <siteMapNode url="~/Friends.aspx" title="Friends"  description="Friends" />
+  <siteMapNode url="~/MyAccount/MyAccount.aspx" title="Profile"  description="Profile" />
+  <siteMapNode url="~/Support.aspx" title="Help"  description="Help" />
+  <siteMapNode url="~/About2.aspx" title="About"  description="About" />
+</siteMap>

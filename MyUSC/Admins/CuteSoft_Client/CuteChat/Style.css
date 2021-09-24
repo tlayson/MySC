@@ -1,0 +1,92 @@
+/*
+	VML SUPPORT
+
+.MsoNormal
+{
+	mso-style-parent: "";
+	text-align: justify;
+	text-justify: inter-ideograph;
+	font-size: 10.5pt;
+	font-family: "Times New Roman";
+	margin-left: 0cm;
+	margin-right: 0cm;
+	margin-top: 0cm;
+	margin-bottom: .0001pt;
+}
+
+v\:*
+{
+	behavior: url(#default#VML);
+}
+o\:*
+{
+	behavior: url(#default#VML);
+}
+.shape
+{
+	behavior: url(#default#VML);
+}
+
+*/
+
+.FullPageWindow td
+{
+	font: 13px Arial, Helvetica, sans-serif;
+}
+.HtmlControl td
+{
+	font: 13px Arial, Helvetica, sans-serif;
+}
+
+#loadingtext
+{
+	font: 13px Arial, Helvetica, sans-serif;
+}
+a:link { color: #0063DC; text-decoration: underline; }
+a:visited { color: #2E67C7; text-decoration: underline; }
+a:hover { color: #ff0000; text-decoration: none; }
+a:active { color: #ff0000; text-decoration: none; }
+
+
+.button
+{
+	margin: 1px;
+	vertical-align: middle;
+	padding: 0px;
+}
+.buttonover
+{
+	border: #0A246A 1px solid;
+	background-color: #B6BDD2;
+	padding: 0px;
+	margin: 0px;
+	vertical-align: middle;
+}
+.buttondown
+{
+	border-right: buttonhighlight 1px solid;
+	border-top: buttonshadow 1px solid;
+	border-left: buttonshadow 1px solid;
+	border-bottom: buttonhighlight 1px solid;
+	margin: 0px;
+	vertical-align: middle;
+	padding: 0px;
+}
+
+.DebugList
+{
+	
+}
+.MessageList
+{
+	
+}
+
+.ContentPanel
+{
+	background-color: White!important;
+}
+.RightPanel
+{
+	background-color: White!important;
+}

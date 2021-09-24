@@ -1,0 +1,303 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<root>
+	<resource name="CuteChat_Messenger">Cute Messenger</resource>
+	
+	<resource name="UI_MENU_AddContact">הוספת איש קשר</resource>
+	<resource name="UI_MENU_RemoveContact">הסרת איש קשר</resource>
+	<resource name="UI_MENU_ViewProfile">צפיה בפרופיל</resource>
+	<resource name="UI_MENU_Block">חסימת משתמש</resource>
+	<resource name="UI_MENU_UnBlock">ביטול חסימת משתמש</resource>
+	<resource name="UI_MENU_ChatWith">שליחת הודעה</resource>
+	<resource name="UI_MENU_TargetAll">לכולם</resource>
+	<resource name="UI_MENU_Refresh">רענון</resource>
+	<resource name="UI_MENU_Clear">ניקוי</resource>
+	<resource name="UI_MENU_SaveMessages">שמירה</resource>
+	<resource name="UI_MENU_ReloadMessages">רענון</resource>
+	<resource name="UI_MENU_Invite">הזמנה</resource>
+	<resource name="UI_MENU_Kick">הרחקה</resource>
+	<resource name="UI_MENU_TargetIt">החל שיחה עם</resource>
+	<resource name="UI_MENU_AutoScroll">גלילה אוטומטית</resource>
+	<resource name="UI_MENU_StopScroll">הפסק גלילה</resource>	
+	<resource name="UI_MENU_Online">מקוון</resource>
+	<resource name="UI_MENU_Offline">לא-מקוון</resource>
+	<resource name="UI_MENU_Away">רחוק</resource>
+	<resource name="UI_MENU_Busy">עסוק</resource>	
+	<resource name="UI_MENU_Blocked">חסום</resource>	
+	<resource name="UI_MENU_SentList">היסטוריה</resource>
+	<resource name="UI_MENU_Admin">מנהל</resource>
+	<resource name="UI_MENU_SetPassword">קביעת סיסמה</resource>
+	<resource name="UI_MENU_DisableAnonymous">ביטול אנונימיים</resource>
+	<resource name="UI_MENU_LockChannel">ביטול ערוץ</resource>
+	<resource name="UI_MENU_UnLockChannel">ביטול נעילת ערוץ</resource>
+	<resource name="UI_MENU_Contacts">אנשי קשר</resource>
+	<resource name="UI_MENU_View">צפיה</resource>
+	<resource name="UI_MENU_Exit">יציאה</resource>
+	<resource name="UI_MENU_Signout">ניתוק</resource>
+	<resource name="UI_MENU_SignIn">התחברות</resource>
+	<resource name="UI_MENU_File">קובץ</resource>
+	<resource name="UI_MENU_OfflineMessage">הודעה לא מקוונת</resource>	
+	<resource name="UI_MENU_Add">הוספה</resource>
+	<resource name="UI_Menu_GoAdminPage">לך לממשק ניהול</resource>
+	<resource name="UI_PROMPT_ENABLEANONYMOUS">אפשר משתמשים אנונימיים</resource>
+	<resource name="UI_Menu_Connect">Connect</resource>
+	<resource name="UI_Menu_Disconnect">Disconnect</resource>
+	
+	<resource name="UI_MENU_Online">מקוון</resource>
+	<resource name="UI_MENU_Away">רחוק</resource>
+	<resource name="UI_MENU_Busy">עסוק</resource>
+	<resource name="UI_MENU_OnThePhone">בטלפון</resource>
+	<resource name="UI_MENU_OutToLunch">הלכתי לאכול</resource>
+	<resource name="UI_MENU_Offline">(לא מקוון)</resource>	
+	<resource name="UI_MENU_AppearOffline">הצג כלא מקוון</resource>
+	
+	<resource name="UI_USER_Online"><!--do not display anything--></resource>
+	<resource name="UI_USER_Away">(רחוק)</resource>
+	<resource name="UI_USER_Busy">(עסוק)</resource>
+	<resource name="UI_USER_OutToLunch">(הלכתי לאכול)</resource>
+	<resource name="UI_USER_OnThePhone">(בטלפון)</resource>
+	<resource name="UI_USER_Offline">(לא מקוון)</resource>	
+	
+	<resource name="UI_USER_All">לכולם</resource>
+	<resource name="UI_Whisper">לחישה</resource>	
+	<resource name="UI_Lobbies">בחירץ ערוץ</resource>	
+	
+	<resource name="UI_PROMPT_KICKUSER">האם אתה בטוח שברצונך להרחיק משתמש זה מהערוץ?</resource>
+	
+	<resource name="UI_UnknownUserName">(לא ידוע)</resource>
+	<resource name="UI_Unknown">(לא ידוע)</resource>
+	
+	<resource name="UI_FloodControlMessage">אין ביכולתך לשלוח הודעות רבות בזמן כה קצר. אנא המתן מספר שניות לפני שליחת הודעות נוספות.</resource>
+	<resource name="UI_AreYouSureQuit">האם אתה בטוח שברצונך לסגור את השיחה?</resource>
+	<resource name="UI_AreYouSureDisconnect">האם אתה בטוח שברצונך להתנתק מהשיחה?</resource>
+	<resource name="UI_NotAllowedFunction">אין לך הרשאות לביצוע פעולה זו.</resource>
+
+	<resource name="UI_PopupBlockedMessage">קיים חוסם חלונות קופצים במערכת.</resource>
+	<resource name="UI_popupblocked">קיים חוסם חלונות קופצים במערכת.</resource>
+	
+	<resource name="CANTNOTWHISPERTONOTARGET">אינך יכול ללחוש לכל המשתמשים.</resource>
+	<resource name="UI_CONNECTION_CONNECTING">אנא המתן, מתקשר לשרת...</resource>
+	<resource name="UI_CONNECTION_ERROR">התקשורת לשרת אבדה. {0}</resource>
+	<resource name="UI_CONNECTION_READY">מחובר!</resource>
+	<resource name="UI_CONNECTION_Disconnect">הינך מנותק מהמערכת.</resource>
+	<resource name="UI_CONNECTION_CANCELLED">התקשורת בוטלה.</resource>
+	<resource name="UI_CONNECTION_NOTENABLE">התקשורת נכשלה. השרת לא מוכן.</resource>
+	<resource name="UI_CONNECTION_NeedName">אנא בחר שם משתמש להתחברות למערכת הצ'אט. שם המשתמש שלך יזהה אותך בשיחות בערוצים השונים מול המשתמשים האחרים. שמות משתמש יכולים להכיל מקסימום 20 תוים, מוכרחים להתחיל באות ואינם יכולים להכיל רווחים או תוים אחרים פרט לאנגלית.</resource>
+	<resource name="UI_CONNECTION_NEEDLOGIN">משתמשים אנונימיים אינם מורשים לבצע שימוש במערכת זו. עליך להתחבר לאתר קודם לכן.</resource>
+	<resource name="UI_CONNECTION_NeedName_Title">שם אורח</resource>
+	<resource name="UI_CONNECTION_NeedName_Message">אנא הקלד את שמך.</resource>
+	<resource name="UI_CONNECTION_NeedPassword">סיסמה נדרשת.</resource>
+	<resource name="UI_CONNECTION_NeedPassword_Title">סיסמה</resource>
+	<resource name="UI_PROMPT_CHANNELPASSWORD">אנא הקלד סיסמה לערוץ</resource>
+	<resource name="UI_CONNECTION_NeedPassword_Message">ערוץ זה מוגן סיסמה. אנא הקלד סיסמה.</resource>
+	<resource name="UI_CONNECTION_Kick">הורחקת מהערוץ.</resource>	
+	<resource name="UI_CONNECTION_MissingNickName">שדה שם המשתמש ריק.</resource>
+	<resource name="UI_CONNECTION_MissingPassword">שדה הסיסמה ריק.</resource>
+	<resource name="UI_CONNECTION_ShortNickName">שם המשתמש קצר מידי.</resource>
+	<resource name="UI_CONNECTION_LongNickName">שם המשתמש ארוך מידי.</resource>
+	
+	
+	<resource name="UI_USER_JOIN">{0} הצטרף לחדר.</resource>
+	<resource name="UI_USER_LEAVE">{0} עזב את החדר.</resource>
+	<resource name="UI_USER_KICK">{0} הורחק מהחדר.</resource>
+	<resource name="UI_USER_DROP">{0} עזב את החדר.</resource>
+	<resource name="UI_USER_BLOCK">{0} נחסם!</resource>
+	<resource name="UI_USER_UNBLOCK">{0} קיבל ביטול חסימה!</resource>
+	<resource name="UI_USER_ADD">{0} הוסף לרשימת אנשי קשר.</resource>
+	<resource name="UI_USER_REMOVE">{0} הוסר מרשימת אנשי הקשר.</resource>
+	<resource name="UI_USER_EXPIRED">{0} נותק מהערוץ בשל חוסר פעילות.</resource>
+	<resource name="UI_USER_HELLO">{0} אומר שלום לכולם בחדר.</resource>
+	<resource name="UI_USER_LOGINMESSENGER">{0} התחבר לשיחה פרטית.</resource>
+	<resource name="UI_USER_LOGOFFMESSENGER">{0} התנתק מהשיחה הפרטית.</resource>
+	<resource name="UI_USER_UPDATE">{0} עדכן את הפרופיל שלו.</resource>
+	
+	
+	<resource name="UI_ADMIN_NOTADMIN">רק מנהל מערכת יכול לבצע פעולות אלו.</resource>
+	
+	
+	<!-- Add Contact -->
+	<resource name="UI_CONTACT_Detach"></resource>
+	<resource name="Select">בחירה</resource>
+	<resource name="DisplayName">שם משתמש</resource>
+	<resource name="Search">חיפוש</resource>
+	<resource name="SearchResults">תוצאות חיפוש</resource>
+	<resource name="UI_CONTACT_CantAddSelf">אינך יכול להוסיף את עצמך.</resource>
+	<resource name="UI_CONTACT_FinishAddContact">המשתמש הוסף לרשימת התפוצה.</resource>
+	<resource name="UI_CONTACT_SelectContact">אנא חפש משתמשים לפי שם, כתובת דוא"ל או מין.</resource>
+	<resource name="UI_CONTACT_AddContact_subTitle">ביכולתך להוסיף משתמש כלשהוא לרשימת אנשי הקשר שלך.</resource>
+	<resource name="UI_CONTACT_TargeAnonymous">זהו משתמש אנונימי!</resource>
+	<resource name="UI_CONTACT_AnonymousCantAddContact">משתמש אנונימי אינו יכול להוסיף איש קשר.</resource>
+	<resource name="FileformatNotsupported">לא יכול להעלות את הקובץ. הפורמט אינו מורשה.</resource>
+	<!-- End Add Contact -->
+	
+	<resource name="My_USER_BLOCK">נחסמת על ידי המשתמש!</resource>
+	
+	<resource name="UI_NewMessage">הודעה חדשה</resource>
+	<resource name="UI_Message">הודעה</resource>
+	<resource name="UI_UserMessageBlocked">קיבלת הודעה חדשה מאת {0}. חלון הצ'אט נחסם ע"י תוכנת חסימת חלונות קופצים, אנא לחץ על "אישור" בכדי לפתוח את החלון.</resource>
+	
+	<resource name="UI_UnknownSplashCommand">הפקודה '{0}' אינה נתמכת.</resource>
+	
+	<resource name="UI_WindowBlocked">חלון צ'אט חדש נחסם, אנא לחץ על "אישור" בכדי לאשר את פתיחת החלון.</resource>
+	
+	<resource name="UI_MSGTAB_GENERAL">כללי</resource>
+	<resource name="UI_MSGTAB_MYSELF">קצת עליי</resource>
+	
+	<resource name="UI_DisableAutoFocus">בטל פוקוס</resource>
+	<resource name="UI_EnableAutoFocus">פוקוס אוטומטי</resource>
+	<resource name="UI_DisableSound">בטל סאונד</resource>
+	<resource name="UI_EnableSound">אפשר סאונד</resource>
+	<resource name="UI_InvitePrivate">שיחה פרטית</resource>
+	<resource name="UI_INVITEPRIVATECHAT">{0} מזמין אותך לשיחה פרטית.</resource>
+	<resource name="UI_ChangeAvatar">בחר דמות</resource>
+	<resource name="UI_AvatarDialogSubTitle">דמויות הינן תמונות של דמויות המייצגות אותך. בחר את הדמות שברצונך להשתמש בה מהרשימה מטה.</resource>
+	<resource name="UI_SendAsOffline">הודעתך נשלחה כהודעה לא מקוונת.</resource>
+	<resource name="UI_FeatureDisabled">אפשרות זו נחסמה על ידי מנהל המערכת!</resource>
+	
+	<!-- Toolbar -->	
+	<resource name="UI_MENU_SendFiles">שליחת קבצים</resource>	
+	<resource name="UI_Send_NoFile">אנא בחר קובץ לשליחה!</resource>
+	<resource name="UI_Send_a_File_subTitle">בחר קובץ לשליחה, ולאחר מכן לחץ על "שליחה".</resource>	
+	<resource name="MaxFileSizeMustBeLessThan">גודל קובץ המקסימלי חייב להיות פחות מ </resource>
+	<resource name="UI_Send_UploadSuccessfully">הקובץ הועלה בהצלחה!</resource>
+	<!-- Toolbar -->
+	
+	<!-- Toolbar -->
+	<resource name="UI_Bold">מודגש</resource>
+	<resource name="UI_Italic">נטוי</resource>
+	<resource name="UI_Underline">קו תחתי</resource>
+	<resource name="UI_Help">עזרה</resource>
+	<resource name="UI_ControlPanel">לוח בקרה</resource>
+	<resource name="UI_Emotion">הכנס Emotion</resource>
+	<resource name="UI_FontColor">צבע פונט</resource>
+	<resource name="UI_Save">שמירה</resource>
+	<resource name="UI_SaveChat">שמירת היסטוריית צ'אט</resource>
+	<resource name="UI_Avatar">בחר דמות</resource>
+	<resource name="UI_PlaySound">נגן סאונד</resource>
+	<resource name="UI_AutoFocus">השאר פוקוס</resource>
+	<resource name="UI_AutoScroll">גלילת חלון</resource>
+	<resource name="UI_SelectSkin">בחירת תבנית</resource>
+	<resource name="UI_Clear">נקה את המסך</resource>
+	<resource name="UI_Font">פונט</resource>
+	<resource name="UI_Size">גודל</resource>
+	<resource name="UI_Close">סגירה</resource>
+	
+	<resource name="IEonly_Feature">אופציה זו אפשרית רק למשתמשי Internet Explorer 5.0 ומעלה.</resource>
+	<resource name="CantSaytoYourself">לשליחת הודעה פרטית, עליך לבחור משתמש אחר פרט לעצמך.</resource>
+	<resource name="PrivateChatTitle">שיחה פרטית</resource>
+	<resource name="TargetUserNotOnline">המשתמש איננו מחובר כעת.</resource>
+	<resource name="PrivateChatTitle">שיחה פרטית</resource>
+	<resource name="ConnectingToServer">אנא המתן, מתקשר לשרת...</resource>
+	<resource name="ConnectionFailed">התקשורת נכשלה.</resource>
+	<resource name="ConnectionOK">מחובר!</resource>
+	<resource name="Details">פרטי שגיאה</resource>
+	<resource name="NotInvited">הרשאה נדחתה! לא הוזמנת להתחבר לערוץ זה.</resource>
+	<resource name="NumPeoplesChatting">אנשים משוחחים</resource>
+	<resource name="DenyAllAnonymous">משתמשים אנונימיים אינם מורשים במערכת צ'אט זו.</resource>
+	<resource name="CommandPtopOnly">פקודה זו יכולה להיות משומשת רק בשיחה פרטית.</resource>
+	<resource name="CantInviteSelf">אינך יכול להזמין את עצמך.</resource>
+	<resource name="TargetUserOffline">המשתמש איננו מחובר.</resource>
+	<resource name="TargetUserInvalid">שגיאה בשם המשתמש.</resource>
+	<resource name="YouCantInvite">רק מקים הערוץ יכול להזמין משתמשים.</resource>
+	<resource name="DenyPrivateMessage">הודעות פרטיות אינן מורשות בחדר זה.</resource>
+	<resource name="ConnectedUsingNewPC">הצטרף מחדש לחדר.</resource>
+	<resource name="blockuser">חסימה</resource>
+	<resource name="unblockuser">ביטול חסימה</resource>
+	<resource name="ManageChannel">נהל את הערוץ</resource>
+	<resource name="IsAnonymous">הינו משתמש אנונימי.</resource>	
+	<resource name="LOGINNEWACCOUNT">נעשה שימוש בחשבון זה ע"י אדם אחר. </resource>
+	
+	<!-- End Toolbar -->
+	
+	
+	<!-- GENERAL -->
+	<resource name="UI_Loading">טוען</resource>
+	<resource name="OK">אישור</resource>
+	<resource name="CANCEL">ביטול</resource>	
+	<resource name="UI_SEND">שליחה</resource>
+	<resource name="Send">שליחה</resource>
+	
+	<resource name="MessageNotSend">שליחת ההודעה נכשלה!</resource>
+	<resource name="MsgMessageContainsBadWord">ההודעה שלך מכירה מילה "רעה": </resource>
+	<resource name="DenyChannelAnonymous">משתמשים אנונימיים אינם מורשים בערוץ זה.</resource>
+	<resource name="NickNameIsExists">שם משתמש זה כבר קיים.</resource>
+	<resource name="YouAreRejected">נדחה.</resource>
+	<resource name="YouAreNotConnect">לא התחברת לערוץ.</resource>
+	<resource name="YouCantGetin">אין ביכולתך להתחבר לערוץ.</resource>
+	<resource name="YouAreNotModerator">אינך מנהל מורשה לערוץ זה.</resource>
+	<resource name="NoModerators">אין מנהלים.</resource>
+	<resource name="WrongPassword">סיסמה שגויה - אנא הקלד שוב!</resource>
+	<resource name="TargetUserNotPtop">{0} דחה את ההודעה הפרטית</resource>
+	<resource name="TargetUserAlreadyHere">המשתמש מחובר כעת.</resource>
+	<resource name="SpecifyUserName">הקלד שם משתמש</resource>
+	<resource name="AnonymousCantChangeAvatar">משתמשים אנונימיים אינם מורשים לשנות דמויות.</resource>
+	<resource name="CommandChannelOnly">פקודה זו יכולה להיות משומשת רק בתוך הערוץ. </resource>
+	<resource name="NoManagerWindow">אין חלונות ניהול זמינים.</resource>
+	<resource name="NoAccountInfo">פרטי חשבון לא נמצאו!</resource>
+	<resource name="IPAddressRejected">כתובת ה-IP שלך נדחתה.</resource>
+	<resource name="WordExceededMaxLen">אחת מהמילים בהודעתך עוברת את גבולות האורך המותר למילה אחת</resource>
+	<resource name="MsgExceededMaxLen">ההודעה עוברת את גבול האורך המותר</resource>
+	<resource name="MsgUserExpired">ההתקשרות פגה.</resource>
+	<resource name="MsgUserTryJoinChannel">מבקש להצטרף לשיחה.</resource>
+	<resource name="MsgChooseAvatar">בחר דמות</resource>
+	<resource name="MsgAvatarChanged">הדמות שונתה.</resource>
+	<resource name="MsgCommandError">שגיאת פקודה</resource>
+	<resource name="MsgCommandUnknown">פקודה לא מוכרת</resource>
+	<resource name="ConnectionRejected">החיבור נדחה.</resource>
+	<resource name="RequirePassword">סיסמה נדרשת</resource>
+	<resource name="MessageSendFailed">נכשל בשליחת הודעה!</resource>
+	<resource name="SelectChannel">בחר ערוץ</resource>
+	<resource name="NickNameRestriction">אנא בחר שם משתמש להתחברות למערכת הצ'אט. שם המשתמש שלך יזהה אותך בשיחות בערוצים השונים מול המשתמשים האחרים. שמות משתמש יכולים להכיל מקסימום 20 תוים, מוכרחים להתחיל באות ואינם יכולים להכיל רווחים או אחד מהתוים הבאים: ! @ # $ % ( ) + = ' " ; : &lt; &gt; ? &amp; /.</resource>
+	<resource name="GuestNameMessage">שמות משתמש יכולים להכיל מקסימום 20 תוים, אינם יכולים להכיל רווחים ואסור שיכללו את אחד או יותר מהתוים הבאים: ! @ # $ % ( ) + = ' " ; : &lt; &gt; ? &amp; / . Please choose a new nickname to begin chatting.</resource>
+	<resource name="PleaseInputChannelPassword">אנא הקלד סיסמה לערוץ</resource>
+	<resource name="ChatPtopWelcomeMessage">הצטרפת לשיחה פרטית. אנא המתן למשתמשים אחרים להתחברות.</resource>
+	<resource name="Name">שם מלא:</resource>
+	<resource name="Email">דוא"ל:</resource>
+	<resource name="Enquiry">הודעה:</resource>
+	<resource name="Subject">נושא:</resource>
+	<resource name="ExpiredTask">המשימה פגה.</resource>
+	
+	<resource name="Send_a_File">שליחת קובץ</resource>
+	
+	<resource name="MSG_TO">&#32;אל&#32;</resource>
+	<resource name="WHISPER_TO">&#32;לחישה&#32;</resource>
+	
+	<resource name="Connect_Cancel">ביטול</resource>
+	<resource name="NumPeoplesChatting">אנשים משוחחים</resource>
+	<resource name="TargetUserNotPtop">דחה את בקשת השיחה הפרטית.</resource>
+	<resource name="IsNotOnline">איננו מחובר.</resource>
+	<resource name="TargetBusyTryagain">עסוק. אנא נסה שוב.</resource>
+	<resource name="Conversations">שיחות</resource>
+	<resource name="NoConversations">אין שיחות פעילות</resource>
+	<resource name="NoOnlineContacts">כל אנשי הקשר שלך לא מחוברים.</resource>
+	<resource name="NoOfflineContacts">אין אנשים קשר לא מחוברים.</resource>
+	
+	<!-- Messenger Invite -->
+	<resource name="Invite_subTitle">אנא בחר את האנשים אותם תרצה להוסיף לשיחה, ולחץ על אישור (אתה יכול לבחור יותר מאחד).</resource>
+	<resource name="InvitationSent">הזמנה נשלחה.</resource>
+	<!-- End Messenger Invite -->
+	<!-- User Profile -->
+	<resource name="ViewUserProfile_Title">צופה בפרופיל משתמש</resource>
+	<!-- End User Profile -->
+	
+	
+	
+	<!-- added by terry -->
+	<resource name="UI_InviteIntoPrivate">הזמן אנשים להצטרף לשיחה</resource>
+	<resource name="UI_SpecifyInviteName">את מי ברצונך להזמין?</resource>
+	<resource name="UI_USER_TYPING"> מקליד הודעה.</resource>
+	
+	
+	<resource name="UI_LeaveMessage">אנא השאר הודעה</resource>
+	<resource name="NumberOnly">אנא הקלד מספר חוקי.</resource>
+	<resource name="ModeratorList">רשימת מפעילים:</resource>
+	<resource name="ModeratorList_subTitle">ביכולתך להוסיף כמה מפעילים שברצונך להוסיף.</resource>
+	<resource name="OperatorList">רשימת מפעילים:</resource>
+	<resource name="OperatorList_subTitle">ביכולתך להוסיף כמה מפעילים שברצונך להוסיף.</resource>
+
+	<resource name="UI_MENU_UnKickUsers">ביטול הרחקה</resource>
+	<resource name="UI_MENU_CheckIP">בדיקת IP</resource>
+	<resource name="UI_MENU_DenyIP">חסום IP</resource>
+	<resource name="UI_PROMPT_DENYUSERIP">האם אתה בטוח שברצוך לחסום את כתובת ה-IP של המשתמש?</resource>
+	<resource name="UI_PROMPT_CHANNELPASSWORD">אנא ציין סיסמה , השאר אותה ריקה לאיפוס.</resource>
+	<resource name="UI_MessageHistory">היסטוריית הודעות</resource>
+</root>

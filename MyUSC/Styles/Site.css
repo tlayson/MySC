@@ -1,0 +1,827 @@
+﻿/* DEFAULTS
+----------------------------------------------------------*/
+
+body   
+{
+    margin: 0px;
+    padding: 0px;
+}
+
+
+a:link, a:visited
+{
+    color: black;
+}
+
+a:hover
+{
+    color: #1d60ff;
+    text-decoration: none;
+}
+
+a:active
+{
+    color: black;
+}
+
+button 
+{
+	font-family: 'Times New Roman' , Times, serif;
+	font-size: large;
+	font-weight: bolder;
+	background-color: #C0C0C0;
+}
+
+/*<staticmenuitemstyle backcolor="Black" forecolor="WhiteSmoke" Width="100" VerticalPadding="5" />
+<StaticSelectedStyle BackColor="Red" ForeColor="White" BorderColor="White" Width="100" VerticalPadding="5" BorderWidth="1" />
+<statichoverstyle backcolor="LightSkyBlue"/>
+*/
+
+a.miHomeNormal
+{
+	color: black;
+	background-color: #C0C0C0;
+	width: 100px;
+	padding-top: 5px;
+	padding-bottom: 5px;
+	padding-left: 15px;
+	padding-right: 15px;
+}
+
+a.miHomeSelected
+{
+	background-color: red;
+	width: 100px;
+	border-color: black;
+	border-width: 3px;
+	border-style: solid;
+	padding-top: 5px;
+	padding-bottom: 5px;
+	padding-left: 15px;
+	padding-right: 15px;
+}
+
+a.miHomeHover
+{
+	background-color: LightSkyBlue;
+	width: 100px;
+	padding-top: 5px;
+	padding-bottom: 5px;
+	padding-left: 15px;
+	padding-right: 15px;
+}
+
+/*
+<StaticMenuItemStyle backcolor="Black" forecolor="WhiteSmoke" VerticalPadding="2" />
+<StaticSelectedStyle BackColor="Red" ForeColor="White" BorderColor="White" VerticalPadding="2" BorderWidth="1" />
+<StaticHoverStyle backcolor="LightSkyBlue"/>
+<DynamicMenuItemStyle BackColor="#CCFFFF" VerticalPadding="2px" HorizontalPadding="15" BorderStyle="None"></DynamicMenuItemStyle>
+<DynamicSelectedStyle BackColor="Red" ForeColor="White" BorderColor="LightSkyBlue" VerticalPadding="2" BorderWidth="1" />
+<DynamicHoverStyle BackColor="#CCFFFF" BorderStyle="None"></DynamicHoverStyle>
+*/
+a.miNewsNormal
+{
+	color: black;
+	background-color: beige;
+	padding-bottom: 2px;
+	padding-top: 2px;
+}
+
+a.miTeamsNormal
+{
+	color: black;
+	background-color: beige;
+	padding-bottom: 2px;
+	padding-top: 2px;
+	width: 100px;
+}
+
+a.miFriendsNormal
+{
+	color: black;
+	background-color: beige;
+	padding-bottom: 2px;
+	padding-top: 2px;
+	width: 125px;
+}
+
+
+
+/* PRIMARY LAYOUT ELEMENTS   
+----------------------------------------------------------*/
+
+.page
+{
+    width: 100%;
+    background-color: beige;
+}
+
+.header
+{
+    width: 100%;
+    position: relative;
+    margin: 0px;
+    padding: 0px;
+    background: #C0C0C0;
+}
+
+.main
+{
+    width: 100%;
+    padding: 0px 12px;
+    margin: 4px 8px 8px 8px;
+    min-height: 580px;
+    overflow: auto
+}
+
+.footer
+{
+    width: 100%;
+    color: #4e5766;
+    padding: 8px 0px 0px 0px;
+    margin: 0px auto;
+    text-align: center;
+    line-height: normal;
+}
+
+.HoverStyle
+{
+    cursor: e-resize;
+}
+
+/* FORM ELEMENTS   
+----------------------------------------------------------*/
+
+
+
+/* INPUT  
+----------------------------------------------------------*/
+.pnlNormal
+{
+    vertical-align:top;
+    background-repeat: no-repeat;
+}
+
+/* MISC  
+----------------------------------------------------------*/
+
+/* Dialog styles */
+.tblDlgControlOuter 
+{
+	border-style: solid;
+	border-width:thick;
+	border-color:blue;
+    background-color:whitesmoke;
+}
+.tblDlgControlInner
+{
+	width: 100%;
+	border-style:none;
+    background-color:whitesmoke;
+}
+
+.trDlgControlTitle 
+{
+	height: 20px;
+	vertical-align: top;
+	background-color:aqua;
+}
+.trDlgControlNormal 
+{
+	height: 20px;
+	vertical-align: top;
+}
+
+.tdDlgControlLabel 
+{
+	color: #000000;
+	font-weight: bolder;
+	font-size: xx-small;
+	padding: 5px;
+	width: 110px;
+}
+
+.tdDlgControlNormal 
+{
+	color: #000000;
+	font-weight: bolder;
+	font-size: xx-small;
+	padding: 5px;
+}
+
+.tdDlgControlCenter
+{
+	color: #000000;
+	font-weight: bolder;
+	padding: 5px;
+	text-align:center;
+}
+
+
+.btnOK 
+{
+	width: 80px;
+	background-color:darkgray;
+}
+
+.btnCancel
+{
+	width: 80px;
+	background-color:darkgray;
+}
+.btnNormal
+{
+	width: 80px;
+	background-color:darkgray;
+}
+
+.btnHomePage
+{
+	width: 300px;
+	height: 150px;
+}
+
+/* Event styles */
+.tblEventSection 
+{
+	width: 100%;
+	border-style: solid;
+	border-width:thin;
+	border-color:whitesmoke;
+}
+.trEventRow 
+{
+	height: 25px;
+	vertical-align: top;
+	border-style: none;
+}
+.tdEventLeft 
+{
+	color: #FF0000;
+	font-weight: bolder;
+	padding: 5px;
+	border-style: none;
+	width: 150px;
+}
+.tdEventCenter 
+{
+	color: #FF0000;
+	font-weight: bolder;
+	padding: 5px;
+	border-style: none;
+}
+.tdEventRight 
+{
+	color: #FF0000;
+	font-weight: bolder;
+	padding: 5px;
+	border-style: none;
+	width: 150px;
+}
+.trEventResponseRow
+{
+	height: 25px;
+	vertical-align: top;
+	border-style: none;
+}
+.trEventResponseListRow
+{
+	height: 25px;
+	vertical-align: top;
+	border-style: none;
+}
+.tdEventResponseList
+{
+	color: #000000;
+	font-weight: bolder;
+	padding: 5px;
+	border-style: none;
+	width: 150px;
+}
+.tdEventResponseListExpand
+{
+	color: #000000;
+	font-weight: bolder;
+	padding: 5px;
+	border-style: none;
+	width: 150px;
+}
+
+.tblDlgEventResponseList
+{
+	width: 100%;
+	border-style: none;
+    background-color:whitesmoke;
+}
+.trDlgEventResponseListHead
+{
+	height: 25px;
+	vertical-align: top;
+	border-style: none;
+}
+.trDlgEventResponseList
+{
+	height: 25px;
+	vertical-align: top;
+	border-style: none;
+}
+.tdDlgEventResponseListHead
+{
+	color: #000000;
+	font-weight: bolder;
+	padding: 5px;
+	border-style: none;
+}
+.tdDlgEventResponseListLeft
+{
+	color: #000000;
+	font-weight: bolder;
+	padding: 5px;
+	border-style: none;
+	width: 150px;
+}
+.tdDlgEventResponseListCenter
+{
+	color: #000000;
+	font-weight: bolder;
+	padding: 5px;
+	border-style: none;
+	width: 150px;
+}
+.tdDlgEventResponseListRight
+{
+	color: #000000;
+	font-weight: bolder;
+	padding: 5px;
+	border-style: none;
+	width: 150px;
+}
+
+
+/* Generic Table styles */
+.divMyTeamsContent
+{
+	width: 100%;
+}
+.pnlMyTeamsContent
+{
+	width: 100%;
+}
+.tblPage 
+{
+	color: white;
+	font-weight: bold;
+	/*width: 800px;*/
+	border-style: none;
+	border-width:thin;
+	border-color:aqua;
+}
+.tblMainPage 
+{
+	color: white;
+	font-weight: bold;
+	/*width: 800px;*/
+	border-style: none;
+	border-width:thin;
+	border-color:aqua;
+	background-image:url('Images/Background.jpg');
+	background-repeat:repeat;
+}
+.tblMyTeamsPage 
+{
+	color: white;
+	font-weight: bold;
+	/*width: 650px;*/
+	border-style: none;
+	border-width:thin;
+	border-color:aqua;
+}
+.tblDashboard
+{
+	color: white;
+	font-weight: bold;
+	/*width: 800px;*/
+	border-style: none;
+	border-width:thin;
+	border-color:aqua;
+}
+.tblNormal 
+{
+	color: white;
+	font-weight: bold;
+	width: 100%;
+	border-style: none;
+	border-width:thin;
+	border-color:aqua;
+}
+.tblResults
+{
+	color: white;
+	font-weight: bold;
+	width: 100%;
+	border-style: none;
+	border-width:thin;
+	border-color:aqua;
+}
+.tblDashboardTeams
+{
+	color: white;
+	font-weight: bold;
+	width: 500px;
+	border-style: none;
+	border-width:thin;
+	border-color:aqua;
+}
+.tblDashboardEventsList
+{
+	color: white;
+	font-weight: bold;
+	width: 500px;
+	border-style: none;
+	border-width:thin;
+	border-color:aqua;
+}
+.tblDashboardEvent
+{
+	color: white;
+	font-weight: bold;
+	width: 500px;
+	border-style: solid;
+	border-width:thin;
+	border-color:darkgrey;
+}
+.tblEventExpand
+{
+	color: white;
+	font-weight: bold;
+	width: 800px;
+}
+.tblSectionThinBorder 
+{
+	width: 100%;
+	border-style: solid;
+	border-width:thin;
+	border-color:aqua;
+}
+.trPageHeading 
+{
+	height: 40px;
+	vertical-align: top;
+}
+.trNormal 
+{
+	height: 45px;
+	vertical-align: top;
+}
+.trShort
+{
+	height: 25px;
+	vertical-align: top;
+}
+.trAdmin
+{
+	vertical-align: top;
+}
+.trVATop
+{
+	vertical-align: top;
+}
+.tdPageHeading 
+{
+	font-size: xx-large;
+	color: #FF0000;
+	padding: 5px;
+}
+.tdSectionHeading 
+{
+	font-size: large;
+	color: #FF0000;
+	padding: 5px;
+}
+.tdImage 
+{
+	color: black;
+	font-weight: bolder;
+	padding: 5px;
+	width: 100px;
+	height: 100px;
+	border-style: solid;
+	border-top-width: 2px;
+	border-color: black;
+}
+.tdInput 
+{
+	vertical-align: top;
+	color: #FF0000;
+	font-weight: bolder;
+	padding: 5px;
+}
+.tdRSS
+{
+	vertical-align: top;
+	color: black;
+	font-weight: bolder;
+	padding: 5px;
+	height: 25px;
+}
+.tdError 
+{
+	color: #FF0000;
+	font-weight: bolder;
+	padding: 5px;
+}
+.tdRight 
+{
+	text-align: right;
+	padding: 5px;
+    padding-right: 10px;
+}
+.tdLeft 
+{
+	text-align: left;
+	padding: 5px;
+	padding-left: 10px;
+}
+.tdCenter 
+{
+	padding: 5px;
+	text-align: center;
+}
+.tdButton
+{
+	text-align: right;
+	padding: 5px;
+    padding-right: 15px;
+	padding-left: 15px;
+}
+.tdHomeButton
+{
+	text-align: right;
+	padding: 5px;
+}
+
+/* Pageview metrics styles */
+.tdPVLabel 
+{
+	font-weight: bolder;
+	padding: 5px;
+	width: 110px;
+}
+
+.tdPVValue 
+{
+	padding: 5px;
+}
+
+
+
+/* Site text colors */
+
+.smSiteColorTxt 
+{
+	font-size: small;
+	color: red;
+}
+.medSiteColorTxt 
+{
+	font-size: medium;
+	color: red;
+}
+.lgSiteColorTxt 
+{
+	font-size: large;
+	color: red;
+}
+.xlgSiteColorTxt 
+{
+	font-size: x-large;
+	color: red;
+	font-weight: bolder;
+}
+.xxlgSiteColorTxt 
+{
+	font-size: xx-large;
+	color: red;
+	font-weight: bolder;
+}
+.smEventTxt 
+{
+	font-size: small;
+	color: #FF0000;
+}
+.medEventTxt 
+{
+	font-size: medium;
+	color: #FF0000;
+}
+.lgEventTxt 
+{
+	font-size: large;
+	color: #FF0000;
+}
+.xlgEventTxt 
+{
+	font-size: x-large;
+	color: #FF0000;
+	font-weight: bolder;
+}
+.xxlgEventTxt 
+{
+	font-size: xx-large;
+	color: #FF0000;
+	font-weight: bolder;
+}
+.smNormalTxt 
+{
+	font-size: small;
+	color: black;
+	font-weight: bolder;
+}
+.medNormalTxt 
+{
+	font-size: medium;
+	color: black;
+	font-weight: bolder;
+}
+.lgNormalTxt 
+{
+	font-size: large;
+	color: black;
+	font-weight: bolder;
+}
+.xlgNormalTxt 
+{
+	font-size: x-large;
+	color: black;
+	font-weight: bolder;
+}
+.smCommentTxt 
+{
+	font-size: small;
+	color: black;
+	font-weight: bolder;
+}
+.medCommentTxt 
+{
+	font-size: medium;
+	color: black;
+	font-weight: bolder;
+}
+.lgCommentTxt 
+{
+	font-size: large;
+	color: black;
+	font-weight: bolder;
+}
+.xlgCommentTxt 
+{
+	font-size: x-large;
+	color: black;
+	font-weight: bolder;
+}
+.smErrorTxt 
+{
+	font-size: small;
+	color: red;
+	font-weight: bolder;
+}
+.medErrorTxt 
+{
+	font-size: medium;
+	color: red;
+	font-weight: bolder;
+}
+.lgErrorTxt 
+{
+	font-size: large;
+	color: red;
+	font-weight: bolder;
+}
+.xlgErrorTxt 
+{
+	font-size: x-large;
+	color: red;
+	font-weight: bolder;
+}
+
+.smSuccessTxt 
+{
+	font-size: small;
+	color: green;
+	font-weight: bolder;
+}
+.medSuccessTxt 
+{
+	font-size: medium;
+	color: green;
+	font-weight: bolder;
+}
+.lgSuccessTxt 
+{
+	font-size: large;
+	color: green;
+	font-weight: bolder;
+}
+.xlgSuccessTxt 
+{
+	font-size: x-large;
+	color: green;
+	font-weight: bolder;
+}
+/* Specific Text colors */
+
+.smOrangeTxt 
+{
+	font-size: small;
+	color: #FF0000;
+}
+.medOrangeTxt 
+{
+	font-size: medium;
+	color: #FF0000;
+}
+.lgOrangeTxt 
+{
+	font-size: large;
+	color: #FF0000;
+}
+.xlgOrangeTxt 
+{
+	font-size: x-large;
+	color: #FF0000;
+	font-weight: bolder;
+}
+.smWhiteTxt 
+{
+	font-size: small;
+	color: #FFFFFF;
+	font-weight: bolder;
+}
+.medWhiteTxt 
+{
+	font-size: medium;
+	color: #FFFFFF;
+	font-weight: bolder;
+}
+.lgWhiteTxt 
+{
+	font-size: large;
+	color: #FFFFFF;
+	font-weight: bolder;
+}
+.xlgWhiteTxt 
+{
+	font-size: x-large;
+	color: #FFFFFF;
+	font-weight: bolder;
+}
+.smGrayTxt 
+{
+	font-size: small;
+	color: #CCCCCC;
+	font-weight: bolder;
+}
+.medGrayTxt 
+{
+	font-size: medium;
+	color: #CCCCCC;
+	font-weight: bolder;
+}
+.lgGrayTxt 
+{
+	font-size: large;
+	color: #CCCCCC;
+	font-weight: bolder;
+}
+.xlgGrayTxt 
+{
+	font-size: x-large;
+	color: #CCCCCC;
+	font-weight: bolder;
+}
+.smRedTxt 
+{
+	font-size: small;
+	color: red;
+	font-weight: bolder;
+}
+.medRedTxt 
+{
+	font-size: medium;
+	color: red;
+	font-weight: bolder;
+}
+.lgRedTxt 
+{
+	font-size: large;
+	color: red;
+	font-weight: bolder;
+}
+.xlgRedTxt 
+{
+	font-size: x-large;
+	color: red;
+	font-weight: bolder;
+}
+
+

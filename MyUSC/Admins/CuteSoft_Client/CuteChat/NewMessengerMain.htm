@@ -1,0 +1,105 @@
+<table border='0' cellspacing='0' cellpadding='0' class='MessengerLayout' style='width:100%;height:100%;'>
+	<tr>
+		<td style='height:70px;'>
+			<table border="0" cellspacing="0" cellpadding="0">
+				<tr>
+					<td style="margin-left: 3px;cursor:hand;">
+						<img id="ccm_MyAvatar" src="#__cc_urlbase#Images/1x1.gif" class="MessengerAvatar" title="[[UI_ChangePicture]]" onclick="CuteChatMessenger.BubbleCommand('ShowMyInfo',this,event)" />
+					</td>
+					<td>
+						<table border="0" cellspacing="0" cellpadding="0">
+							<tr>
+								<td>
+									<div class="MessengerMyName" hoverclass="MessengerLineButtonHover" title="[[UI_ChangeStatus]]"
+										onclick="CuteChatMessenger.BubbleCommand('ShowMyMenu',this,event)">
+										<span id="ccm_MyName">Username</span>
+										<img src="#__cc_urlbase#Images/IM_Arrow3.png" style="padding-left:3px" />
+									</div>
+								</td>
+							</tr>
+							<tr>
+								<td>
+									<div id="ccm_MyDescription" class="MessengerMyDescription" title="[[UI_ChangeDescription]]"
+										hoverclass="MessengerLineButtonHover" onclick="CuteChatMessenger.BubbleCommand('EditMyDesc',this,event)"></div>
+								</td>
+							</tr>
+						</table>
+					</td>
+				</tr>
+			</table>
+		</td>
+	</tr>
+	<tr>
+		<td style='height:32px;'>
+			<span class="MessangerToolbarItem" hoverclass="MessangerToolbarItemHover">
+				<a href="http://CuteSoft.net" target="_blank"><img src="#__cc_urlbase#Images/home.png" border="0" /></a>
+			</span>
+			<span title="[[AddNewGroup]]" class="MessangerToolbarItem" hoverclass="MessangerToolbarItemHover"
+				onclick="CuteChatMessenger.BubbleCommand('AddNewGroup',this,event)">
+				<img src="#__cc_urlbase#Images/add_group.png" />
+			</span>
+			<span title="[[UI_History]]" class="MessangerToolbarItem" hoverclass="MessangerToolbarItemHover"
+				onclick="CuteChatMessenger.BubbleCommand('ShowHistory',this,event)">
+				<img src="#__cc_urlbase#Images/notebook.png" />
+			</span>
+			<!--
+		<span  title="[[UI_History]]" class="MessangerToolbarItem" hoverclass="MessangerToolbarItemHover" onclick="CuteChatMessenger.BubbleCommand('ShowHistory',this,event)">
+			<img src="#__cc_urlbase#Images/color.png" />
+		</span>
+		-->
+			<span title="[[ChangePictureSize]]" class="MessangerToolbarItem" hoverclass="MessangerToolbarItemHover"
+				onclick="CuteChatMessenger.BubbleCommand('ShoSizeMenu',this,event)">
+				<img src="#__cc_urlbase#Images/showicon.png" />
+			</span>
+			<span title="[[UI_MENU_Invite]]" class="MessangerToolbarItem" hoverclass="MessangerToolbarItemHover"
+				onclick="CuteChatMessenger.BubbleCommand('InviteDialog',this,event)">
+				<img src="#__cc_urlbase#Images/invite.png" />
+			</span>
+			<span title="[[UI_DisableSound]]" class="MessangerToolbarItem" hoverclass="MessangerToolbarItemHover"
+				id='ccm_SoundButton'
+				onclick="CuteChatMessenger.BubbleCommand('ToggleSound',this,event)">
+				<img src="#__cc_urlbase#Images/sound_on.png" />
+			</span>
+		</td>
+	</tr>
+	<tr>
+		<td style='height:32px;background-color:white;white-space:nowrap;overflow:hidden;padding:0 8px 2px 0'>
+			<table border="0" cellspacing="0" cellpadding="0" width="100%">
+				<tr>
+					<td style="padding:3px 4px 0 6px" width="100%">
+						<input type="text" class="MessengerFilterBox" style="width:80%" onpropertychange="this.onchange(event)"
+							onkeyup="this.onchange(event)" onchange="CuteChatMessenger.BubbleCommand('FilterUser',this,event)" />
+					</td>
+					<td nowrap valign="bottom">
+						<div class="MessengerSmallButton" title="[[UI_MENU_AddContact]]" hoverclass="MessengerSmallButtonHover"
+							onclick="CuteChatMessenger.BubbleCommand('ShowAddFriend',this,event)">
+							<img src="#__cc_urlbase#Images/icon_add.gif" alt="[[UI_MENU_AddContact]]" />
+						</div>
+					</td>
+					<td nowrap valign="bottom">
+						<div class="MessengerSmallButton" title="[[UI_SortContacts]]" hoverclass="MessengerSmallButtonHover"
+							onclick="CuteChatMessenger.BubbleCommand('ShowSortMenu',this,event)">
+							<img src="#__cc_urlbase#Images/IM_PicSize.png" />
+						</div>
+					</td>
+				</tr>
+			</table>
+		</td>
+	</tr>
+	<tr>
+		<td style='height:1px;background-color:lightgray;'><img style='display:none;width:1px;height:1px;' /></td>
+	</tr>
+	<tr>
+		<td style='background-color:white;vertical-align:top;' onselectstart="return false">
+			<div id="ccm_ContactList" style="height:100%;overflow:auto;overflow-x:hidden;"></div>
+		</td>
+	</tr>
+	<tr>
+		<td style='height:1px;background-color:lightgray;'><img style='display:none;width:1px;height:1px;' /></td>
+	</tr>
+	<tr>
+		<td style='height:32px;background-color:white;'>
+			&nbsp;
+		</td>
+	</tr>
+</table>

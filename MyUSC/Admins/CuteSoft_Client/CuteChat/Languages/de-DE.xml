@@ -1,0 +1,300 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<root>
+	<resource name="CuteChat_Messenger">Cute Messenger</resource>
+	
+	<resource name="UI_MENU_AddContact">Kontakt hinzufügen</resource>
+	<resource name="UI_MENU_RemoveContact">Kontakt entfernen</resource>
+	<resource name="UI_MENU_ViewProfile">Profil zeigen</resource>
+	<resource name="UI_MENU_Block">Benutzer blockieren</resource>
+	<resource name="UI_MENU_UnBlock">Benutzer freigeben</resource>
+	<resource name="UI_MENU_ChatWith">Sende eine Nachricht</resource>
+	<resource name="UI_MENU_TargetAll">an alle</resource>
+	<resource name="UI_MENU_Refresh">aktualisieren</resource>
+	<resource name="UI_MENU_Clear">aufräumen</resource>
+	<resource name="UI_MENU_SaveMessages">speichern</resource>
+	<resource name="UI_MENU_ReloadMessages">neu laden</resource>
+	<resource name="UI_MENU_Invite">einladen</resource>
+	<resource name="UI_MENU_Kick">rauswerfen</resource>
+	<resource name="UI_MENU_TargetIt">unterhalten mit</resource>
+	<resource name="UI_MENU_AutoScroll">Auto Scrollen</resource>
+	<resource name="UI_MENU_StopScroll">Stop Scrollen</resource>	
+	<resource name="UI_MENU_Online">Online</resource>
+	<resource name="UI_MENU_Offline">Offline</resource>
+	<resource name="UI_MENU_Away">weg</resource>
+	<resource name="UI_MENU_Busy">beschäftigt</resource>	
+	<resource name="UI_MENU_Blocked">blockiert</resource>	
+	<resource name="UI_MENU_SentList">Historie</resource>
+	<resource name="UI_MENU_Admin">Admin</resource>
+	<resource name="UI_MENU_SetPassword">Passwort ändern</resource>
+	<resource name="UI_MENU_DisableAnonymous">Anonym deaktivieren</resource>
+	<resource name="UI_MENU_LockChannel">Kanal sperren</resource>
+	<resource name="UI_MENU_UnLockChannel">Kanal entsperren</resource>
+	<resource name="UI_MENU_Contacts">Kontake</resource>
+	<resource name="UI_MENU_View">anzeigen</resource>
+	<resource name="UI_MENU_Exit">Ausgang</resource>
+	<resource name="UI_MENU_Signout">abmelden</resource>
+	<resource name="UI_MENU_SignIn">anmelden</resource>
+	<resource name="UI_MENU_File">Datei</resource>
+	<resource name="UI_MENU_OfflineMessage">Offline-Nachricht</resource>	
+	<resource name="UI_MENU_Add">hinzufügen</resource>
+	<resource name="UI_Menu_GoAdminPage">zur Admin-Seite</resource>
+	<resource name="UI_PROMPT_ENABLEANONYMOUS">erlaube anonyme Benutzer</resource>
+	<resource name="UI_Menu_Connect">verbinden</resource>
+	<resource name="UI_Menu_Disconnect">trennen</resource>
+	
+	<resource name="UI_MENU_OnThePhone">am Telefon</resource>
+	<resource name="UI_MENU_OutToLunch">zu Tisch</resource>
+	<resource name="UI_MENU_AppearOffline">offline anzeigen</resource>
+	
+	<resource name="UI_USER_Online"><!--do not display anything--></resource>
+	<resource name="UI_USER_Away">(weg)</resource>
+	<resource name="UI_USER_Busy">(beschäftigt)</resource>
+	<resource name="UI_USER_OutToLunch">(zu Tisch)</resource>
+	<resource name="UI_USER_OnThePhone">(am Telefon)</resource>
+	<resource name="UI_USER_Offline">(Offline)</resource>	
+	
+	<resource name="UI_USER_All">zu allen</resource>
+	<resource name="UI_Whisper">flüstern</resource>	
+	<resource name="UI_Lobbies">wähle einen Kanal</resource>	
+	
+	<resource name="UI_PROMPT_KICKUSER">Sind Sie sicher, dass Sie diesen Benutzer aus dem aktuellen Kanal werfen möchten?</resource>
+	
+	<resource name="UI_UnknownUserName">(unbekannt)</resource>
+	<resource name="UI_Unknown">(unbekannt)</resource>
+	
+	<resource name="UI_FloodControlMessage">Sie können nicht so viele Nachrichten in so kurzer Zeit versenden. Bitte warten Sie ein paar Sekunden, bevor Sie weitere Nachrichten versenden.</resource>
+	<resource name="UI_AreYouSureQuit">Sind Sie sicher, dass Sie diese Unterhaltung schließen wollen?</resource>
+	<resource name="UI_AreYouSureDisconnect">Sind Sie sicher, dass Sie sich vom Chat trennen wollen?</resource>
+	<resource name="UI_NotAllowedFunction">Sie sind nicht berechtigt diese Funktion auszuführen.</resource>
+
+	<resource name="UI_PopupBlockedMessage">Pop-up Blocker entdeckt.</resource>
+	<resource name="UI_popupblocked">Pop-up Blocker entdeckt.</resource>
+	
+	<resource name="CANTNOTWHISPERTONOTARGET">Sie können nicht zu allen Usern flüstern.</resource>
+	<resource name="UI_CONNECTION_CONNECTING">Bitte warten, Verbindungsaufbau zum Server...</resource>
+	<resource name="UI_CONNECTION_ERROR">Die Verbindung zum Chat-Server wurde verloren. {0}</resource>
+	<resource name="UI_CONNECTION_READY">Verbunden!</resource>
+	<resource name="UI_CONNECTION_Disconnect">Sie wurden getrennt.</resource>
+	<resource name="UI_CONNECTION_CANCELLED">Verbindung abgebrochen.</resource>
+	<resource name="UI_CONNECTION_NOTENABLE">Verbindung gescheitert. Server ist nicht bereit.</resource>
+	<resource name="UI_CONNECTION_NeedName">Bitte wählen Sie einen Spitznamen für sich, um das Chatten zu beginnen. Ihr Spitzname wird Sie gegenüber anderen Benutzern im Chat-Raum identifizieren. Spitznamen können maximal 20 Zeichen lang sein, müssen mit einem Buchstaben beginnen und dürfen keine Leerzeichen oder Sonderzeichen enthalten.</resource>
+	<resource name="UI_CONNECTION_NEEDLOGIN">In dieser Anwendung sind keine anonymen Benutzer erlaubt. Sie müssen sich erst auf dieser Webseite anmelden.</resource>
+	<resource name="UI_CONNECTION_NeedName_Title">Gastname</resource>
+	<resource name="UI_CONNECTION_NeedName_Message">Bitte geben Sie Ihren Namen ein.</resource>
+	<resource name="UI_CONNECTION_NeedPassword">Ein Passwort ist erforderlich.</resource>
+	<resource name="UI_CONNECTION_NeedPassword_Title">Passwort</resource>
+	<resource name="UI_PROMPT_CHANNELPASSWORD">Bitte Seben das Kanal-Passwort ein</resource>
+	<resource name="UI_CONNECTION_NeedPassword_Message">Dieser Kanal ist passwortgeschützt. Bitte geben Sie das Kanal-Passwort ein.</resource>
+	<resource name="UI_CONNECTION_Kick">Sie wurden aus diesem Kanal geworfen.</resource>	
+	<resource name="UI_CONNECTION_MissingNickName">Das Feld für Ihren Spitznamen ist leer.</resource>
+	<resource name="UI_CONNECTION_MissingPassword">Das Feld für Ihr Passwort ist leer.</resource>
+	<resource name="UI_CONNECTION_ShortNickName">Ihr Spitzname ist zu kurz.</resource>
+	<resource name="UI_CONNECTION_LongNickName">Ihr Spitzname ist zu lang.</resource>
+	
+	
+	<resource name="UI_USER_JOIN">{0} hat den Raum betreten.</resource>
+	<resource name="UI_USER_LEAVE">{0} hat den Raum verlassen.</resource>
+	<resource name="UI_USER_KICK">{0} wurde aus dem Raum geworfen.</resource>
+	<resource name="UI_USER_DROP">{0} hat den Raum verlassen.</resource>
+	<resource name="UI_USER_BLOCK">{0} wurde geblockt</resource>
+	<resource name="UI_USER_UNBLOCK">{0} wurde entblockt</resource>
+	<resource name="UI_USER_ADD">{0} hat Sie zu seiner Kontaktliste hinzugefügt.</resource>
+	<resource name="UI_USER_REMOVE">{0} wurde von Ihrer Kontaktliste entfernt.</resource>
+	<resource name="UI_USER_EXPIRED">{0} wurde aufgrund von Inaktivität aus diesem Raum entfernt.</resource>
+	<resource name="UI_USER_HELLO">{0} sagt hallo zu allen in diesem Raum.</resource>
+	<resource name="UI_USER_LOGINMESSENGER">{0} hat sich im Messenger angemeldet.</resource>
+	<resource name="UI_USER_LOGOFFMESSENGER">{0} hat sich im Messenger abgemeldet.</resource>
+	<resource name="UI_USER_UPDATE">{0} hat das Profil aktualisiert.</resource>
+	
+	
+	<resource name="UI_ADMIN_NOTADMIN">Nur der Admin kann diese Funktion ausführen.</resource>
+	
+	
+	<!-- Add Contact -->
+	<resource name="UI_CONTACT_Detach"></resource>
+	<resource name="Select">Auswahl</resource>
+	<resource name="DisplayName">Benutzername</resource>
+	<resource name="Search">Suche</resource>
+	<resource name="SearchResults">Suchergebnisse</resource>
+	<resource name="UI_CONTACT_CantAddSelf">Sie können sich nicht selber hinzufügen.</resource>
+	<resource name="UI_CONTACT_FinishAddContact">Dieser Benutzer wurde zu Ihren Kontakten hinzugefügt.</resource>
+	<resource name="UI_CONTACT_SelectContact">Bitte suchen Sie nach Freunden mit Name, E-Mail oder Geschlecht.</resource>
+	<resource name="UI_CONTACT_AddContact_subTitle">Sie können jemanden zu Ihrer Kontaktliste hinzufügen.</resource>
+	<resource name="UI_CONTACT_TargeAnonymous">Ziel ist ein anonymer Benutzer!</resource>
+	<resource name="UI_CONTACT_AnonymousCantAddContact">Anonyme Benutzer können keine Kontakte hinzufügen.</resource>
+	<resource name="FileformatNotsupported">Upload der Datei nicht möglich. Das Dateiformat ist nicht erlaubt.</resource>
+	<!-- End Add Contact -->
+	
+	<resource name="My_USER_BLOCK">Sie wurden vom Zielbenutzer geblockt!</resource>
+	
+	<resource name="UI_NewMessage">Neue Nachricht</resource>
+	<resource name="UI_Message">Nachricht</resource>
+	<resource name="UI_UserMessageBlocked">Sie haben eine neue Nachricht von {0} erhalten. Das Chat-Fenster wurde durch Ihren Pop-up Blocker blockiert, bitte klicken Sie OK um es zu öffnen.</resource>
+	
+	<resource name="UI_UnknownSplashCommand">Befehl '{0}' wird vom System nicht unterstützt.</resource>
+	
+	<resource name="UI_WindowBlocked">Ein neues Chat-Fenster wurde blockiert, bitte klicken Sie OK um es zu öffnen.</resource>
+	
+	<resource name="UI_MSGTAB_GENERAL">Allgemein</resource>
+	<resource name="UI_MSGTAB_MYSELF">Ich</resource>
+	<resource name="UI_DisableAutoFocus">Fokus ausschalten</resource>
+	<resource name="UI_EnableAutoFocus">automatischer Fokus</resource>
+	<resource name="UI_DisableSound">Töne ausschalten</resource>
+	<resource name="UI_EnableSound">Töne abspielen</resource>
+	<resource name="UI_InvitePrivate">Privater Chat</resource>
+	<resource name="UI_INVITEPRIVATECHAT">{0} hat Sie zum Betreten eines privaten Kanals eingeladen.</resource>
+	<resource name="UI_ChangeAvatar">Wählen Sie ein Avatar</resource>
+	<resource name="UI_AvatarDialogSubTitle">Avatare sind kleine Icons oder Bilder, die Sie repräsentieren. Wählen Sie ein Avatar das Ihnen gefällt aus folgender Liste. </resource>
+	<resource name="UI_SendAsOffline">Ihre Nachricht wurde als Offline-Nachricht gesendet.</resource>
+	<resource name="UI_FeatureDisabled">Diese Funktion wurde vom System-Administrator ausgeschaltet!</resource>
+	
+	<!-- Toolbar -->	
+	<resource name="UI_MENU_SendFiles">Sende Dateien</resource>	
+	<resource name="UI_Send_NoFile">Bitte wählen Sie eine Datei zum Senden!</resource>
+	<resource name="UI_Send_a_File_subTitle">Wählen Sie eine Datei zum Versenden und danach die Senden-Schaltfläche.</resource>	
+	<resource name="MaxFileSizeMustBeLessThan">Die maximale Dateigröße muss kleiner sein als </resource>
+	<resource name="UI_Send_UploadSuccessfully">Der Datei wurde erfolgreich hochgeladen!</resource>
+	<!-- Toolbar -->
+	
+	<!-- Toolbar -->
+	<resource name="UI_Bold">Fett</resource>
+	<resource name="UI_Italic">Kursiv</resource>
+	<resource name="UI_Underline">Unterstrichen</resource>
+	<resource name="UI_Help">Hilfe</resource>
+	<resource name="UI_ControlPanel">Kontrolltafel</resource>
+	<resource name="UI_Emotion">Emoticons einfügen</resource>
+	<resource name="UI_FontColor">Schriftfarbe</resource>
+	<resource name="UI_Save">Speichern</resource>
+	<resource name="UI_SaveChat">Speichere das Chat-Log</resource>
+	<resource name="UI_Avatar">Ein Avatar holen</resource>
+	<resource name="UI_PlaySound">Spiele Töne</resource>
+	<resource name="UI_AutoFocus">Im Fokus halten</resource>
+	<resource name="UI_AutoScroll">Scrolle Fenster</resource>
+	<resource name="UI_SelectSkin">Wähle eine Oberfläche</resource>
+	<resource name="UI_Clear">Leere den Bildschirm</resource>
+	<resource name="UI_Font">Schriftart</resource>
+	<resource name="UI_Size">Größe</resource>
+	<resource name="UI_Close">Schließen</resource>
+	
+	<resource name="IEonly_Feature">Die Funktion ist nur für Benutzer verfügbar, die den Internet-Explorer Version 5.0 oder höher benutzen.</resource>
+	<resource name="CantSaytoYourself">Um eine private Nachricht zu versenden, müssen Sie jemanden anderen wählen als sich selbst.</resource>
+	<resource name="PrivateChatTitle">Privater Chat</resource>
+	<resource name="TargetUserNotOnline">Der gewünschte Benutzer ist nicht online.</resource>
+	<resource name="ConnectingToServer">Bitte warten, Verbindungsaufbau zum Server...</resource>
+	<resource name="ConnectionFailed">Verbindung fehlgeschlagen.</resource>
+	<resource name="ConnectionOK">Verbunden!</resource>
+	<resource name="Details">Fehlerdetails</resource>
+	<resource name="NotInvited">Zugriff verweitert! Sie wurden nicht zum Betreten dieses Kanals eingeladen.</resource>
+	<resource name="DenyAllAnonymous">Anonyme Benutzer sind in dieser Chat-Anwendung nicht erlaubt.</resource>
+	<resource name="CommandPtopOnly">Dieses Kommando kann nur im privaten Fenster benutzt werden.</resource>
+	<resource name="CantInviteSelf">Sie können sich nicht selber einladen.</resource>
+	<resource name="TargetUserOffline">Der gewünschte Benutzer ist nicht online.</resource>
+	<resource name="TargetUserInvalid">Ungültiger gewünschter Benutzername.</resource>
+	<resource name="YouCantInvite">Nur der Ersteller dieses Kanals kann Benutzer zum Betreten einladen.</resource>
+	<resource name="DenyPrivateMessage">Private Nachrichten sind in diesem Chat-Kanal nicht erlaubt.</resource>
+	<resource name="ConnectedUsingNewPC">hat den Kanal erneut betreten.</resource>
+	<resource name="blockuser">blockieren</resource>
+	<resource name="unblockuser">entblockerien</resource>
+	<resource name="ManageChannel">Verwalte den Kanal</resource>
+	<resource name="IsAnonymous">ist ein anonymer Benutzer.</resource>	
+	<resource name="LOGINNEWACCOUNT">Dieses Konto wird von einem anderen Benutzer benutzt. </resource>
+	
+	<!-- End Toolbar -->
+	
+	
+	<!-- GENERAL -->
+	<resource name="UI_Loading">Laden</resource>
+	<resource name="OK">OK</resource>
+	<resource name="CANCEL">Abbrechen</resource>	
+	<resource name="UI_SEND">Senden</resource>
+	<resource name="Send">Senden</resource>
+	
+	<resource name="MessageNotSend">Nachricht konnte nicht gesendet werden!</resource>
+	<resource name="MsgMessageContainsBadWord">Ihre Nachricht enthält ein zensiertes Wort: </resource>
+	<resource name="DenyChannelAnonymous">Anonyme Benutzer sind in diesem Chat-Kanal nicht erlaubt.</resource>
+	<resource name="NickNameIsExists">Spitzname existiert bereits.</resource>
+	<resource name="YouAreRejected">Sie wurden abgewiesen.</resource>
+	<resource name="YouAreNotConnect">Sie haben sich nicht zum Kanal verbunden.</resource>
+	<resource name="YouCantGetin">Sie können nicht in den Chat-Kanal kommen.</resource>
+	<resource name="YouAreNotModerator">Sie sind nicht der Moderator dieses Kanals.</resource>
+	<resource name="NoModerators">Keine Moderatoren.</resource>
+	<resource name="WrongPassword">Falsches Passwort - erneute Eingabe!</resource>
+	<resource name="TargetUserNotPtop">{0} lehnt die private Nachricht ab.</resource>
+	<resource name="TargetUserAlreadyHere">Der Zielbenutzer ist online.</resource>
+	<resource name="SpecifyUserName">Legen Sie einen Benutzernamen fest</resource>
+	<resource name="AnonymousCantChangeAvatar">Anonyme Benutzer dürfen nicht ihr Avatar ändern.</resource>
+	<resource name="CommandChannelOnly">Das Kommando kann nur im Kanal benutzt werden. </resource>
+	<resource name="NoManagerWindow">Keine Verwaltungsfenster sind verfügbar.</resource>
+	<resource name="NoAccountInfo">Konotinformationen wurden nicht gefunden!</resource>
+	<resource name="IPAddressRejected">DIe IP-Adresse wurde abgewiesen.</resource>
+	<resource name="WordExceededMaxLen">Ein Wort in Ihrer NAchricht erreicht die maximale Länge für ein einzelnes Wort</resource>
+	<resource name="MsgExceededMaxLen">Die Nachricht erreicht die maximale Länge für eine Nachricht</resource>
+	<resource name="MsgUserExpired">Verbindung erloschen.</resource>
+	<resource name="MsgUserTryJoinChannel">möchte in den Kanal aufgenommen werden.</resource>
+	<resource name="MsgChooseAvatar">Wähle Avatar</resource>
+	<resource name="MsgAvatarChanged">Ihr Avatar wurde geändert.</resource>
+	<resource name="MsgCommandError">Kommandofehler</resource>
+	<resource name="MsgCommandUnknown">Unbekanntes Kommande</resource>
+	<resource name="ConnectionRejected">Verbindung abgewiesen.</resource>
+	<resource name="RequirePassword">Passwort abgewiesen</resource>
+	<resource name="MessageSendFailed">Senden der Nachricht fehlgeschlagen!</resource>
+	<resource name="SelectChannel">Wählen Sie einen Kanal</resource>
+	<resource name="NickNameRestriction">Bitte wählen Sie einen Sptitznamen für sich um mit dem Chatten zu beginnen. Ihr Spitzame wird Sie gegenüber anderen Benutzern im Chat-Kanal identifizieren. Spitznamen können maximal 20 Zeichen lang sein, müssen mit einem Buchstaben beginnen und dürfen keine Leerzeichen oder folgende Sonderzeichen enthalten: ! @ # $ % ( ) + = ' " ; : &lt; &gt; ? &amp; /.</resource>
+	<resource name="GuestNameMessage">Spitznamen können maximal 20 Zeichen lang sein, müssen mit einem Buchstaben beginnen und dürfen keine Leerzeichen oder folgende Sonderzeichen enthalten: ! @ # $ % ( ) + = ' " ; : &lt; &gt; ? &amp; / . Bitte wählen Sie einen Sptitznamen für sich um mit dem Chatten zu beginnen.</resource>
+	<resource name="PleaseInputChannelPassword">Bitte geben Sie das Kanal-Passwort ein</resource>
+	<resource name="ChatPtopWelcomeMessage">Die haben den privaten Chat-Kanal betreten. Bitte warten auf andere Chatter.</resource>
+	<resource name="Name">Ihr Name:</resource>
+	<resource name="Email">E-Mail:</resource>
+	<resource name="Enquiry">Nachricht:</resource>
+	<resource name="Subject">Betreff:</resource>
+	<resource name="ExpiredTask">Aufgabe abgelaufen.</resource>
+	
+	<resource name="Send_a_File">Senden Sie eine Datei</resource>	
+	<resource name="Connect_Cancel">Abbrechen</resource>
+	<resource name="NumPeoplesChatting">Leute plaudern</resource>
+	<resource name="IsNotOnline">ist nicht online.</resource>
+	<resource name="TargetBusyTryagain">ist beschäftigt. Bitte versuchen Sie es erneut.</resource>
+	<resource name="Conversations">Gespräche</resource>
+	<resource name="NoConversations">Keine aktiven Gspräche</resource>
+	<resource name="NoOnlineContacts">All Ihre Kontakte sind offline.</resource>
+	<resource name="NoOfflineContacts">Keine Offline-Kontakte.</resource>
+	
+	<!-- Messenger Invite -->
+	<resource name="Invite_subTitle">Wählen Sie die Personen die Sie dieser Unterhaltung hinzufügen wollten, und klicken OK. (Sie können mehr als eine Person auswählen).</resource>
+	<resource name="InvitationSent">Eine Einladung wurde gesendet.</resource>
+	<!-- End Messenger Invite -->
+	<!-- User Profile -->
+	<resource name="ViewUserProfile_Title">Benutzerprofil ansehen</resource>
+	<!-- End User Profile -->
+	
+	
+	
+	<!-- added by terry -->
+	<resource name="UI_InviteIntoPrivate">Laden Sie Personen ein, Ihrer Unterhaltung beizutreten</resource>
+	<resource name="UI_SpecifyInviteName">Wen wollen Sie einladen?</resource>
+	
+	<resource name="UI_LeaveMessage">Bitte hinterlassen Sie eine Nachricht</resource>
+	<resource name="NumberOnly">Bitte geben Sie eine gültige Zahl ein.</resource>
+	<resource name="ModeratorList">Moderatorenliste:</resource>
+	<resource name="ModeratorList_subTitle">Sie können soviele Moderatoren hinzufügen wie das System benötigt.</resource>
+	<resource name="OperatorList">Operatorenliste:</resource>
+	<resource name="OperatorList_subTitle">Sie können soviele Operatoren hinzufügen wie das System benötigt.</resource>
+	
+	<resource name="UI_MENU_UnKickUsers">Benutzer wieder zulassen</resource>
+	<resource name="UI_MENU_CheckIP">Prüfe IP</resource>
+	<resource name="UI_MENU_DenyIP">Weise IP ab</resource>
+	<resource name="UI_PROMPT_DENYUSERIP">Sind Sie sicher, dass Sie die IP dieses Benutzers abweisen wollen ?</resource>
+	<resource name="UI_PROMPT_CHANNELPASSWORD">Bitte legen Sie ein Passwort fest , lassen Sie es leer um es zu löschen.</resource>
+	<resource name="UI_MessageHistory">Nachrichtenverlauf</resource>
+	
+	<!-- special character in value, translate with care -->
+	<resource name="MSG_TO">&#32;an&#32;</resource>
+	<resource name="WHISPER_TO">&#32;flüstere&#32;</resource>
+	
+</root>
+
+
+
+
+
+

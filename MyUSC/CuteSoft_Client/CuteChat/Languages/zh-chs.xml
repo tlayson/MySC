@@ -1,0 +1,302 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<root>
+		<resource name="CuteChat_Messenger">Cute Messenger</resource>
+		
+		<resource name="UI_MENU_AddContact">添加联系人</resource>
+		<resource name="UI_MENU_RemoveContact">删除联系人</resource>
+		<resource name="UI_MENU_ViewProfile">察看Profile</resource>
+		<resource name="UI_MENU_Block">屏蔽该用户</resource>
+		<resource name="UI_MENU_UnBlock">解禁该用户</resource>
+		<resource name="UI_MENU_ChatWith">发送消息</resource>
+		<resource name="UI_MENU_TargetAll">所有人</resource>
+		<resource name="UI_MENU_Refresh">刷新</resource>
+		<resource name="UI_MENU_Clear">清除</resource>
+		<resource name="UI_MENU_SaveMessages">保存</resource>
+		<resource name="UI_MENU_ReloadMessages">重载</resource>
+		<resource name="UI_MENU_Invite">邀请</resource>
+		<resource name="UI_MENU_Kick">踢走</resource>
+		<resource name="UI_MENU_TargetIt">说话</resource>
+		<resource name="UI_MENU_AutoScroll">自动滚屏</resource>
+		<resource name="UI_MENU_StopScroll">停止滚屏</resource>	
+		<resource name="UI_MENU_Online">在线</resource>
+		<resource name="UI_MENU_Offline">离线</resource>
+		<resource name="UI_MENU_Away">离开</resource>
+		<resource name="UI_MENU_Busy">用户忙</resource>	
+		<resource name="UI_MENU_Blocked">屏蔽</resource>	
+		<resource name="UI_MENU_SentList">历史纪录</resource>
+		<resource name="UI_MENU_Admin">管理员</resource>
+		<resource name="UI_MENU_SetPassword">设置密码</resource>
+		<resource name="UI_MENU_DisableAnonymous">禁止匿名用户</resource>
+		<resource name="UI_MENU_LockChannel">锁定频道</resource>
+		<resource name="UI_MENU_UnLockChannel">开启频道</resource>
+		<resource name="UI_MENU_Contacts">联系人</resource>
+		<resource name="UI_MENU_View">察看</resource>
+		<resource name="UI_MENU_Exit">关闭</resource>
+		<resource name="UI_MENU_Signout">退出登陆</resource>
+		<resource name="UI_MENU_SignIn">登陆</resource>
+		<resource name="UI_MENU_File">文件</resource>
+		<resource name="UI_MENU_OfflineMessage">离线消息</resource>	
+		<resource name="UI_MENU_Add">添加</resource>
+		<resource name="UI_Menu_GoAdminPage">转到管理员界面</resource>
+		<resource name="UI_PROMPT_ENABLEANONYMOUS">允许匿名用户</resource>
+		<resource name="UI_Menu_Connect">连接</resource>
+		<resource name="UI_Menu_Disconnect">中断连接</resource>
+		
+		<resource name="UI_MENU_Online">在线</resource>
+		<resource name="UI_MENU_Away">离开</resource>
+		<resource name="UI_MENU_Busy">繁忙</resource>
+		<resource name="UI_MENU_OnThePhone">电话中</resource>
+		<resource name="UI_MENU_OutToLunch">午间休息</resource>
+		<resource name="UI_MENU_Offline">(离线)</resource>	
+		<resource name="UI_MENU_AppearOffline">显示 离线</resource>
+		
+		<resource name="UI_USER_Online"><!--do not display anything--></resource>
+		<resource name="UI_USER_Away">(离开座位)</resource>
+		<resource name="UI_USER_Busy">(用户繁忙)</resource>
+		<resource name="UI_USER_OutToLunch">(午间休息)</resource>
+		<resource name="UI_USER_OnThePhone">(电话中)</resource>
+		<resource name="UI_USER_Offline">(用户离线)</resource>	
+		
+		<resource name="UI_USER_All">To All</resource>
+		<resource name="UI_Whisper">悄悄话</resource>	
+		<resource name="UI_Lobbies">选择频道</resource>	
+		
+		<resource name="UI_PROMPT_KICKUSER">你确定想把该用户踢走吗?</resource>
+		
+		<resource name="UI_UnknownUserName">(未知用户)</resource>
+		<resource name="UI_Unknown">(未知)</resource>
+		
+		<resource name="UI_FloodControlMessage">系统不允许太多、太频繁地发送消息。请耐心等待几秒钟再发送下一条消息.</resource>
+		<resource name="UI_AreYouSureQuit">你确定关闭当前对话吗？</resource>
+		<resource name="UI_AreYouSureDisconnect">你确定要断线吗？</resource>
+		<resource name="UI_NotAllowedFunction">该项操作不允许</resource>
+
+		<resource name="UI_PopupBlockedMessage">发现弹出拦截器消息.</resource>
+		<resource name="UI_popupblocked">发现弹出拦截器.</resource>
+		
+		<resource name="CANTNOTWHISPERTONOTARGET">不允许向所有用户悄悄话.</resource>
+		<resource name="UI_CONNECTION_CONNECTING">请耐心等待，正在连接服务器...</resource>
+		<resource name="UI_CONNECTION_ERROR">服务器连接中断. {0}</resource>
+		<resource name="UI_CONNECTION_READY">连接中!</resource>
+		<resource name="UI_CONNECTION_Disconnect">断线了.</resource>
+		<resource name="UI_CONNECTION_CANCELLED">连接取消.</resource>
+		<resource name="UI_CONNECTION_NOTENABLE">连接失败，服务器没准备好.</resource>
+		<resource name="UI_CONNECTION_NeedName">请选择昵称. 昵称在聊天室中用来代表你. 昵称最长 20 字符, 必须以字母开头，而且没有空格.</resource>
+		<resource name="UI_CONNECTION_NEEDLOGIN">不允许匿名使用. 必须先登陆.</resource>
+		<resource name="UI_CONNECTION_NeedName_Title">Guest Name</resource>
+		<resource name="UI_CONNECTION_NeedName_Message">请输入姓名.</resource>
+		<resource name="UI_CONNECTION_NeedPassword">请输入密码.</resource>
+		<resource name="UI_CONNECTION_NeedPassword_Title">密码</resource>
+		<resource name="UI_PROMPT_CHANNELPASSWORD">请输入频道密码</resource>
+		<resource name="UI_CONNECTION_NeedPassword_Message">需要密码进入该频道. 请输入频道密码.</resource>
+		<resource name="UI_CONNECTION_Kick">你已经被管理员请出该频道.</resource>	
+		<resource name="UI_CONNECTION_MissingNickName">昵称空白.</resource>
+		<resource name="UI_CONNECTION_MissingPassword">密码空白.</resource>
+		<resource name="UI_CONNECTION_ShortNickName">昵称太短.</resource>
+		<resource name="UI_CONNECTION_LongNickName">昵称太长.</resource>
+		
+		
+		<resource name="UI_USER_JOIN">{0} 进入室内.</resource>
+		<resource name="UI_USER_LEAVE">{0} 离开屋子.</resource>
+		<resource name="UI_USER_KICK">{0} 被踢走了.</resource>
+		<resource name="UI_USER_DROP">{0} 离开房间.</resource>
+		<resource name="UI_USER_TYPING">{0} 正在输入消息.</resource>
+		<resource name="UI_USER_BLOCK">{0} 被停止发送消息!</resource> 
+		<resource name="UI_USER_UNBLOCK">{0} 被允许发送消息!</resource> 
+		<resource name="UI_USER_ADD">{0} 被添加到您的联系人列表.</resource> 
+		<resource name="UI_USER_REMOVE">{0} 被从您的联系人列表删除.</resource> 
+		<resource name="UI_USER_EXPIRED">{0} 由于长时间没有动作,已自动离开本聊天室</resource> 
+		<resource name="UI_USER_HELLO">{0} 向所有人问号.</resource> 
+		<resource name="UI_USER_LOGINMESSENGER">{0} 已经登陆messenger.</resource> 
+		<resource name="UI_USER_LOGOFFMESSENGER">{0} 已经登出messenger.</resource> 
+		<resource name="UI_USER_UPDATE">{0} 更新了个人信息.</resource> 
+		<resource name="UI_ADMIN_NOTADMIN">只有管理员能工进行此项操作.</resource> 
+			
+		
+		<!-- Add Contact -->
+		<resource name="UI_CONTACT_Detach"></resource>
+		<resource name="Select">选择</resource>
+		<resource name="DisplayName">用户名</resource>
+		<resource name="Search">查找</resource>
+		<resource name="SearchResults">查找结果</resource>
+		<resource name="UI_CONTACT_CantAddSelf">您不能添加自己.</resource>
+		<resource name="UI_CONTACT_FinishAddContact">这个用户已经被加入你的联系人列表.</resource> 
+		<resource name="UI_CONTACT_SelectContact">请输入用户名,email,性别来查找用户.</resource> 
+		<resource name="UI_CONTACT_AddContact_subTitle">您可以添加某人到你的联系人列表.</resource> 
+		<resource name="UI_CONTACT_TargeAnonymous">对方是匿名用户!</resource> 
+		<resource name="UI_CONTACT_AnonymousCantAddContact">匿名用户不能添加到联系人列表.</resource> 
+		<resource name="FileformatNotsupported">不允许的文件类型,不能上传此文件.</resource> 
+
+		<!-- End Add Contact -->
+		
+		<resource name="My_USER_BLOCK">对方阻止了您与他的交谈</resource> 
+		<resource name="UI_NewMessage">新信息</resource> 
+		<resource name="UI_Message">消息</resource> 
+		<resource name="UI_UserMessageBlocked">您收到了来自 {0} 的信息. 但聊天窗口被您安装的弹出窗口阻止程序阻止,请允许弹出窗口弹出.</resource> 
+		<resource name="UI_UnknownSplashCommand">系统不支持的命令 '{0}' .</resource> 
+		<resource name="UI_WindowBlocked">聊天窗口被阻止,请允许窗口弹出.</resource> 
+		<resource name="UI_MSGTAB_GENERAL">通用设置</resource> 
+		<resource name="UI_MSGTAB_MYSELF">个人设置</resource> 
+		<resource name="UI_DisableAutoFocus">停用自动焦点</resource> 
+		<resource name="UI_EnableAutoFocus">自动焦点</resource> 	
+		<resource name="UI_DisableSound">停止声音</resource>
+		<resource name="UI_EnableSound">播放声音</resource>
+		<resource name="UI_InvitePrivate">私聊</resource>
+		<resource name="UI_INVITEPRIVATECHAT">{0} 邀请你加入私聊.</resource>
+		<resource name="UI_ChangeAvatar">选择虚拟形</resource>
+		<resource name="UI_AvatarDialogSubTitle">虚拟形象是代表你的图标或者图片. 您可以从列表种选择您喜欢的虚拟形象.</resource>
+		<resource name="UI_SendAsOffline">您的信息将作为离线信息发布.</resource>
+		<resource name="UI_FeatureDisabled">此功能被系统管理员禁用!</resource>
+
+		<!-- Toolbar -->	
+		<resource name="UI_MENU_SendFiles">发送文件</resource> 
+		<resource name="UI_Send_NoFile">选择文件!</resource> 
+		<resource name="UI_Send_a_File_subTitle">选择需要发送的文件,然后点击发送按钮发送.</resource> 
+		<resource name="MaxFileSizeMustBeLessThan">文件大小必须小于</resource> 
+		<resource name="UI_Send_UploadSuccessfully">文件上传成功!</resource> 
+		
+		<!-- Toolbar -->
+		
+		<!-- Toolbar -->
+		<resource name="UI_Bold">黑体</resource> 
+		<resource name="UI_Italic">斜体</resource> 
+		<resource name="UI_Underline">下划线</resource> 
+		<resource name="UI_Help">帮助</resource> 
+		<resource name="UI_ControlPanel">控制面板</resource> 
+		<resource name="UI_Emotion">插入表情</resource> 
+		<resource name="UI_FontColor">文字颜色</resource> 
+		<resource name="UI_Save">保存</resource> 
+		<resource name="UI_SaveChat">保存聊天记录</resource> 
+		<resource name="UI_Avatar">选择虚拟形象</resource> 
+		<resource name="UI_PlaySound">播放音效</resource> 
+		<resource name="UI_AutoFocus">焦点保持</resource> 
+		<resource name="UI_AutoScroll">自动滚屏</resource> 
+		<resource name="UI_SelectSkin">选择皮肤</resource> 
+		<resource name="UI_Clear">清频</resource> 
+		<resource name="UI_Font">字体</resource> 
+		<resource name="UI_Size">字体大小</resource> 
+		<resource name="UI_Close">关闭</resource> 
+			
+		<resource name="IEonly_Feature">只有使用IE50或以上版本浏览器的用户能使用此功能.</resource> 
+		<resource name="CantSaytoYourself">不能与自己私聊.</resource> 
+		<resource name="PrivateChatTitle">私聊</resource> 
+		<resource name="TargetUserNotOnline">对方不在线.</resource> 
+		<resource name="PrivateChatTitle">私聊</resource> 
+		<resource name="ConnectingToServer">正在连接服务器,请耐心等待...</resource> 
+			
+		<resource name="ConnectionFailed">连接失败.</resource> 
+		<resource name="ConnectionOK">成功连接!</resource> 
+		<resource name="Details">详细错误信息</resource> 
+		<resource name="NotInvited">禁止访问,您没有被邀请进入此频道.</resource> 
+		<resource name="NumPeoplesChatting">多人聊天</resource> 
+		<resource name="DenyAllAnonymous">本程序禁止匿名聊天.</resource> 
+		<resource name="CommandPtopOnly">本命令只能在个聊天窗口中使用.</resource> 
+		<resource name="CantInviteSelf">您不能邀请自己.</resource> 
+		<resource name="TargetUserOffline">对方不在线.</resource> 
+		<resource name="TargetUserInvalid">对方用户名无效.</resource> 
+		<resource name="YouCantInvite">频道创建者才有权限邀请他人加入.</resource> 
+		<resource name="DenyPrivateMessage">本频道不允许私聊.</resource> 
+		<resource name="ConnectedUsingNewPC">重新加入频道.</resource> 
+		<resource name="blockuser">阻止</resource> 
+		<resource name="unblockuser">允许</resource> 
+		<resource name="ManageChannel">频道管理</resource> 
+		<resource name="IsAnonymous">是匿名用户.</resource> 
+		<resource name="LOGINNEWACCOUNT">本帐号已被其他人使用.</resource> 
+
+			
+		<!-- End Toolbar -->
+		
+		<resource name="UI_Loading">载入中</resource> 
+	<resource name="OK">OK</resource> 
+	<resource name="CANCEL">取消</resource> 
+	<resource name="UI_SEND">发送</resource> 
+	<resource name="Send">发送</resource> 
+	<resource name="MessageNotSend">消息未被发出!</resource> 
+	<resource name="MsgMessageContainsBadWord">您的消息有不被允许的词汇出现,请注意用语</resource> 
+	<resource name="DenyChannelAnonymous">本频道不允许匿名用户.</resource> 
+	<resource name="NickNameIsExists">昵称已存在.</resource> 
+	<resource name="YouAreRejected">您的邀请被拒绝.</resource> 
+	<resource name="YouAreNotConnect">您无法连接到频道.</resource> 
+	<resource name="YouCantGetin">您无法进入频道.</resource> 
+	<resource name="YouAreNotModerator">您不是本频道的管理员.</resource> 
+	<resource name="NoModerators">无管理员.</resource> 
+	<resource name="WrongPassword">密码错误-重新输入!</resource> 
+	<resource name="TargetUserNotPtop">{0} 拒绝私聊信心.</resource> 
+	<resource name="TargetUserAlreadyHere">对方在线.</resource> 
+	<resource name="SpecifyUserName">选择一个用户名</resource> 
+	<resource name="AnonymousCantChangeAvatar">匿名用户不允许更换虚拟形象.</resource> 
+	<resource name="CommandChannelOnly">本命令只在此频道可用.</resource> 
+	<resource name="NoManagerWindow">没有可用的管理窗口.</resource> 
+	<resource name="NoAccountInfo">没有找到帐户信息</resource> 
+	<resource name="IPAddressRejected">ip地址被拒绝.</resource> 
+	<resource name="WordExceededMaxLen">您的信息中有的单词的长度超过单个单词长度的最大限制</resource> 
+	<resource name="MsgExceededMaxLen">信息超长</resource> 
+	<resource name="MsgUserExpired">连接超时.</resource> 
+	<resource name="MsgUserTryJoinChannel">正申请加入频道.</resource> 
+	<resource name="MsgChooseAvatar">选择虚拟形象r</resource> 
+	<resource name="MsgAvatarChanged">您的形象已经更换.</resource> 
+	<resource name="MsgCommandError">命令错误</resource> 
+	<resource name="MsgCommandUnknown">未知命令</resource> 
+	<resource name="ConnectionRejected">连接被拒绝.</resource> 
+	<resource name="RequirePassword">需要密码</resource> 
+	<resource name="MessageSendFailed">发送失败!</resource> 
+	<resource name="SelectChannel">选择频道</resource> 
+	<resource name="NickNameRestriction">开始聊天前请选择一个昵称,您的昵称将会是你在聊天室里的唯一标识,昵称最大可以有20个英文字符.昵称必须以字母开头,其中不能包含空格,以及以下字符: ! @ # $ % ( ) + = ' " ; : &lt; &gt; ? &amp; / . </resource> 
+	<resource name="GuestNameMessage">昵称最大可以有20个英文字符.昵称必须以字母开头,其中不能包含空格,以及以下字符: ! @ # $ % ( ) + = ' " ; : &lt; &gt; ? &amp; / . 开始聊天前请选择一个昵称.</resource> 
+	<resource name="PleaseInputChannelPassword">请输入频道密码</resource> 
+	<resource name="ChatPtopWelcomeMessage">您已经加入了私聊. 请等待其他用户加入.</resource> 
+	<resource name="Name">您的姓名:</resource> 
+	<resource name="Email">Email:</resource> 
+	<resource name="Enquiry">信息:</resource> 
+	<resource name="Subject">主题:</resource> 
+	<resource name="ExpiredTask">任务超时.</resource> 
+	<resource name="Send_a_File">发送文件</resource> 
+	<resource name="MSG_TO">to</resource> 
+	<resource name="WHISPER_TO">悄悄话</resource> 
+	<resource name="Connect_Cancel">取消</resource> 
+	<resource name="NumPeoplesChatting">多人聊天</resource> 
+	<resource name="TargetUserNotPtop">拒绝私聊请求.</resource> 
+	<resource name="IsNotOnline">不在线.</resource> 
+	<resource name="TargetBusyTryagain">忙,请稍后再试</resource> 
+	<resource name="Conversations">会话</resource> 
+	<resource name="NoConversations">没有激活的会话</resource> 
+	<resource name="NoOnlineContacts">您的所有联系人都不再线.</resource> 
+	<resource name="NoOfflineContacts">没有离线用户.</resource> 
+	- <!--  Messenger Invite 
+	--> 
+	<resource name="Invite_subTitle">选择您希望加入会话的用户,点击ok按钮. (可多选).</resource> 
+	<resource name="InvitationSent">邀请已送出.</resource> 
+	- <!--  End Messenger Invite 
+	--> 
+	- <!--  User Profile 
+	--> 
+	<resource name="ViewUserProfile_Title">查看用户档案</resource> 
+	- <!--  End User Profile 
+	--> 
+	- <!--  added by terry 
+	--> 
+	<resource name="UI_InviteIntoPrivate">邀请他人加入会话</resource> 
+	<resource name="UI_SpecifyInviteName">您希望邀请谁加入会话?</resource> 
+	<resource name="UI_USER_TYPING">正在输入消息.</resource> 
+	<resource name="UI_LeaveMessage">请留言</resource> 
+	<resource name="NumberOnly">请输入有效号码.</resource> 
+	<resource name="ModeratorList">Moderator List:</resource>
+	<resource name="ModeratorList_subTitle">You can add as many moderators to the system as required.</resource>
+	<resource name="OperatorList">Operator List:</resource>
+	<resource name="OperatorList_subTitle">You can add as many operators to the system as required.</resource>
+
+	<resource name="UI_MENU_UnKickUsers">Unkick Users</resource>
+	<resource name="UI_MENU_CheckIP">Check IP</resource>
+	<resource name="UI_MENU_DenyIP">Deny IP</resource>
+	<resource name="UI_PROMPT_DENYUSERIP">Are you sure you want to deny the IP of that user ?</resource>
+	<resource name="UI_PROMPT_CHANNELPASSWORD">Please specify password , use let it blank to clear it.</resource>
+	<resource name="UI_MessageHistory">Message History</resource>
+
+	<!-- GENERAL -->
+</root>
+
+
+
+
+
+

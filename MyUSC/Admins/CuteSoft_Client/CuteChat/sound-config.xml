@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- SoundManager Flash configuration -->
+<!-- Sound IDs are referenced from JS -->
+
+<items baseHref="Sound/" defaultVol="100">
+
+ <sound id="Alert" href="alert.mp3" />
+ <sound id="ChatInvt" href="ChatInvt.mp3" />
+ <sound id="Select" href="select.mp3" />
+ <sound id="ChatJoin" href="ChatJoin.mp3" />
+ <sound id="ChatTag" href="ChatTag.mp3" />
+ <sound id="ChatWhsp" href="ChatWhsp.mp3" />
+ <sound id="newalert" href="newalert.mp3" />
+ <sound id="newemail" href="newemail.mp3" />
+ <sound id="nudge" href="nudge.mp3" />
+ <sound id="online" href="online.mp3" />
+ <sound id="ring" href="ring.mp3" />
+ <sound id="type" href="type.mp3" />
+
+</items>

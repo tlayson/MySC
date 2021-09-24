@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?><?xml-stylesheet type='text/xsl' href='_UpgradeReport_Files/UpgradeReport.xslt'?><UpgradeLog>
+<Properties><Property Name="Solution" Value="SamplePortal5">
+</Property><Property Name="Solution File" Value="C:\MyUSC\MyUSC\Web\SamplePortal5.sln">
+</Property><Property Name="Date" Value="Tuesday, May 15, 2012">
+</Property><Property Name="Time" Value="6:24:21 AM">
+</Property></Properties><Event ErrorLevel="0" Project="SamplePortal5" Source="SamplePortal5.csproj" Description="Scan complete: Upgrade not required for project files.">
+</Event><Event ErrorLevel="0" Project="SamplePortal5.csproj" Source="SamplePortal5.csproj" Description="Visual Studio cannot detect whether this virtual root has been configured for use with ASP.NET 4.0. The likely cause is that you do not have sufficient priviledges to access the IIS metabase. You may need to manually configure this site for ASP.NET 4.0 in order for your site to run correctly.">
+</Event><Event ErrorLevel="3" Project="SamplePortal5" Source="SamplePortal5.csproj" Description="Converted">
+</Event><Event ErrorLevel="0" Project="SamplePortal5" Source="SamplePortal5.csproj" Description="You have completed the first step in converting your Visual Studio .NET 2003 web project. To complete the conversion, please select your project in the Solution Explorer and choose the 'Convert to Web Application' context menu item.">
+</Event></UpgradeLog>

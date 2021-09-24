@@ -1,0 +1,305 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<root>
+	<resource name="CuteChat_Messenger">Cute Messenger</resource>
+	
+	<resource name="UI_MENU_AddContact">Legg til kontakt</resource>
+	<resource name="UI_MENU_RemoveContact">Slett kontakt</resource>
+	<resource name="UI_MENU_ViewProfile">Se på profil</resource>
+	<resource name="UI_MENU_Block">Blokker bruker</resource>
+	<resource name="UI_MENU_UnBlock">Ta bort blokkering av bruker</resource>
+	<resource name="UI_MENU_ChatWith">Send en melding</resource>
+	<resource name="UI_MENU_TargetAll">Til alle</resource>
+	<resource name="UI_MENU_Refresh">Oppdater</resource>
+	<resource name="UI_MENU_Clear">Slett</resource>
+	<resource name="UI_MENU_SaveMessages">Lagre</resource>
+	<resource name="UI_MENU_ReloadMessages">Hente opp meldinger</resource>
+	<resource name="UI_MENU_Invite">Invitere</resource>
+	<resource name="UI_MENU_Kick">Kast ut</resource>
+	<resource name="UI_MENU_TargetIt">Snakk til</resource>
+	<resource name="UI_MENU_AutoScroll">Auto Scroll</resource>
+	<resource name="UI_MENU_StopScroll">Stopp Scroll</resource>	
+	<resource name="UI_MENU_Online">Tilkoblet</resource>
+	<resource name="UI_MENU_Offline">Utlogget</resource>
+	<resource name="UI_MENU_Away">Borte</resource>
+	<resource name="UI_MENU_Busy">Opptatt</resource>	
+	<resource name="UI_MENU_Blocked">Blokkert</resource>	
+	<resource name="UI_MENU_SentList">Historie</resource>
+	<resource name="UI_MENU_Admin">Admin</resource>
+	<resource name="UI_MENU_SetPassword">Sett passord</resource>
+	<resource name="UI_MENU_DisableAnonymous">Ingen Anonyme</resource>
+	<resource name="UI_MENU_LockChannel">Lås Kanal</resource>
+	<resource name="UI_MENU_UnLockChannel">Åpne Kanal</resource>
+	<resource name="UI_MENU_Contacts">Kontakter</resource>
+	<resource name="UI_MENU_View">Se på</resource>
+	<resource name="UI_MENU_Exit">Gå ut</resource>
+	<resource name="UI_MENU_Signout">Logge av</resource>
+	<resource name="UI_MENU_SignIn">Logge på</resource>
+	<resource name="UI_MENU_File">Fil</resource>
+	<resource name="UI_MENU_OfflineMessage">Frakoblet Melding</resource>	
+	<resource name="UI_MENU_Add">Legg til</resource>
+	<resource name="UI_Menu_GoAdminPage">Gå til admin side</resource>
+	<resource name="UI_PROMPT_ENABLEANONYMOUS">Tillat anonyme brukere</resource>
+	
+	<resource name="UI_MENU_Online">Tilkoblet</resource>
+	<resource name="UI_MENU_Away">Borte</resource>
+	<resource name="UI_MENU_Busy">Opptatt</resource>
+	<resource name="UI_MENU_OnThePhone">I telefonen</resource>
+	<resource name="UI_MENU_OutToLunch">Ute til lunsj</resource>
+	<resource name="UI_MENU_Offline">(Frakoblet)</resource>	
+	<resource name="UI_MENU_AppearOffline">Vis som frakoblet</resource>
+	
+	<resource name="UI_USER_Online"><!--do not display anything--></resource>
+	<resource name="UI_USER_Away">(Borte)</resource>
+	<resource name="UI_USER_Busy">(Opptatt)</resource>
+	<resource name="UI_USER_OutToLunch">(Ute til lunsj)</resource>
+	<resource name="UI_USER_OnThePhone">(I telefonen)</resource>
+	<resource name="UI_USER_Offline">(Frakoblet)</resource>	
+	
+	<resource name="UI_USER_All">Til alle</resource>
+	<resource name="UI_Whisper">Visk</resource>	
+	<resource name="UI_Lobbies">Velg en kanal</resource>	
+	
+	<resource name="UI_PROMPT_KICKUSER">Er du sikker på at du ønsker å kaste denne brukeren ut av denne kanalen?</resource>
+	
+	<resource name="UI_UnknownUserName">(Ukjent)</resource>
+	<resource name="UI_Unknown">(Ukjent)</resource>
+	
+	<resource name="UI_FloodControlMessage">Du kan ikke sende så mange meldinger på så kort tid. Vennligst vent noen sekunder før de sender en ny melding.</resource>
+	<resource name="UI_AreYouSureQuit">Er du sikker på at du ønsker å lukke samtalen?</resource>
+	<resource name="UI_AreYouSureDisconnect">Er du sikker på at du ønsker å koble deg fra samtalen?</resource>
+	<resource name="UI_NotAllowedFunction">Du har ikke tillatelse til å utføre denne funksjonen.</resource>
+
+	<resource name="UI_PopupBlockedMessage">Pop-up blokker funnet.</resource>
+	<resource name="UI_popupblocked">Pop-up blokker funnet.</resource>
+	
+	<resource name="CANTNOTWHISPERTONOTARGET">Du kan ikke viske til alle brukere.</resource>
+	<resource name="UI_CONNECTION_CONNECTING">Vennligst vent, kobler til server...</resource>
+	<resource name="UI_CONNECTION_ERROR">Mistet tilkobling til chat server. {0}</resource>
+	<resource name="UI_CONNECTION_READY">Tilkoblet!</resource>
+	<resource name="UI_CONNECTION_Disconnect">Du er frakoblet.</resource>
+	<resource name="UI_CONNECTION_CANCELLED">Tilkobling avbrutt.</resource>
+	<resource name="UI_CONNECTION_NOTENABLE">Tilkobling feilet. Serveren er ikke klar.</resource>
+	<resource name="UI_CONNECTION_NeedName">Velg et kallenavn for deg selv for å begynne å chatte. Kallenavnet vil identifisere deg for andre brukere i chat rommet. Kallenavn kan ikke være mer enn 20 tegn, må begynne med en bokstav og kan ikke ha mellomrom, eller tegnene.</resource>
+	<resource name="UI_CONNECTION_NEEDLOGIN">Anonyme brukere er ikke tillatt. Du må logge deg inn på web-sidene først.</resource>
+	<resource name="UI_CONNECTION_NeedName_Title">Gjeste navn</resource>
+	<resource name="UI_CONNECTION_NeedName_Message">Vennligst skriv inn ditt navn.</resource>
+	<resource name="UI_CONNECTION_NeedPassword">Passord må brukes.</resource>
+	<resource name="UI_CONNECTION_NeedPassword_Title">Passord</resource>
+	<resource name="UI_PROMPT_CHANNELPASSWORD">Vennligst skriv kanalens passord</resource>
+	<resource name="UI_CONNECTION_NeedPassword_Message">Denne kanalen er passordbeskyttet. Vennligst skriv kanalens passord.</resource>
+	<resource name="UI_CONNECTION_Kick">Du ble kastet ut av denne kanalen.</resource>	
+	<resource name="UI_CONNECTION_MissingNickName">Feltet for kallenavn er tomt.</resource>
+	<resource name="UI_CONNECTION_MissingPassword">Feltet for passord er tomt.</resource>
+	<resource name="UI_CONNECTION_ShortNickName">Kallenavnet ditt er for kort.</resource>
+	<resource name="UI_CONNECTION_LongNickName">Kallenavnet ditt er for langt.</resource>
+	
+	
+	<resource name="UI_USER_JOIN">{0} kom inn i rommet.</resource>
+	<resource name="UI_USER_LEAVE">{0} forlot rommet.</resource>
+	<resource name="UI_USER_KICK">{0} ble kastet ut.</resource>
+	<resource name="UI_USER_DROP">{0} forlot rommet.</resource>
+	<resource name="UI_USER_BLOCK">{0} er blokkert!</resource>
+	<resource name="UI_USER_UNBLOCK">{0} er åpnet!</resource>
+	<resource name="UI_USER_ADD">{0} ble lagt til i din kontaktliste.</resource>
+	<resource name="UI_USER_REMOVE">{0} ble fjernet fra din kontaktliste.</resource>
+	<resource name="UI_USER_EXPIRED">{0} ble tatt bort fra kanalen pga. inaktivitet.</resource>
+	<resource name="UI_USER_HELLO">{0} sier hallo til alle i rommet.</resource>
+	<resource name="UI_USER_LOGINMESSENGER">{0} har logget seg inn på messengeren.</resource>
+	<resource name="UI_USER_LOGOFFMESSENGER">{0} har logget seg av messengeren.</resource>
+	<resource name="UI_USER_UPDATE">{0} har oppdatert profilen.</resource>
+	
+	
+	<resource name="UI_ADMIN_NOTADMIN">Bare admin kan utføre denne funksjonen.</resource>
+	
+	
+	<!-- Add Contact -->
+	<resource name="UI_CONTACT_Detach"></resource>
+	<resource name="Select">Velg</resource>
+	<resource name="DisplayName">Brukernavn</resource>
+	<resource name="Search">Søk</resource>
+	<resource name="SearchResults">Søkeresultat</resource>
+	<resource name="UI_CONTACT_CantAddSelf">Du kan ikke legge til deg selv.</resource>
+	<resource name="UI_CONTACT_FinishAddContact">Denne brukeren ble lagt til dine kontakter.</resource>
+	<resource name="UI_CONTACT_SelectContact">Bruk navn, email, eller kjønn for å søke etter venner.</resource>
+	<resource name="UI_CONTACT_AddContact_subTitle">Du kan legge noen til i din kontaktliste.</resource>
+	<resource name="UI_CONTACT_TargeAnonymous">Mottaker er en anonym bruker!</resource>
+	<resource name="UI_CONTACT_AnonymousCantAddContact">Anonyme brukere kan ikke legge til kontakter.</resource>
+	<resource name="FileformatNotsupported">Kan ikke laste opp filen. Filformatet er ikke tillatt.</resource>
+	<!-- End Add Contact -->
+	
+	<resource name="My_USER_BLOCK">Du er blokkert av brukeren!</resource>
+	
+	<resource name="UI_NewMessage">Ny melding</resource>
+	<resource name="UI_Message">Melding</resource>
+	<resource name="UI_UserMessageBlocked">Du har mottatt en ny melding fra {0}. Chat vinduet ble blokkert av en Pop-up blokker, vennligst trykk OK for å åpne det.</resource>
+	
+	<resource name="UI_UnknownSplashCommand">Kommandoen '{0}' støttes ikke av systemet.</resource>
+	
+	<resource name="UI_WindowBlocked">Ett nytt chat vindu er blokkert, vennligst trykk OK for å åpne det.</resource>
+	
+	<resource name="UI_MSGTAB_GENERAL">Generelt</resource>
+	<resource name="UI_MSGTAB_MYSELF">Meg selv</resource>
+	
+	<resource name="UI_DisableAutoFocus">Slå av Fokus</resource>
+	<resource name="UI_EnableAutoFocus">Auto Fokus</resource>
+	<resource name="UI_DisableSound">Slå av lyd</resource>
+	<resource name="UI_EnableSound">Spill av lyd</resource>
+	<resource name="UI_InvitePrivate">Privat Chat</resource>
+	<resource name="UI_INVITEPRIVATECHAT">{0} inviterer deg til å bli med i en privat kanal.</resource>
+	<resource name="UI_ChangeAvatar">Velg Avatar</resource>
+	<resource name="UI_AvatarDialogSubTitle">Avatarer er små iconer, eller grafikk som representerer deg. Velg en Avatar du liker fra listen. </resource>
+	<resource name="UI_SendAsOffline">Meldingen din ble sent som en frakoblet melding.</resource>
+	<resource name="UI_FeatureDisabled">System administratoren har slått av dette valget!</resource>
+	
+	<!-- Toolbar -->	
+	<resource name="UI_MENU_SendFiles">Send filer</resource>	
+	<resource name="UI_Send_NoFile">Velg en fil som du ønsker å sende!</resource>
+	<resource name="UI_Send_a_File_subTitle">Velg filen du ønsker å sende. Trykk så send knappen.</resource>	
+	<resource name="MaxFileSizeMustBeLessThan">Maks. fil størrelse må være mindre enn </resource>
+	<resource name="UI_Send_UploadSuccessfully">Filen ble lastet opp!</resource>
+	<!-- Toolbar -->
+	
+	<!-- Toolbar -->
+	<resource name="UI_Bold">Fet skrift</resource>
+	<resource name="UI_Italic">Kursiv skrift</resource>
+	<resource name="UI_Underline">Understreking</resource>
+	<resource name="UI_Help">Hjelp</resource>
+	<resource name="UI_ControlPanel">Kontrollpanel</resource>
+	<resource name="UI_Emotion">Sett inn et uttrykk</resource>
+	<resource name="UI_FontColor">Skriftfarge</resource>
+	<resource name="UI_Save">Lagre</resource>
+	<resource name="UI_SaveChat">Lagre chat loggen</resource>
+	<resource name="UI_Avatar">Velg en avatar</resource>
+	<resource name="UI_PlaySound">Spill av lyd</resource>
+	<resource name="UI_AutoFocus">Hold fokus</resource>
+	<resource name="UI_AutoScroll">Rull vindu</resource>
+	<resource name="UI_SelectSkin">Velg et skin</resource>
+	<resource name="UI_Clear">Tøm skjermen</resource>
+	<resource name="UI_Font">Skrifttype</resource>
+	<resource name="UI_Size">Størrelse</resource>
+	<resource name="UI_Close">Lukk</resource>
+	
+	<resource name="IEonly_Feature">Valget er bare tilgjengelig for brukere med Internet Explorer versjon 5.0 eller senere versjoner.</resource>
+	<resource name="CantSaytoYourself">FOr å sende en privat melding må du velge noen andre enn deg selv.</resource>
+	<resource name="PrivateChatTitle">Privat Chat</resource>
+	<resource name="TargetUserNotOnline">Mottakeren er ikke tilkoblet.</resource>
+	<resource name="PrivateChatTitle">Privat Chat</resource>
+	<resource name="ConnectingToServer">Vennligst vent, kobler til server...</resource>
+	<resource name="ConnectionFailed">Tilkobling feilet.</resource>
+	<resource name="ConnectionOK">Tilkoblet!</resource>
+	<resource name="Details">Detaljer om feil</resource>
+	<resource name="NotInvited">Tilgang nektet! Du har ikke fått invitasjon til denne kanalen.</resource>
+	<resource name="NumPeoplesChatting">personer chatter</resource>
+	<resource name="DenyAllAnonymous">Anonyme brukere er ikke tillatt i denne chat applikasjonen.</resource>
+	<resource name="CommandPtopOnly">Kommandoen kan bare brukes i det private vinduet.</resource>
+	<resource name="CantInviteSelf">Du kan ikke invitere deg selv.</resource>
+	<resource name="TargetUserOffline">Brukeren er ikke tilkoblet.</resource>
+	<resource name="TargetUserInvalid">Ugyldig brukernavn på mottaker.</resource>
+	<resource name="YouCantInvite">Det er bare den som opprettet denne kanalen som kan invitere andre brukere til å slutte seg til kanalen.</resource>
+	<resource name="DenyPrivateMessage">Private meldinger er ikke tillatt i denne chat kanalen.</resource>
+	<resource name="ConnectedUsingNewPC">kom tilbake til kanalen.</resource>
+	<resource name="blockuser">blokker</resource>
+	<resource name="unblockuser">fjern blokkering</resource>
+	<resource name="ManageChannel">Kontroller kanalen</resource>
+	<resource name="IsAnonymous">er en Anonym bruker.</resource>	
+	<resource name="LOGINNEWACCOUNT">Denne kontoen brukes av en annen bruker. </resource>
+	
+	<!-- End Toolbar -->
+	
+	
+	<!-- GENERAL -->
+	<resource name="UI_Loading">Henter</resource>
+	<resource name="OK">OK</resource>
+	<resource name="CANCEL">Avbryt</resource>	
+	<resource name="UI_SEND">Send</resource>
+	<resource name="Send">Send</resource>
+	
+	<resource name="MessageNotSend">Meldingen kunne ikke sendes!</resource>
+	<resource name="MsgMessageContainsBadWord">Meldingen din inneholder et "stygt" ord: </resource>
+	<resource name="DenyChannelAnonymous">Anonyme brukere tillates ikke i denne chat kanalen.</resource>
+	<resource name="NickNameIsExists">Kallenavnet eksisterer fra før.</resource>
+	<resource name="YouAreRejected">Du er avvist.</resource>
+	<resource name="YouAreNotConnect">Du er ikke tilkoblet kanalen.</resource>
+	<resource name="YouCantGetin">Du kommer ikke inn i chat kanalen.</resource>
+	<resource name="YouAreNotModerator">Du er ikke moderator for kanalen.</resource>
+	<resource name="NoModerators">Ingen Moderatorer.</resource>
+	<resource name="WrongPassword">Feil passord - Skriv inn på nytt!</resource>
+	<resource name="TargetUserNotPtop">{0} avviser den private meldingen.</resource>
+	<resource name="TargetUserAlreadyHere">Målbruker er tilkoblet.</resource>
+	<resource name="SpecifyUserName">Spesifiser et brukernavn</resource>
+	<resource name="AnonymousCantChangeAvatar">Anonyme brukere kan ikke bytte avatar.</resource>
+	<resource name="CommandChannelOnly">Kommandoen kan bare brukes i kanalen. </resource>
+	<resource name="NoManagerWindow">Ingen ledelses vindu er tilgjengelig.</resource>
+	<resource name="NoAccountInfo">Fant ikke informasjon om kontoen!</resource>
+	<resource name="IPAddressRejected">IP addressen ble avvist.</resource>
+	<resource name="WordExceededMaxLen">Ett ord i meldingen overskrider maksimumslengde for ett enkelt ord</resource>
+	<resource name="MsgExceededMaxLen">Meldingen overskrider maksimum tillatt lengde for en melding</resource>
+	<resource name="MsgUserExpired">Tilkoblingen har utløpt.</resource>
+	<resource name="MsgUserTryJoinChannel">ber om å få komme inn i kanalen.</resource>
+	<resource name="MsgChooseAvatar">Velg Avatar</resource>
+	<resource name="MsgAvatarChanged">Din avatar er endret.</resource>
+	<resource name="MsgCommandError">Kommando feil</resource>
+	<resource name="MsgCommandUnknown">Ukjent kommando</resource>
+	<resource name="ConnectionRejected">Tilkoblingen ble avvist.</resource>
+	<resource name="RequirePassword">Passord er nødvendig</resource>
+	<resource name="MessageSendFailed">Kunne ikke sende meldingen!</resource>
+	<resource name="SelectChannel">Velg en kanal</resource>
+	<resource name="NickNameRestriction">For å begynne å chatte må du velge deg ett kallenavn. Dette vil identifisere deg ovenfor andre brukere i chat kanalen. Kallenavn kan være maksimum 20 tegn, må begynne med en bokstav og kan ikke inneholde mellomrom, eller noen av følgende tegn: ! @ # $ % ( ) + = ' " ; : &lt; &gt; ? &amp; /.</resource>
+	<resource name="GuestNameMessage">Kallenavn kan være maksimum 20 tegn, må begynne med en bokstav og kan ikke inneholde mellomrom, eller noen av følgende tegn: ! @ # $ % ( ) + = ' " ; : &lt; &gt; ? &amp; / . Velg et kallenavn for å begynne å chatte.</resource>
+	<resource name="PleaseInputChannelPassword">Skriv inn passord for kanalen</resource>
+	<resource name="ChatPtopWelcomeMessage">Du har sluttet deg til den private chat kanalen. Vennligst vent så andre brukere kan slutte seg til.</resource>
+	<resource name="Name">Ditt navn:</resource>
+	<resource name="Email">E-post:</resource>
+	<resource name="Enquiry">Melding:</resource>
+	<resource name="Subject">Emne:</resource>
+	<resource name="ExpiredTask">Oppgaven utløp.</resource>
+	
+	<resource name="Send_a_File">Send en fil</resource>
+	
+	<resource name="MSG_TO">&#32;til&#32;</resource>
+	<resource name="WHISPER_TO">&#32;visk&#32;</resource>
+	
+	<resource name="Connect_Cancel">Avbryt</resource>
+	<resource name="NumPeoplesChatting">personer chatter</resource>
+	<resource name="TargetUserNotPtop">avviste den private chat forespørselen.</resource>
+	<resource name="IsNotOnline">er ikke tilkoblet.</resource>
+	<resource name="TargetBusyTryagain">er opptatt. Vennligst prøv igjen.</resource>
+	<resource name="Conversations">Samtaler</resource>
+	<resource name="NoConversations">Ingen aktive samtaler</resource>
+	<resource name="NoOnlineContacts">Alle dine kontakter er frakoblet.</resource>
+	<resource name="NoOfflineContacts">Ingen frakoblede kontakter.</resource>
+	
+	<!-- Messenger Invite -->
+	<resource name="Invite_subTitle">Velg personer du ønsker å legge til i denne samtalen, og trykk OK. (Du kan velge mer enn en person).</resource>
+	<resource name="InvitationSent">En invitasjon ble sendt.</resource>
+	<!-- End Messenger Invite -->
+	<!-- User Profile -->
+	<resource name="ViewUserProfile_Title">Ser på bruker profil</resource>
+	<!-- End User Profile -->
+	
+	
+	
+	<!-- added by terry -->
+	<resource name="UI_InviteIntoPrivate">Inviter personer til å slutte seg til samtalen</resource>
+	<resource name="UI_SpecifyInviteName">Hvem ønsker du å invitere?</resource>
+	<resource name="UI_USER_TYPING"> skriver en melding.</resource>
+	
+	
+	<resource name="UI_LeaveMessage">Vennligst legg igjen en melding</resource>
+	<resource name="NumberOnly">Vennligst skriv et gyldig nummer.</resource>
+	<resource name="ManagerList">Operatør liste:</resource>
+	<resource name="ManagerList_subTitle">Du kan legge til så mange operatører som nødvendig.</resource>
+	
+	<resource name="UI_MENU_UnKickUsers">Åpne for brukere (utkastede)</resource>
+	<resource name="UI_MENU_CheckIP">Sjekk IP</resource>
+	<resource name="UI_MENU_DenyIP">Nekt IP</resource>
+	<resource name="UI_PROMPT_DENYUSERIP">Er du sikker på at du ønsker å nekte brukerens IP?</resource>
+	<resource name="UI_PROMPT_CHANNELPASSWORD">Vennligst spesifiser ett passord, bruk blank for å slette.</resource>
+	<resource name="UI_MessageHistory">Meldingshistorie</resource>
+</root>
+
+
+
+
+
+

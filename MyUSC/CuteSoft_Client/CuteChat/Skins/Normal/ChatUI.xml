@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Desktop>
+	<Class TypeName="ChannelMainForm" BaseType="FullPageWindow" Width="1000">
+		<TopPanel AutoDock="Top" Height="60"></TopPanel>
+		<BottomAdsPanel AutoDock="Bottom" Height="60"></BottomAdsPanel>
+		<BottomPanel AutoDock="Bottom" Height="100" DockMargins="4,0,0,0">
+			<Toolbar AutoDock="Top" Height="22"/>
+			<HtmlPanel AutoDock="Bottom" Height="28" DockMargins="2,2,2,2">
+				<SelectTarget AutoDock="Left" Height="24" Width="240"/>
+				<TypingUserList AutoDock="Fill" Height="24">
+					<Scripts>
+						<Execute>
+							this.GetElement().style.padding="8px";
+						</Execute>
+					</Scripts>
+				</TypingUserList>
+			</HtmlPanel>
+			<SendButton AutoDock="Right" Width="90" DockMargins="5,4,3,5"/>
+			<InputBox AutoDock="Fill" DockMargins="2,4,2,2"/>					
+		</BottomPanel>
+
+		<DebugList DockMargins="4,4,2,4" AutoDock="Right" EnableSizing="True" Width="180" BorderWidth="1" BorderStyle="solid"></DebugList>
+
+		<RightPanel AutoDock="Right" Width="160" EnableSizing="True" DockPaddings="3,3,3,3" BackColor="white" DockMargins="2,4,2,2" BorderWidth="1" BorderStyle="solid" BorderColor="#BED6E0">
+				<ChannelTitle AutoDock="Top" Height="30"></ChannelTitle>
+				<ChannelList AutoDock="Bottom"></ChannelList>
+				<UserList AutoDock="Fill"></UserList>
+		</RightPanel>
+
+		<MessageList DockMargins="4,4,10,12" AutoDock="Fill">
+		</MessageList>
+		
+		<Scripts>
+			<OnDoubleClick Arguments="Arg">
+				if(Arg.GetCtrlKey())
+				{
+					var debuglist=this.GetWindow().FindChildByType("DebugList");
+					debuglist.SetVisible( !debuglist.GetVisible() )
+				}
+			</OnDoubleClick>
+		</Scripts>
+	</Class>
+</Desktop>

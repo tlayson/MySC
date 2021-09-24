@@ -1,0 +1,370 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<root>
+	<resource name="CuteChat_Messenger">Cute Web Messenger</resource>
+	<resource name="UI_MENU_AddContact">Add Contact</resource>
+	<resource name="UI_MENU_RemoveContact">Remove Contact</resource>
+	<resource name="UI_MENU_ViewProfile">View Profile</resource>
+	<resource name="UI_MENU_Block">Block User</resource>
+	<resource name="UI_MENU_UnBlock">Unblock User</resource>
+	<resource name="UI_MENU_ChatWith">Send a Message</resource>
+	<resource name="UI_MENU_TargetAll">To All</resource>
+	<resource name="UI_MENU_Clear">Clear</resource>
+	<resource name="UI_MENU_SaveMessages">Save the chat log</resource>
+	<resource name="UI_MENU_EmailMessages">Email the chat log</resource>
+	<resource name="UI_MENU_ReloadMessages">Reload</resource>
+	<resource name="UI_MENU_Invite">Invite</resource>
+	<resource name="UI_MENU_Kick">Kick</resource>
+	<resource name="UI_MENU_TargetIt">Talk to</resource>
+	<resource name="UI_MENU_AutoScroll">Auto Scroll</resource>
+	<resource name="UI_MENU_StopScroll">Stop Scroll</resource>	
+	<resource name="UI_MENU_Online">Online</resource>
+	<resource name="UI_MENU_Away">Away</resource>
+	<resource name="UI_MENU_Busy">Busy</resource>	
+	<resource name="UI_MENU_Blocked">Blocked</resource>	
+	<resource name="UI_MENU_ShowMyCamera">Turn My Camera On</resource>
+	<resource name="UI_MENU_SentList">History</resource>
+	<resource name="UI_MENU_Admin">Admin</resource>
+	<resource name="UI_MENU_SetPassword">Set Password</resource>
+	<resource name="UI_MENU_DisableAnonymous">Disable Anonymous</resource>
+	<resource name="UI_MENU_LockChannel">Lock Channel</resource>
+	<resource name="UI_MENU_UnLockChannel">UnLock Channel</resource>
+	<resource name="UI_MENU_Contacts">Contacts</resource>
+	<resource name="UI_MENU_Exit">Exit</resource>
+	<resource name="UI_MENU_Signout">Sign Out</resource>
+	<resource name="UI_MENU_SignIn">Sign in</resource>
+	<resource name="UI_MENU_File">File</resource>
+	<resource name="UI_MENU_DeleteAll">Delete All</resource>
+	<resource name="UI_MENU_OfflineMessage">Offline Message</resource>	
+	<resource name="UI_Menu_GoAdminPage">Go to admin page</resource>
+	<resource name="UI_PROMPT_ENABLEANONYMOUS">Allow Anonymous users</resource>
+	<resource name="UI_Menu_Connect">Connect</resource>
+	<resource name="UI_Menu_Disconnect">Disconnect</resource>	
+	<resource name="UI_MENU_OnThePhone">On The Phone</resource>
+	<resource name="UI_MENU_OutToLunch">Out To Lunch</resource>
+	<resource name="UI_MENU_AppearOffline">Invisible</resource>	
+	<resource name="UI_USER_Users">Users</resource>
+	<resource name="UI_USER_Online"><!--do not display anything--></resource>
+	<resource name="UI_USER_Away">(Away)</resource>
+	<resource name="UI_USER_Busy">(Busy)</resource>
+	<resource name="UI_USER_OutToLunch">(Out To Lunch)</resource>
+	<resource name="UI_USER_OnThePhone">(On The Phone)</resource>
+	<resource name="UI_USER_Offline">(Offline)</resource>	
+	<resource name="UI_USER_AppearOffline">(Offline)</resource>		
+	<resource name="UI_Whisper">Whisper</resource>	
+	<resource name="UI_PROMPT_KICKUSER">Are you sure you want to kick this user out of the current channel?</resource>	
+	<resource name="UI_Unknown">(Unknown)</resource>
+	<resource name="UI_ChatCommands">Chat Commands</resource>	
+	<resource name="UI_FloodControlTitle">Flood Control</resource>	
+	<resource name="UI_FloodControlMessage">You can't send so many messages in a short time. Please wait a few seconds before sending another message.</resource>
+	<resource name="UI_AreYouSureQuit">Are you sure that want to close the conversation?</resource>
+	<resource name="UI_AreYouSureQuitMessenger">Are you sure that you want to quit Web Messenger?</resource>
+	<resource name="UI_AreYouSureDisconnect">Are you sure you want to disconnect from the chat?</resource>
+	<resource name="UI_popupblocked">Pop-up blocker detected.</resource>	
+	<resource name="CANTNOTWHISPERTONOTARGET">Please select a specific user to whisper.</resource>
+	<resource name="UI_CONNECTION_CONNECTING">Please wait, connecting to server...</resource>
+	<resource name="UI_CONNECTION_ERROR">The connection to the chat server is lost. {0}</resource>
+	<resource name="UI_CONNECTION_READY">Connected!</resource>
+	<resource name="UI_CONNECTION_Disconnect">You're disconnected.</resource>
+	<resource name="UI_CONNECTION_CANCELLED">Connection Cancelled.</resource>
+	<resource name="UI_CONNECTION_NOTENABLE">Connection failed. Server is not ready.</resource>
+	<resource name="UI_CONNECTION_NeedName">Please choose a nickname for yourself to begin chatting. Your nickname will identify you to other users in the chat room. Nicknames can be a maximum of 20 characters long, must begin with a letter and cannot contain spaces or the characters.</resource>
+	<resource name="UI_CONNECTION_NEEDLOGIN">Anonymous Users are not allowed in this application. You must sign in this website first.</resource>
+	<resource name="UI_CONNECTION_NeedName_Title">Guest Name</resource>
+	<resource name="UI_CONNECTION_NeedName_Message">Please type your name.</resource>
+	<resource name="UI_CONNECTION_NeedPassword">Password is required.</resource>
+	<resource name="UI_CONNECTION_NeedPassword_Title">Password</resource>
+	<resource name="UI_CONNECTION_NeedPassword_Message">This channel is password protected. Please input the password of this channel.</resource>
+	<resource name="UI_CONNECTION_Kick">You have been kicked out of this channel.</resource>	
+	<resource name="UI_CONNECTION_Locked">This chat room has been locked. Please wait for the moderator to accept you.</resource>	
+	<resource name="UI_CONNECTION_MissingNickName">The nickname field is empty.</resource>
+	<resource name="UI_CONNECTION_MissingPassword">The password field is empty.</resource>
+	<resource name="UI_CONNECTION_ShortNickName">Your nickname is too short.</resource>
+	<resource name="UI_CONNECTION_LongNickName">Your nickname is too long.</resource>
+	<resource name="UI_CONNECTION_NOPLACE">The server is reset and this chat room is deleted. Please close the window and try again.</resource>
+	<resource name="UI_CONNECTION_REMOVED">You are removed from the channel due to inactivity.</resource>
+	<resource name="UI_CONNECTION_REJECTED">The server have rejected your connection.</resource>
+	<resource name="UI_CONNECTION_NOCONNECTION">The connection to the chat server is lost.</resource>
+	<resource name="UI_CONNECTION_IDEXISTS">You are already logged in this chat application. A new connection cannot be established.</resource>
+	<resource name="UI_CONNECTION_NEEDLOGIN">Anonymous Users are not allowed in this application. You must sign in this website first.</resource>
+	<resource name="UI_CONNECTION_INQUEUE">This chat room is full. Please choose another room.</resource> 
+	 
+	<resource name="UI_USER_JOIN">{0} joined the room.</resource>
+	<resource name="UI_USER_LEAVE">{0} left this room.</resource>
+	<resource name="UI_USER_KICK">{0} has been kicked away.</resource>
+	<resource name="UI_USER_DROP">{0} left the room.</resource>
+	<resource name="UI_USER_BLOCK">{0} has been blocked!</resource>
+	<resource name="UI_USER_UNBLOCK">{0} has been unblocked!</resource>
+	<resource name="UI_USER_ADD">{0} has been added to your contact list.</resource>
+	<resource name="UI_USER_REMOVE">{0} has been removed from your contact list.</resource>
+	<resource name="UI_USER_EXPIRED">{0} was removed from the channel due to inactivity.</resource>
+	<resource name="UI_USER_HELLO">{0} say hello to everyone in the room.</resource>
+	<resource name="UI_USER_LOGINMESSENGER">{0} has logged in to the messenger.</resource>
+	<resource name="UI_USER_LOGOFFMESSENGER">{0} has logged off from the messenger.</resource>
+	<resource name="UI_USER_UPDATE">{0} has updated the profile.</resource>
+
+	<resource name="UI_USER_ADDED">{0} joined the room.</resource>
+	<resource name="UI_USER_REMOVED_BYCLIENT">{0} left this room.</resource>
+	<resource name="UI_USER_REMOVED_KICK">{0} has been kicked away.</resource>
+	<resource name="UI_USER_REMOVED_EXPIRED">{0} was removed from the channel due to inactivity.</resource>
+	<resource name="UI_USER_REMOVED_IDLE">{0} was removed from the channel due to inactivity.</resource>
+	<resource name="UI_USER_RENAME">{0}'s username is changed to {1}.</resource>
+
+	<resource name="UI_ADMIN_NOTADMIN">Only the admin can perform this function.</resource>
+	<resource name="UI_INVALIDIDENTITY">You are not authorized to perform the current operation.</resource>
+	
+	
+	<!-- Add Contact -->
+	<resource name="UI_CONTACT_Detach"></resource>
+	<resource name="Select">Select</resource>
+	<resource name="DisplayName">User Name</resource>
+	<resource name="Search">Search</resource>
+	<resource name="SearchResults">Search Results</resource>
+	<resource name="UI_CONTACT_NotContact">Non Contact</resource>
+	<resource name="UI_CONTACT_CantAddSelf">You can't add yourself.</resource>
+	<resource name="UI_CONTACT_FinishAddContact">This user has been added into your contacts.</resource>
+	<resource name="UI_CONTACT_SelectContact">Please search for friends by name, email or gender.</resource>
+	<resource name="UI_CONTACT_AddContact_subTitle">Type the name of the person you want to add:</resource>
+	<resource name="UI_CONTACT_TargeAnonymous">Target is an anonymous user!</resource>
+	<resource name="UI_CONTACT_AnonymousCantAddContact">Anonymous user cannot perform this function.</resource>
+	<resource name="FileformatNotsupported">Cannot upload the file. The File format is not allowed.</resource>
+	<!-- End Add Contact -->
+	
+	<resource name="My_USER_BLOCK">You have been blocked by the target user!</resource>
+	
+	<resource name="UI_NewMessage">New Message</resource>
+	<resource name="UI_Message">Message</resource>
+	<resource name="UI_UserMessageBlocked">You have received a new message from {0}. The chat window has been blocked by your Pop-up blocker, please click OK to open it.</resource>
+	<resource name="UI_UnknownSplashCommand">Command '{0}' is not supported by system.</resource>
+	<resource name="UI_WindowBlocked">A new chat window has been blocked, please click OK to open it.</resource>
+	
+	<resource name="UI_DisableAutoFocus">Disable Focus</resource>
+	<resource name="UI_EnableAutoFocus">Auto Focus</resource>
+	<resource name="UI_DisableSound">Disable Sounds</resource>
+	<resource name="UI_EnableSound">Play sounds</resource>
+	<resource name="UI_InvitePrivate">Private Chat</resource>
+	<resource name="UI_INVITEPRIVATECHAT">{0} invites you to join a private channel.</resource>
+	<resource name="UI_AvatarDialogSubTitle">Avatars are small icons or graphics that represent you. Select the Avatar you like from the following list. </resource>
+	<resource name="UI_SendAsOffline">Your message has been sent as an offline message.</resource>
+	<resource name="UI_FeatureDisabled">This feature has been disabled by the system administrator!</resource>
+	
+	<resource name="UI_Send_NoFile">Please select a file to send!</resource>
+	<resource name="UI_Send_a_File_subTitle">Select a file to send, then click send button.</resource>	
+	<resource name="MaxFileSizeMustBeLessThan">Maximum file upload size is set to </resource>
+	<resource name="UI_Send_UploadSuccessfully">File uploaded successfully!</resource>
+	<resource name="UI_AllowedFiles">Allowed file types:</resource>
+	
+	<resource name="UI_Bold">Bold</resource>
+	<resource name="UI_Italic">Italic</resource>
+	<resource name="UI_Underline">Underline</resource>
+	<resource name="UI_Help">Help</resource>
+	<resource name="UI_ControlPanel">Control Panel</resource>
+	<resource name="UI_Emotion">Insert Emotions</resource>
+	<resource name="UI_FontColor">Font Color</resource>
+	<resource name="UI_Avatar">Pick an avatar</resource>
+	<resource name="UI_ChangePicture">Change your display picture</resource>
+	<resource name="UI_PlaySound">Play sounds</resource>
+	<resource name="UI_SelectSkin">Select a skin</resource>
+	<resource name="UI_Font">Font</resource>
+	<resource name="UI_Size">Size</resource>
+	<resource name="UI_Close">Close</resource>
+	<resource name="UI_Print">Print</resource>
+	
+	<resource name="IEonly_Feature">This feature is only available to users running Internet Explorer versions 5.0 and above.</resource>
+	<resource name="CantSaytoYourself">To send a private message, you must select someone other than yourself.</resource>
+	<resource name="TargetUserNotOnline">The target user is not online.</resource>
+	<resource name="PrivateChatTitle">Private Chat</resource>
+	<resource name="Details">Error Details</resource>
+	<resource name="NotInvited">Access denied! You haven't been invited to join this channel.</resource>
+	<resource name="NumPeoplesChatting">people chatting</resource>
+	<resource name="CommandPtopOnly">That Command can only be used in the private window.</resource>
+	<resource name="CantInviteSelf">You can't invite yourself.</resource>
+	<resource name="TargetUserInvalid">Invalid target user name.</resource>
+	<resource name="YouCantInvite">Only the creator of this channel can invite users to join.</resource>
+	<resource name="DenyPrivateMessage">Private messages are not allowed in this chat channel.</resource>
+	<resource name="DenyPrivateModerateMode">Private messages are not allowed in the Moderate Mode.</resource>
+	<resource name="ConnectedUsingNewPC">has rejoined the channel.</resource>	
+	
+	<!-- GENERAL -->
+	<resource name="UI_Loading">Loading</resource>
+	<resource name="OK">OK</resource>
+	<resource name="CANCEL">Cancel</resource>	
+	<resource name="UI_SEND">Send</resource>
+	
+	<resource name="MessageNotSend">Message Could Not Be Sent!</resource>
+	<resource name="MsgMessageContainsBadWord">Your message contains a "bad" word: </resource>
+	<resource name="NickNameIsExists">Nickname already exists.</resource>
+	<resource name="YouAreRejected">You are rejected.</resource>
+	<resource name="YouAreNotConnect">You haven't connect to the channel.</resource>
+	<resource name="YouCantGetin">You can't get into the chat channel.</resource>
+	<resource name="YouAreNotModerator">You are not the moderator of the channel.</resource>
+	<resource name="NoModerators">No Moderators.</resource>
+	<resource name="WrongPassword">Wrong Password - Enter Again!</resource>
+	<resource name="TargetUserNotPtop">{0} rejects the private messgae.</resource>
+	<resource name="TargetUserAlreadyHere">The target user is online.</resource>
+	<resource name="SpecifyUserName">Specify a user name</resource>
+	<resource name="AnonymousCantChangeAvatar">Anonymous users are not allowed to change avatar.</resource>
+	<resource name="CommandChannelOnly">The Command can only be used in the channel. </resource>
+	<resource name="NoManagerWindow">No management window are available.</resource>
+	<resource name="NoAccountInfo">Account Information Not Found!</resource>
+	<resource name="IPAddressRejected">The IP address is rejected.</resource>
+	<resource name="WordExceededMaxLen">One word in your message exceeded the maximum length of a single word</resource>
+	<resource name="MsgExceededMaxLen">Message exceeded the maximum length of a message</resource>
+	<resource name="MsgUserExpired">Connection Expired.</resource>
+	<resource name="MsgUserTryJoinChannel">is requesting to get into the channel.</resource>
+	<resource name="MsgChooseAvatar">Choose Avatar</resource>
+	<resource name="MsgAvatarChanged">Your avatar has been changed.</resource>
+	<resource name="MsgCommandError">Command Error</resource>
+	<resource name="MsgCommandUnknown">Unknown Command</resource>
+	<resource name="ConnectionRejected">Connection rejected.</resource>
+	<resource name="RequirePassword">Password Required</resource>
+	<resource name="MessageSendFailed">Failed to Send Message!</resource>
+	<resource name="SelectChannel">Select a channel</resource>
+	<resource name="NickNameRestriction">Please choose a nickname for yourself to begin chatting. Your nickname will identify you to other users in the chat channel. Nicknames can be a maximum of 20 characters long, must begin with a letter and cannot contain spaces or the following characters: ! @ # $ % ( ) + = ' " ; : &lt; &gt; ? &amp; /.</resource>
+	<resource name="GuestNameMessage">Nicknames can be a maximum of 20 characters long, must begin with a letter and cannot contain spaces or the following characters: ! @ # $ % ( ) + = ' " ; : &lt; &gt; ? &amp; / . Please choose a new nickname to begin chatting.</resource>
+	<resource name="PleaseInputChannelPassword">Please input channel password</resource>
+	<resource name="ChatPtopWelcomeMessage">You have join in the private chat channel. Please wait for other chatters to join.</resource>
+	<resource name="Name">Name:</resource>
+	<resource name="Email">Email:</resource>
+	<resource name="Enquiry">Message:</resource>
+	<resource name="Subject">Subject:</resource>
+	<resource name="Question">Question:</resource>
+	<resource name="Department">Department:</resource>
+	<resource name="ExpiredTask">Task Expired.</resource>
+	<resource name="StartChat">Start Chat...</resource>
+	<resource name="Feedback">Post Feedback</resource>
+	
+	<resource name="Send_a_File">Send a file</resource>
+	
+	<resource name="MSG_TO">&#32;to&#32;</resource>
+	<resource name="WHISPER_TO">&#32;whisper&#32;</resource>
+	
+	<resource name="Connect_Cancel">Cancel</resource>
+	<resource name="NumPeoplesChatting">people chatting</resource>
+	<resource name="TargetUserNotPtop">rejected the private chat request.</resource>
+	<resource name="IsNotOnline">is not online.</resource>
+	<resource name="TargetBusyTryagain">is busy. Please try again.</resource>
+	<resource name="Conversations">Conversations</resource>
+	<resource name="NoConversations">No active conversations</resource>
+	<resource name="NoOnlineContacts">All of your contacts are offline.</resource>
+	<resource name="NoOfflineContacts">No offline contacts.</resource>
+	<resource name="ViewUserProfile_Title">Viewing user's profile</resource>	
+	
+	<!-- added by terry -->
+	<resource name="UI_SpecifyInviteName">Type the name of the person you want to invite:</resource>
+	<resource name="UI_SelectName">Select the person that you want to invite:</resource>
+	<resource name="UI_USER_TYPING"> is typing a message.</resource>	
+	
+	<resource name="UI_LeaveMessage">Please leave a message</resource>
+	<resource name="NumberOnly">Please enter a valid number.</resource>
+	
+	<resource name="ModeratorList">Moderators:</resource>	
+	<resource name="ModeratorList_subTitle">A Room Moderator is responsible for ensuring that the rules of the room are observed. Moderators can kick, ban and quiet disruptive users that abuse the program. </resource>
+	<resource name="OperatorList">Operator List:</resource>
+	<resource name="OperatorList_subTitle">You can add as many operators to the system as required.</resource>
+	
+		
+	<resource name="UI_ChangeName">Change display name</resource>
+	<resource name="UI_SetMaxUsers">Set Max Online</resource>
+	<resource name="UI_PROMPT_CHANNELMAXONLINE">Set the maximum number of chatters allowed in this room</resource>
+	
+	<resource name="UI_Menu_OpenModeratorMode">Open Moderate Chat Mode</resource>
+	<resource name="UI_Menu_CloseModeratorMode">Turn off Moderate Chat Mode</resource>
+	<resource name="UI_MENU_UnDenyIPs">Unban IPs</resource>
+
+	<resource name="UI_MENU_UnKickUsers">Unkick Users</resource>
+	<resource name="UI_MENU_CheckIP">Check IP</resource>
+	<resource name="UI_MENU_DenyIP">Ban IP</resource>
+	<resource name="UI_PROMPT_DENYUSERIP">Are you sure you want to ban the IP of that user ?</resource>
+	<resource name="UI_PROMPT_CHANNELPASSWORD">Please specify a password or leave blank if you want to clear it.</resource>
+	<resource name="UI_MessageHistory">Message History</resource>
+	<resource name="InputRequired">Input Required:</resource>	
+	<resource name="UI_SENDEMAILOK">Your e-mail was sent successfully!</resource>
+	
+	<resource name="UI_Buzz">Nudge</resource>
+	<resource name="UI_SendFile">Send File</resource>
+	<resource name="UI_History">View message history</resource>
+	<resource name="UI_Menu_UserLevel">Role</resource>
+	<resource name="UI_Menu_UserLevel_Silence">Silence</resource>
+	<resource name="UI_Menu_UserLevel_Normal">Normal</resource>
+	<resource name="UI_Menu_UserLevel_VIP">VIP</resource>
+	<resource name="UI_Menu_UserLevel_Speaker">Speaker</resource>
+	<resource name="UI_Menu_UserLevel_Moderator">Moderator</resource>
+	<resource name="UI_USER_JOIN_MODERATE">{0} is requesting to enter this chat room.</resource>
+	<resource name="UI_MESSAGE_SETAUTOAWAY">The application automatically set your presence status to Away because you are inactive for a long time.</resource>
+	<resource name="UI_CONTACT_ADDED">User {0} has been added into your contact list successfully.</resource>
+	<resource name="UI_CONTACT_REMOVED">User {0} has been removed from your contact list successfully.</resource>
+	<resource name="UI_IGNORE_ADDED">User {0} has been added into your block list successfully.</resource>
+	<resource name="UI_IGNORE_REMOVED">User {0} has been removed from your block list successfully.</resource>
+	<resource name="InvalidActionWhenAppearOffline">You cannot send a message when your status is offline.</resource>
+	
+	<resource name="MODERATEMESSAGEACCEPTED">You message has been accepted.</resource>
+	<resource name="MODERATEMESSAGEREJECTED">You message has been rejected.</resource>
+	
+	<resource name="UI_INPUTEMAILADDRESS">Please input your email address.</resource>
+	
+	<resource name="UI_AdminModerateModeEntering">This is a moderated chat room. That means that your messages won't appear until a moderator approves it.</resource>
+	<resource name="UI_AdminModerateModeStart">Moderator activated moderated chat function. That means that your messages won't appear until a moderator approves it. </resource>
+	<resource name="UI_AdminModerateModeEnd">Moderator disabled moderated-chat function, you can free chat now.</resource>
+	<resource name="UI_AdminLockRoomEntering">This chat room has been locked. Regular users need be approved before joining this room.</resource>
+	<resource name="UI_AdminLockRoom">This chat room has been locked. Please wait for the moderator to accept you.</resource>	
+	<resource name="UI_AdminUnLockRoom">This chat room has been unlocked.</resource>
+	
+	<resource name="UI_MENU_Tools">Tools</resource>
+	<resource name="UI_MENU_ChangeInstantAvatar">Change My Avatar</resource>
+	<resource name="UI_BLOCKED">Blocked</resource>
+	<resource name="UI_ALERT">System Alert</resource>
+	<resource name="ADDCONTACT_INVALIDNAME">Username not found!</resource>
+	<resource name="FEEDBACKEMAILTITLEFORMAT">{0} sent an Offline Message. Title: {2}</resource>
+	<resource name="FEEDBACKEMAILCONTENTFORMAT">User Name:{0}&#10;&#13;Email Address:{1}&#10;&#13;Title:{2}&#10;&#13;&#10;&#13;Details:&#10;&#13;{3}</resource>
+	
+
+	<resource name="INVALIDARGUMENT">Invalid argument.</resource>
+	<resource name="INVALIDIDENTITY">Invalid identity.</resource>
+	<resource name="INVALIDCOMMAND">Invalid command.</resource>
+	<resource name="INVALIDTARGET">The specified user is currently offline or does not exist.</resource>
+	<resource name="INVATEOBJECT">Invalid object.</resource>
+	<resource name="INVATESTATUS">Invalid status.</resource>
+	<resource name="UI_USER_PARTIAL">(Browsing)</resource>
+	<resource name="ChannelNameRequired">Chat Room Name is required.</resource>
+	<resource name="UI_PersonalMessage">Enter a personal message</resource>
+
+	<resource name="UI_ChangeStatus">Change your status</resource>
+	<resource name="UI_ChangeDescription">Change your description</resource>
+	<resource name="UI_SortContacts">Sort your contacts</resource>
+	<resource name="TypeGroupName">Please type group name.</resource>
+	<resource name="GroupAlreadyExists">Group already exists.</resource>
+	<resource name="AddNewGroup">Create a group</resource>
+	<resource name="RenameGroup">Edit a group</resource>
+	<resource name="DeleteGroup">Delete group</resource>
+	<resource name="HideContactsinGroup">Hide the contacts in this group. Right-click to rename or delete this group.</resource>
+	<resource name="ShowContactsinGroup">Show the contacts in this group.</resource>
+	<resource name="NoContactsinGroup">No contacts in this group.</resource>
+	<resource name="ChangePictureSize">Change Picture Size</resource>
+	<resource name="ShowLargeIcon">Show Large Picture </resource>
+	<resource name="ShowSmallIcon">Show Small Picture</resource>
+	<resource name="ShowMediumIcon">Show Medium Picture</resource>
+	<resource name="SortByStatus">Sort by status</resource>
+	<resource name="SortByGroup">Sort by group</resource>
+	<resource name="MoveToGroup">Move to group</resource>
+	<resource name="Default">(Default)</resource>
+	<resource name="ShowWebCam">Show your webcam</resource>
+	<resource name="Says">says:</resource>
+	<resource name="Next">Next</resource>
+	<resource name="Next">Next</resource>
+	<resource name="HideDisplayPictures">Hide the participant's display pictures</resource>
+	<resource name="ShowDisplayPictures">Show the participant's display pictures</resource>
+	<resource name="UI_MSG_UnKickUsers">All previously kicked users are allowed to participate in the chat room again. </resource>
+	<resource name="UI_MSG_UnBanIPs">All previously banned IPs are allowed to participate in the chat room again. </resource>	
+	<resource name="GoNextLine">Press Shift+Enter to go to the next line</resource>
+	<resource name="TypeQuestion">Please type your question here</resource>
+	<resource name="CreateQuestion">Create the question-answer pair</resource>
+	<resource name="Accept">Accept</resource>
+	<resource name="FlashChatNotAvailable">Video server is not available!</resource>
+		
+	<resource name="UI_Support_Ready">Agent {0} has received your message and will be right with you.</resource>
+	<resource name="UI_Support_Wait">Please wait while we route your call to the next available agent who will help you with your question: "{0}".</resource>
+	<resource name="UI_Support_NOAGENT">No agent online! Please leave an offline message.</resource>
+	<resource name="UI_Support_Title">Live Support</resource>
+	<resource name="UI_Support_Welcome">Thank you for contacting us. To serve you better please provide the following information:</resource>
+	
+</root>                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          
